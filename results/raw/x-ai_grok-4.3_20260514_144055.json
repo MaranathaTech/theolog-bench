@@ -1,0 +1,655 @@
+{
+  "model_name": "x-ai/grok-4.3",
+  "timestamp": "2026-05-14T14:40:55.234054",
+  "category_weights": {
+    "catechism_recall": 0.25,
+    "confessional_knowledge": 0.15,
+    "doctrinal_position": 0.2,
+    "biblical_reference": 0.15,
+    "error_detection": 0.15,
+    "comparative_theology": 0.1
+  },
+  "questions": [
+    {
+      "id": "wsc-001",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q1",
+      "question": "What is the chief end of man?",
+      "reference_answer": "Man's chief end is to glorify God, and to enjoy him for ever.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "Man's chief end is to glorify God",
+          "and to enjoy him for ever"
+        ],
+        "key_concepts": [
+          "Man's chief end is to glorify God",
+          "and to enjoy him for ever"
+        ]
+      },
+      "response": "Man's chief end is to glorify God, and to enjoy Him forever.\n\n(This is the answer given in the Westminster Shorter Catechism, Question 1, a foundational summary of Reformed Christian theology drawn from passages such as 1 Corinthians 10:31 and Psalm 73:25\u201326.)"
+    },
+    {
+      "id": "wsc-002",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q2",
+      "question": "What rule hath God given to direct us how we may glorify and enjoy him?",
+      "reference_answer": "The Word of God, which is contained in the Scriptures of the Old and New Testaments, is the only rule to direct us how we may glorify and enjoy him.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "which is contained in the Scriptures of the Old and New Testaments",
+          "is the only rule to direct us how we may glorify and enjoy him"
+        ],
+        "key_concepts": [
+          "The Word of God",
+          "which is contained in the Scriptures of the Old and New Testaments",
+          "is the only rule to direct us how we may glorify and enjoy him"
+        ]
+      },
+      "response": "The Word of God (contained in the Scriptures of the Old and New Testaments) is the only rule to direct us how we may glorify and enjoy him. \n\n(This is the answer given in the Westminster Shorter Catechism, Q. 2.)"
+    },
+    {
+      "id": "wsc-003",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q3",
+      "question": "What do the Scriptures principally teach?",
+      "reference_answer": "The Scriptures principally teach what man is to believe concerning God, and what duty God requires of man.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "The Scriptures principally teach what man is to believe concerning God",
+          "and what duty God requires of man"
+        ],
+        "key_concepts": [
+          "The Scriptures principally teach what man is to believe concerning God",
+          "and what duty God requires of man"
+        ]
+      },
+      "response": "The Scriptures principally teach what man is to believe concerning God, and what duty God requires of man. \n\n(This is the classic answer from the Westminster Shorter Catechism, Q. 3.)"
+    },
+    {
+      "id": "wsc-004",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q4",
+      "question": "What is God?",
+      "reference_answer": "God is a Spirit, infinite, eternal, and unchangeable in his being, wisdom, power, holiness, justice, goodness, and truth.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "and unchangeable in his being"
+        ],
+        "key_concepts": [
+          "God is a Spirit",
+          "and unchangeable in his being"
+        ]
+      },
+      "response": "**God** is one of humanity's oldest and most contested ideas\u2014a word used to point at whatever is considered the ultimate source, ground, or explanation of reality.\n\n### Core Meanings Across Traditions\n- **Monotheistic view** (Judaism, Christianity, Islam): God is a singular, personal, transcendent being who created the universe, sustains it, and is distinct from it. Often described with attributes like omnipotence, omniscience, and moral perfection. In these traditions, God is not a force or principle but a conscious agent who can relate to humans.\n- **Pantheistic view** (Spinoza, some strands of Hinduism and Taoism): God *is* the universe itself\u2014everything that exists is part of or identical with the divine. There is no separate creator; the cosmos in its totality is God.\n- **Panentheistic view**: God contains the universe but is also more than it\u2014immanent and transcendent at once.\n- **Deistic view**: A creator who set the laws of nature in motion but does not intervene afterward (popular during the Enlightenment).\n- **Philosophical abstractions**: Aristotle's \"unmoved mover,\" Plotinus's \"One,\" or modern concepts like \"the ground of being\" (Tillich). These treat God less as a person and more as the necessary foundation that explains why anything exists at all.\n\n### Non-Theistic and Skeptical Takes\nMany traditions (certain forms of Buddhism, Jainism, and much of secular philosophy) either reject the concept or treat it as irrelevant to understanding reality. From a strictly naturalistic standpoint, \"God\" is often seen as a human projection\u2014either an explanation for natural phenomena before science, a source of moral authority, or a psychological comfort.\n\n### A Practical Framing\nIf you're asking what God *is* in the sense of \"what actually exists,\" there is no empirical consensus. Physics describes the universe's behavior from the Planck epoch onward but does not require (or rule out) a creator. Cosmology, consciousness studies, and fundamental physics still leave open questions about why there is something rather than nothing, why the laws are what they are, and how subjective experience arises. Some people locate \"God\" in those explanatory gaps; others see the gaps as shrinking or as category errors.\n\nUltimately, the answer depends on the framework you're using. If you have a specific tradition, philosopher, or angle in mind (e.g., the God of the Bible, Spinoza's God, process theology, simulation arguments), I can go deeper into that."
+    },
+    {
+      "id": "wsc-005",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q5",
+      "question": "Are there more Gods than one?",
+      "reference_answer": "There is but one only, the living and true God.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "There is but one only",
+          "the living and true God"
+        ],
+        "key_concepts": [
+          "There is but one only",
+          "the living and true God"
+        ]
+      },
+      "response": "**It depends on your beliefs and tradition.**\n\n- **Monotheistic view** (Judaism, Christianity, Islam, Sikhism, etc.): There is only one God. These faiths explicitly affirm a single, supreme deity who is unique, omnipotent, and incomparable. Any other claimed \u201cgods\u201d are viewed as nonexistent, false, or subordinate creations.\n\n- **Polytheistic / henotheistic view** (many forms of Hinduism, ancient Greek, Roman, Norse, Egyptian, Shinto, and numerous indigenous traditions): Multiple gods exist, often with distinct domains, personalities, and hierarchies. Some traditions are henotheistic\u2014they acknowledge many gods but focus worship on one primary deity at a time.\n\n- **Non-theistic or atheistic view**: No gods exist at all (or the question is meaningless because divinity is not empirically detectable). This includes most forms of Buddhism, Jainism, and secular naturalism.\n\nFrom a strictly evidence-based standpoint, there is no verifiable, reproducible data that can count or confirm the existence of any gods, let alone determine their number. Claims about the divine rest on faith, revelation, scripture, or philosophical argument rather than empirical measurement. Different cultures and eras have therefore produced widely divergent answers, and no single answer commands universal agreement."
+    },
+    {
+      "id": "wsc-006",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q6",
+      "question": "How many persons are there in the Godhead?",
+      "reference_answer": "There are three persons in the Godhead; the Father, the Son, and the Holy Ghost; and these three are one God, the same in substance, equal in power and glory.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "There are three persons in the Godhead",
+          "and the Holy Ghost",
+          "and these three are one God",
+          "the same in substance"
+        ],
+        "key_concepts": [
+          "There are three persons in the Godhead",
+          "and the Holy Ghost",
+          "and these three are one God",
+          "the same in substance"
+        ]
+      },
+      "response": "**Three persons.**\n\nAccording to historic Christian (Trinitarian) doctrine, there are three persons in the one Godhead: the Father, the Son, and the Holy Spirit. These three are the same in substance, equal in power and glory, yet distinct in their personal relations (the Father is unbegotten, the Son is eternally begotten of the Father, and the Spirit proceeds from the Father and the Son). This is the classic formulation found in the early creeds (Nicene, Athanasian) and in confessional summaries such as the Westminster Shorter Catechism Q. 6."
+    },
+    {
+      "id": "wsc-007",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q7",
+      "question": "What are the decrees of God?",
+      "reference_answer": "The decrees of God are, his eternal purpose, according to the counsel of his will, whereby, for his own glory, he hath foreordained whatsoever comes to pass.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "The decrees of God are",
+          "his eternal purpose",
+          "according to the counsel of his will",
+          "for his own glory"
+        ],
+        "key_concepts": [
+          "The decrees of God are",
+          "his eternal purpose",
+          "according to the counsel of his will",
+          "for his own glory"
+        ]
+      },
+      "response": "The decrees of God refer to His eternal, wise, and sovereign purpose\u2014according to the counsel of His own will\u2014by which He has foreordained everything that comes to pass, for the ultimate display of His glory. This concept is especially prominent in Reformed theology (e.g., the Westminster Confession of Faith, Chapter 3, and the Shorter/Larger Catechisms).\n\n### Core Elements\n- **Eternal and Unchangeable**: God\u2019s decrees are formed from eternity past, not reactions to events in time. They are fixed and cannot be altered (Psalm 33:11; Isaiah 46:10).\n- **Comprehensive**: They encompass *all* things\u2014creation, providence, human actions, salvation, and judgment\u2014without making God the author of sin or violating human responsibility.\n- **Purpose-Driven**: Everything is ordained for God\u2019s own glory, particularly in the display of His mercy, justice, and wisdom (Ephesians 1:11\u201312; Romans 11:36).\n- **Free and Wise**: They flow from God\u2019s perfect knowledge and will, not from any external compulsion or foresight of human merit.\n\n### Key Aspects in Scripture and Theology\n- **General Providence**: God ordains the course of nature, history, and individual lives (e.g., Acts 17:26; Proverbs 16:9).\n- **Election and Predestination**: Especially regarding angels and humanity, God sovereignly chooses some for salvation in Christ (election) while passing over others (reprobation), all according to His good pleasure (Ephesians 1:4\u20135; Romans 9:11\u201313).\n- **Means and Ends**: God decrees both the ends and the means (e.g., faith, repentance, preaching of the gospel) by which those ends are accomplished.\n\nIn short, the decrees of God express that nothing happens by chance or outside His ultimate control; all things serve His unchanging plan. Different Christian traditions nuance the details (e.g., the extent of human free will or the precise mechanics of election), but the core idea of God\u2019s sovereign, eternal purpose remains central to historic Christian teaching."
+    },
+    {
+      "id": "wsc-008",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q8",
+      "question": "How doth God execute his decrees?",
+      "reference_answer": "God executeth his decrees in the works of creation and providence.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "God executeth his decrees in the works of creation and providence"
+        ],
+        "key_concepts": [
+          "God executeth his decrees in the works of creation and providence"
+        ]
+      },
+      "response": "God executeth his decrees in the works of creation and providence."
+    },
+    {
+      "id": "wsc-009",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q9",
+      "question": "What is the work of creation?",
+      "reference_answer": "The work of creation is, God's making all things of nothing, by the word of his power, in the space of six days, and all very good.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "The work of creation is",
+          "God's making all things of nothing",
+          "by the word of his power",
+          "in the space of six days"
+        ],
+        "key_concepts": [
+          "The work of creation is",
+          "God's making all things of nothing",
+          "by the word of his power",
+          "in the space of six days"
+        ]
+      },
+      "response": "**The work of creation** (in classic Christian theology, especially the Westminster Shorter Catechism Q. 9) is:\n\n> God\u2019s making all things of nothing, by the word of his power, in the space of six days, and all very good.\n\n### Key elements:\n- **Ex nihilo** (\u201cout of nothing\u201d): God did not work with pre-existing material; he brought everything into being by his command.\n- **By the word of his power**: Creation happened through God\u2019s spoken word (\u201cAnd God said\u2026\u201d \u2014 Genesis 1).\n- **Six days**: The Bible presents the work as completed in six successive days (with the seventh day set apart as rest).\n- **All very good**: The result was a perfectly ordered, harmonious, and good creation, free from evil or defect.\n\nIn short, the \u201cwork of creation\u201d refers to God\u2019s sovereign, powerful, and purposeful act of bringing the entire universe into existence and ordering it for his glory."
+    },
+    {
+      "id": "wsc-010",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q10",
+      "question": "How did God create man?",
+      "reference_answer": "God created man male and female, after his own image, in knowledge, righteousness, and holiness, with dominion over the creatures.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "God created man male and female",
+          "after his own image",
+          "with dominion over the creatures"
+        ],
+        "key_concepts": [
+          "God created man male and female",
+          "after his own image",
+          "in knowledge",
+          "righteousness"
+        ]
+      },
+      "response": "According to the Bible (primarily in the Book of Genesis), God created man (humanity) in two complementary accounts:\n\n- **Genesis 1:26-27**: God said, \"Let us make man in our image, after our likeness,\" and created male and female together on the sixth day, giving them dominion over the earth.\n- **Genesis 2:7**: More specifically for the first man (Adam), \"the Lord God formed man of the dust of the ground, and breathed into his nostrils the breath of life; and man became a living soul.\" The woman (Eve) was later formed from one of Adam's ribs (Genesis 2:21-22).\n\nThis describes a deliberate, direct act of creation involving physical formation from existing material (dust/earth) combined with divine impartation of life and spiritual likeness to God. Interpretations vary across religious traditions (e.g., literal vs. metaphorical), but this is the core scriptural description."
+    },
+    {
+      "id": "wsc-011",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q11",
+      "question": "What are God's works of providence?",
+      "reference_answer": "God's works of providence are, his most holy, wise, and powerful preserving and governing all his creatures, and all their actions.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "God's works of providence are",
+          "and powerful preserving and governing all his creatures",
+          "and all their actions"
+        ],
+        "key_concepts": [
+          "God's works of providence are",
+          "his most holy",
+          "and powerful preserving and governing all his creatures",
+          "and all their actions"
+        ]
+      },
+      "response": "**God's works of providence** are his most holy, wise, and powerful preserving and governing of all his creatures and all their actions (Westminster Shorter Catechism, Q. 11).\n\nIn other words, after creating the world, God did not abandon it. He continually:\n- **Preserves** all things in existence (upholding them moment by moment so they do not cease to be).\n- **Governs** all events and actions according to his wise and holy will, directing everything toward his purposes without violating the nature of his creatures or making him the author of sin.\n\nThis includes both ordinary processes (seasons, natural laws, human decisions) and extraordinary interventions, all under his sovereign control."
+    },
+    {
+      "id": "wsc-012",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q12",
+      "question": "What special act of providence did God exercise toward man in the estate wherein he was created?",
+      "reference_answer": "When God had created man, he entered into a covenant of life with him, upon condition of perfect obedience; forbidding him to eat of the tree of the knowledge of good and evil, upon pain of death.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "When God had created man",
+          "he entered into a covenant of life with him",
+          "upon condition of perfect obedience",
+          "forbidding him to eat of the tree of the knowledge of good and evil"
+        ],
+        "key_concepts": [
+          "When God had created man",
+          "he entered into a covenant of life with him",
+          "upon condition of perfect obedience",
+          "forbidding him to eat of the tree of the knowledge of good and evil"
+        ]
+      },
+      "response": "When God had created man, he entered into a covenant of life with him, upon condition of perfect obedience, forbidding him to eat of the tree of the knowledge of good and evil, upon pain of death.\n(This is the answer given in the Westminster Shorter Catechism, Q. 12.)"
+    },
+    {
+      "id": "wsc-013",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q13",
+      "question": "Did our first parents continue in the estate wherein they were created?",
+      "reference_answer": "Our first parents, being left to the freedom of their own will, fell from the estate wherein they were created, by sinning against God.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "Our first parents",
+          "being left to the freedom of their own will",
+          "fell from the estate wherein they were created",
+          "by sinning against God"
+        ],
+        "key_concepts": [
+          "Our first parents",
+          "being left to the freedom of their own will",
+          "fell from the estate wherein they were created",
+          "by sinning against God"
+        ]
+      },
+      "response": "No, our first parents (Adam and Eve) did not continue in the estate of innocence, righteousness, and communion with God in which they were created. They fell from it through willful disobedience\u2014specifically, by eating the forbidden fruit in the Garden of Eden (Genesis 3:6)\u2014thereby bringing sin, death, and separation from God upon themselves and all their descendants. \n\nThis is summarized in the Westminster Shorter Catechism (Q. 21): \"Our first parents, being left to the freedom of their own will, fell from the estate wherein they were created, by sinning against God.\""
+    },
+    {
+      "id": "wsc-014",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q14",
+      "question": "What is sin?",
+      "reference_answer": "Sin is any want of conformity unto, or transgression of, the law of God.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "Sin is any want of conformity unto",
+          "or transgression of"
+        ],
+        "key_concepts": [
+          "Sin is any want of conformity unto",
+          "or transgression of",
+          "the law of God"
+        ]
+      },
+      "response": "**Sin** is a concept primarily rooted in religion and morality, referring to an act, thought, or state that violates divine law, ethical principles, or the will of a higher power (typically God). It implies wrongdoing that damages one's relationship with the divine, others, or oneself, often carrying ideas of guilt, accountability, and the need for repentance or atonement.\n\n### Religious Perspectives\n- **Christianity**: Sin is fundamentally disobedience to God, originating with the \"original sin\" of Adam and Eve in the Garden of Eden (Genesis 3), which introduced human fallenness. It's categorized as:\n  - **Mortal sin**: Grave acts done with full knowledge and consent (e.g., murder, adultery), severing one's relationship with God.\n  - **Venial sin**: Lesser offenses that weaken but don't destroy that bond.\n  Common lists include the Seven Deadly Sins (pride, greed, lust, envy, gluttony, wrath, sloth). The New Testament emphasizes sin as missing the mark (Greek *hamartia*) and being redeemed through Christ's sacrifice.\n- **Judaism**: Focuses on *chet* (missing the mark) or transgressions against God's commandments (*mitzvot*). It's more about actions than inherent nature; atonement comes via repentance (*teshuvah*), prayer, and good deeds, especially on Yom Kippur.\n- **Islam**: Sin (*ithm* or *dhamb*) is disobedience to Allah's commands in the Quran and Sunnah. Major sins (*kaba'ir*) like shirk (associating partners with God), murder, or usury require sincere repentance (*tawbah*). Minor sins can be forgiven through good deeds.\n- **Other traditions**: In Hinduism/Buddhism, analogous ideas involve *karma* (actions creating consequences) or *adharma* (unrighteousness), though not always framed as \"sin\" against a personal deity. Eastern Orthodox Christianity stresses sin as illness needing healing rather than just legal guilt.\n\n### Secular and Philosophical Views\nOutside religion, \"sin\" is often used metaphorically for moral failings, ethical violations, or harm to self/society (e.g., \"the seven deadly sins\" as psychological vices). Philosophers like Kant saw wrongdoing as failing rational duty; existentialists might view it as inauthenticity or bad faith. In psychology, it can overlap with guilt, shame, or cognitive dissonance.\n\nIn short, sin highlights the human tension between ideals and actions\u2014whether judged by God, conscience, or society. If you're asking"
+    },
+    {
+      "id": "wsc-015",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q15",
+      "question": "What was the sin whereby our first parents fell from the estate wherein they were created?",
+      "reference_answer": "The sin whereby our first parents fell from the estate wherein they were created, was their eating the forbidden fruit.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "The sin whereby our first parents fell from the estate wherein they were created",
+          "was their eating the forbidden fruit"
+        ],
+        "key_concepts": [
+          "The sin whereby our first parents fell from the estate wherein they were created",
+          "was their eating the forbidden fruit"
+        ]
+      },
+      "response": "The sin was their eating the forbidden fruit (Genesis 3:6).\nThis is the precise answer given in the Westminster Shorter Catechism (Q. 15), which summarizes the biblical account of the Fall in Genesis 3. The act constituted both a transgression of God's explicit command (Genesis 2:17) and a breach of the covenant of works under which humanity was created.\nFinal answer: eating the forbidden fruit (WSC 15)"
+    },
+    {
+      "id": "wsc-016",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q16",
+      "question": "Did all mankind fall in Adam's first transgression?",
+      "reference_answer": "The covenant being made with Adam, not only for himself, but for his posterity; all mankind, descending from him by ordinary generation, sinned in him, and fell with him, in his first transgression.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "The covenant being made with Adam",
+          "not only for himself",
+          "but for his posterity",
+          "descending from him by ordinary generation"
+        ],
+        "key_concepts": [
+          "The covenant being made with Adam",
+          "not only for himself",
+          "but for his posterity",
+          "all mankind"
+        ]
+      },
+      "response": "Yes, according to the classic Reformed understanding of original sin (as summarized, for example, in the Westminster Shorter Catechism), all mankind fell in Adam\u2019s first transgression. The covenant of works was made with Adam not only for himself but for his posterity; therefore all who descend from him by ordinary generation sinned in him and fell with him in that first act of disobedience."
+    },
+    {
+      "id": "wsc-017",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q17",
+      "question": "Into what estate did the fall bring mankind?",
+      "reference_answer": "The fall brought mankind into an estate of sin and misery.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "The fall brought mankind into an estate of sin and misery"
+        ],
+        "key_concepts": [
+          "The fall brought mankind into an estate of sin and misery"
+        ]
+      },
+      "response": "The fall brought mankind into an estate of sin and misery. \n\n(This is the classic formulation from the Westminster Shorter Catechism, Q. 17, reflecting the broader Reformed understanding of the consequences of the Fall described in Genesis 3 and Romans 5:12\u201319.)"
+    },
+    {
+      "id": "wsc-018",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q18",
+      "question": "Wherein consists the sinfulness of that estate whereinto man fell?",
+      "reference_answer": "The sinfulness of that estate whereinto man fell, consists in the guilt of Adam's first sin, the want of original righteousness, and the corruption of his whole nature, which is commonly called original sin; together with all actual transgressions which proceed from it.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "The sinfulness of that estate whereinto man fell",
+          "consists in the guilt of Adam's first sin",
+          "the want of original righteousness",
+          "and the corruption of his whole nature"
+        ],
+        "key_concepts": [
+          "The sinfulness of that estate whereinto man fell",
+          "consists in the guilt of Adam's first sin",
+          "the want of original righteousness",
+          "and the corruption of his whole nature"
+        ]
+      },
+      "response": "The sinfulness of that estate whereinto man fell consists in the guilt of Adam's first sin, the want of original righteousness, and the corruption of his whole nature (commonly called original sin), together with all actual transgressions that proceed from it.\n\n(This is the answer given in the Westminster Shorter Catechism, Q. 18, reflecting classic Reformed theology on the doctrine of original sin and total depravity.)"
+    },
+    {
+      "id": "wsc-019",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q19",
+      "question": "What is the misery of that estate whereinto man fell?",
+      "reference_answer": "All mankind by their fall lost communion with God, are under his wrath and curse, and so made liable to all miseries in this life, to death itself, and to the pains of hell for ever.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "All mankind by their fall lost communion with God",
+          "are under his wrath and curse",
+          "and so made liable to all miseries in this life",
+          "and to the pains of hell for ever"
+        ],
+        "key_concepts": [
+          "All mankind by their fall lost communion with God",
+          "are under his wrath and curse",
+          "and so made liable to all miseries in this life",
+          "to death itself"
+        ]
+      },
+      "response": "All mankind by their fall lost communion with God, are under his wrath and curse, and so made liable to all the miseries of this life, to death itself, and to the pains of hell for ever. (Westminster Shorter Catechism, Q. 19)"
+    },
+    {
+      "id": "wsc-020",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q20",
+      "question": "Did God leave all mankind to perish in the estate of sin and misery?",
+      "reference_answer": "God having, out of his mere good pleasure, from all eternity, elected some to everlasting life did enter into a covenant of grace, to deliver them out of the estate of sin and misery, and to bring them into an estate of salvation by a Redeemer.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "out of his mere good pleasure",
+          "from all eternity",
+          "elected some to everlasting life did enter into a covenant of grace",
+          "to deliver them out of the estate of sin and misery"
+        ],
+        "key_concepts": [
+          "out of his mere good pleasure",
+          "from all eternity",
+          "elected some to everlasting life did enter into a covenant of grace",
+          "to deliver them out of the estate of sin and misery"
+        ]
+      },
+      "response": "**No.**\n\nAccording to the Westminster Shorter Catechism (Question 20), God did not leave all mankind to perish in the estate of sin and misery. Instead:\n\n> \"God, having out of his mere good pleasure, from all eternity, elected some to everlasting life, did enter into a covenant of grace, to deliver them out of the estate of sin and misery, and to bring them into an estate of salvation by a Redeemer.\"\n\nThis reflects classic Reformed theology: while all humanity fell into sin and deserved judgment, God sovereignly chose to save a remnant through the covenant of grace centered on Christ the Redeemer, rather than abandoning everyone to condemnation."
+    },
+    {
+      "id": "wsc-021",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q21",
+      "question": "Who is the Redeemer of God's elect?",
+      "reference_answer": "The only Redeemer of God's elect is the Lord Jesus Christ, who, being the eternal Son of God, became man and so was, and continueth to be, God and man in two distinct natures, and one person, forever.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "The only Redeemer of God's elect is the Lord Jesus Christ",
+          "being the eternal Son of God",
+          "became man and so was",
+          "and continueth to be"
+        ],
+        "key_concepts": [
+          "The only Redeemer of God's elect is the Lord Jesus Christ",
+          "being the eternal Son of God",
+          "became man and so was",
+          "and continueth to be"
+        ]
+      },
+      "response": "**The Lord Jesus Christ.**\n\nAccording to classic Reformed theology (e.g., Westminster Shorter Catechism Q. 21), the only Redeemer of God\u2019s elect is the Lord Jesus Christ. He is the eternal Son of God who became man, lived a sinless life, died as a substitute for the sins of the elect, rose again, and now intercedes for them\u2014thereby accomplishing their redemption by his obedience and sacrifice."
+    },
+    {
+      "id": "wsc-022",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q22",
+      "question": "How did Christ, being the Son of God, become man?",
+      "reference_answer": "Christ, the Son of God, became man, by taking to himself a true body, and a reasonable soul, being conceived by the power of the Holy Ghost, in the womb of the virgin Mary, and born of her yet without sin.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "by taking to himself a true body",
+          "and a reasonable soul",
+          "being conceived by the power of the Holy Ghost",
+          "in the womb of the virgin Mary"
+        ],
+        "key_concepts": [
+          "the Son of God",
+          "by taking to himself a true body",
+          "and a reasonable soul",
+          "being conceived by the power of the Holy Ghost"
+        ]
+      },
+      "response": "**Christ, the eternal Son of God, became man by taking to Himself a true human nature\u2014body and soul\u2014while remaining fully God.**\n\nThis is the central mystery of the Incarnation (from Latin *in carne*, \u201cin the flesh\u201d). Scripture teaches that:\n\n- The Word (the Son) \u201cbecame flesh and dwelt among us\u201d (John 1:14).  \n- He was \u201cborn of a woman\u201d (Galatians 4:4) and \u201cmade in the likeness of men\u201d (Philippians 2:7).  \n- He was conceived by the Holy Spirit in the womb of the Virgin Mary and born of her, yet without sin (Luke 1:35; Matthew 1:18\u201323; Hebrews 4:15).\n\nThe classic summary (found in the Westminster Shorter Catechism, Q. 22, and echoing the Chalcedonian Definition of 451) is:\n\n> Christ, the Son of God, became man by taking to Himself a true body and a reasonable soul, being conceived by the power of the Holy Ghost in the womb of the Virgin Mary, and born of her, yet without sin.\n\nIn this act the divine and human natures are united in one person forever, without confusion, change, division, or separation. He remains truly God and truly man\u2014the one Mediator between God and humanity (1 Timothy 2:5)."
+    },
+    {
+      "id": "wsc-023",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q23",
+      "question": "What offices doth Christ execute as our Redeemer?",
+      "reference_answer": "Christ, as our Redeemer, executeth the offices of a prophet, of a priest, and of a king, both in his estate of humiliation and exaltation.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "executeth the offices of a prophet",
+          "both in his estate of humiliation and exaltation"
+        ],
+        "key_concepts": [
+          "as our Redeemer",
+          "executeth the offices of a prophet",
+          "of a priest",
+          "and of a king"
+        ]
+      },
+      "response": "**Christ executes the offices of a prophet, a priest, and a king.**\n\nThese three offices (sometimes called the *munus triplex*) summarize the work of Christ as our Redeemer, both in his state of humiliation (his earthly life, suffering, and death) and in his state of exaltation (his resurrection, ascension, and ongoing reign).\n\n- **Prophet**: He fully reveals God\u2019s will for our salvation and teaches us by his Word and Spirit (Deut. 18:15; Acts 3:22; John 1:18; Heb. 1:1\u20132).\n- **Priest**: He offered himself once for all as the perfect sacrifice for sin and continually intercedes for his people (Heb. 5:6; 7:25; 9:12, 28; 10:12\u201314; Rom. 8:34).\n- **King**: He rules over his church, subdues his and our enemies, and defends and preserves us in salvation (Ps. 2:6; Isa. 9:6\u20137; Matt. 28:18; Eph. 1:20\u201323; Rev. 19:16).\n\nThis threefold office is the classic Reformed summary of Christ\u2019s redemptive work, drawn especially from the Westminster Shorter Catechism (Q. 23)."
+    },
+    {
+      "id": "wsc-024",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q24",
+      "question": "How doth Christ execute the office of a prophet?",
+      "reference_answer": "Christ executeth the office of a prophet, in revealing to us, by his Word and Spirit the will of God for our salvation.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "Christ executeth the office of a prophet",
+          "in revealing to us",
+          "by his Word and Spirit the will of God for our salvation"
+        ],
+        "key_concepts": [
+          "Christ executeth the office of a prophet",
+          "in revealing to us",
+          "by his Word and Spirit the will of God for our salvation"
+        ]
+      },
+      "response": "Christ executeth the office of a prophet, in revealing to us, by his word and Spirit, the will of God for our salvation. \n\n(This is the answer given in the Westminster Shorter Catechism, Q. 24.)"
+    },
+    {
+      "id": "wsc-025",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q25",
+      "question": "How doth Christ execute the office of a priest?",
+      "reference_answer": "Christ executeth the office of a priest, in his once offering up of himself a sacrifice to satisfy divine justice, and reconcile us to God; and in making continual intercession for us.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "Christ executeth the office of a priest",
+          "in his once offering up of himself a sacrifice to satisfy divine justice",
+          "and reconcile us to God",
+          "and in making continual intercession for us"
+        ],
+        "key_concepts": [
+          "Christ executeth the office of a priest",
+          "in his once offering up of himself a sacrifice to satisfy divine justice",
+          "and reconcile us to God",
+          "and in making continual intercession for us"
+        ]
+      },
+      "response": "Christ executeth the office of a priest, in his once offering up of himself a sacrifice to satisfy divine justice, and reconcile us to God, and in making continual intercession for us."
+    },
+    {
+      "id": "wsc-026",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q26",
+      "question": "How doth Christ execute the office of a king?",
+      "reference_answer": "Christ executeth the office of a king, in subduing us to himself, in ruling and defending us, and in restraining and conquering all his and our enemies.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "Christ executeth the office of a king",
+          "in subduing us to himself",
+          "in ruling and defending us",
+          "and in restraining and conquering all his and our enemies"
+        ],
+        "key_concepts": [
+          "Christ executeth the office of a king",
+          "in subduing us to himself",
+          "in ruling and defending us",
+          "and in restraining and conquering all his and our enemies"
+        ]
+      },
+      "response": "Christ executeth the office of a king in subduing us to himself, in ruling and defending us, and in restraining and conquering all his and our enemies. \n\n(This is the answer given in the Westminster Shorter Catechism, Q. 26.)"
+    },
+    {
+      "id": "wsc-027",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q27",
+      "question": "Wherein did Christ's humiliation consist?",
+      "reference_answer": "Christ's humiliation consisted in his being born, and that in a low condition, made under the law, undergoing the miseries of this life, the wrath of God, and the cursed death of the cross; in being buried, and continuing under the power of death for a time.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "Christ's humiliation consisted in his being born",
+          "and that in a low condition",
+          "made under the law",
+          "undergoing the miseries of this life"
+        ],
+        "key_concepts": [
+          "Christ's humiliation consisted in his being born",
+          "and that in a low condition",
+          "made under the law",
+          "undergoing the miseries of this life"
+        ]
+      },
+      "response": "Christ's humiliation consisted in his being born, and that in a low condition, made under the law, undergoing the miseries of this life, the wrath of God, and the cursed death of the cross; in being buried, and continuing under the power of death for a time. \n\n(This is the classic formulation from the Westminster Shorter Catechism, Q. 27, summarizing the biblical witness to the incarnation and passion.)"
+    },
+    {
+      "id": "wsc-028",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q28",
+      "question": "Wherein consisteth Christ's exaltation?",
+      "reference_answer": "Christ's exaltation consisteth in his rising again from the dead on the third day, in ascending up into heaven, in sitting at the right hand of God the Father, and in coming to judge the world at the last day.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "Christ's exaltation consisteth in his rising again from the dead on the third day",
+          "in ascending up into heaven",
+          "in sitting at the right hand of God the Father",
+          "and in coming to judge the world at the last day"
+        ],
+        "key_concepts": [
+          "Christ's exaltation consisteth in his rising again from the dead on the third day",
+          "in ascending up into heaven",
+          "in sitting at the right hand of God the Father",
+          "and in coming to judge the world at the last day"
+        ]
+      },
+      "response": "Christ's exaltation consisteth in his rising again from the dead on the third day, in ascending up into heaven, in sitting at the right hand of God the Father, and in coming to judge the world at the last day (Westminster Shorter Catechism, Q. 28)."
+    },
+    {
+      "id": "wsc-029",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q29",
+      "question": "How are we made partakers of the redemption purchased by Christ?",
+      "reference_answer": "We are made partakers of the redemption purchased by Christ, by the effectual application of it to us by his Holy Spirit.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "We are made partakers of the redemption purchased by Christ",
+          "by the effectual application of it to us by his Holy Spirit"
+        ],
+        "key_concepts": [
+          "We are made partakers of the redemption purchased by Christ",
+          "by the effectual application of it to us by his Holy Spirit"
+        ]
+      },
+      "response": "We are made partakers of the redemption purchased by Christ by the effectual application of it to us by his Holy Spirit (Westminster Shorter Catechism, Q. 29). \n\nThis occurs as the Spirit unites us to Christ through faith, granting regeneration, justification, adoption, sanctification, and all the benefits of his redemptive work."
+    },
+    {
+      "id": "wsc-030",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q30",
+      "question": "How doth the Spirit apply to us the redemption purchased by Christ?",
+      "reference_answer": "The Spirit applieth to us the redemption purchased by Christ, by working faith in us, and thereby uniting us to Christ in our effectual calling.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "The Spirit applieth to us the redemption purchased by Christ",
+          "by working faith in us",
+          "and thereby uniting us to Christ in our effectual calling"
+        ],
+        "key_concepts": [
+          "The Spirit applieth to us the redemption purchased by Christ",
+          "by working faith in us",
+          "and thereby uniting us to Christ in our effectual calling"
+        ]
+      },
+      "response": "The Spirit applieth to us the redemption purchased by Christ, by working faith in us, and thereby uniting us to Christ in our effectual calling."
+    }
+  ],
+  "results_path": "results/x-ai_grok-4.3_20260514_144055.json",
+  "status": "in_progress"
+}

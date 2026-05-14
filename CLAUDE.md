@@ -12,7 +12,9 @@ theolog-bench/
 │   ├── scorer.py             # Automated scoring: semantic_similarity, position_detection, reference_check
 │   ├── judge.py              # LLM-as-judge scoring via APIBackend for confessional_knowledge, comparative_theology
 │   └── report.py             # Report formatting: generate_report(), generate_comparison_report()
-├── results/                  # Benchmark run results (gitignored)
+├── results/                  # Benchmark outputs
+│   ├── raw/                  # JSON result files from benchmark runs
+│   └── reports/              # Narrative markdown comparison reports
 ├── build_benchmark.py        # Generates benchmark.json from creed JSON files
 ├── run.py                    # Main benchmark runner CLI
 ├── report.py                 # Standalone report generation / comparison tool
@@ -28,10 +30,10 @@ theolog-bench/
 - `lib/backends.py` — Model backends: `UnslothBackend` (local Unsloth/4-bit) and `APIBackend` (OpenAI-compatible API). Both implement `ModelBackend` ABC with `generate(question) -> str` and `name() -> str`. Temperature defaults to 0.3. APIBackend auto-detects `OPENROUTER_API_KEY` / `OPENAI_API_KEY` env vars when no explicit key is provided. `APIBackend.generate()` retries transient errors (429, 5xx, timeouts) with exponential backoff (5 attempts, 2-60s). Hard errors (401, 402) raise `BenchmarkAPIError(retryable=False)` immediately.
 - `lib/scorer.py` — Automated scoring: `score_response(question, response)` dispatches to `score_semantic_similarity`, `score_position_detection`, `score_reference_check`, or returns a deferred placeholder for `llm_judge`. All return `{"score": int, "method": str, "details": dict}` with scores 0-100.
 - `lib/judge.py` — LLM-as-judge scoring: `JudgeScorer` class uses an `APIBackend` to evaluate responses for theological accuracy. `score_with_judge(question, response)` is the convenience entry point. `should_use_judge(question)` returns True for questions needing judge evaluation (confessional_knowledge, comparative_theology, error_detection, or explicit `llm_judge` method). Judge config is read from `config.yaml` `judge:` section. Failed judge calls return `score: 0` with `error: True` instead of crashing.
-- `lib/report.py` — Report formatting: `generate_report(results)` produces a text report with category breakdown, overall score, and flagged failures. `generate_comparison_report(results_list)` shows side-by-side category scores for 2+ runs.
-- `run.py` — Main benchmark runner CLI. Orchestrates: load questions → query model → automated scoring → optional LLM judge → save JSON results → print report. Supports `--backend local|api`, `--categories`, `--limit`, `--judge/--no-judge`, `--preset <name>`, `--sweep [presets...]`, `--list-presets`, `--smoke` (quick 3-per-category smoke test), `--group <name>` (run a named group of presets), `--list-groups`, `--resume <file>` (resume from partial results). Saves atomic checkpoints every 10 questions/judge calls. Results include `"status"` field (`"in_progress"`, `"complete"`, or `"aborted: <reason>"`). Sweep mode isolates errors per preset so one failure doesn't crash the entire multi-model run.
-- `report.py` — Standalone tool to regenerate reports from saved result JSON files, or compare multiple runs with `--compare`.
-- `config.yaml` — Configuration for the LLM judge (defaults to Gemini 2.5 Flash on OpenRouter), scoring params, model presets for `--preset`/`--sweep`, and named groups for `--group` (local, budget, mid, frontier, cloud, all, finetune-compare, smoke).
+- `lib/report.py` — Report formatting: `generate_report(results)` produces a text report with category breakdown, overall score, and flagged failures. `generate_comparison_report(results_list)` shows side-by-side category scores for 2+ runs. `generate_detailed_report(results_list, config, group_name, group_description)` generates a narrative markdown report using the judge LLM (styled after `results/reports/96gb-card-comparison.md`), falling back to leaderboard on failure. Helpers `_compute_report_data()` and `_build_report_prompt()` handle data computation and prompt construction.
+- `run.py` — Main benchmark runner CLI. Orchestrates: load questions → query model → automated scoring → optional LLM judge → save JSON results → print report. Supports `--backend local|api`, `--categories`, `--limit`, `--judge/--no-judge`, `--preset <name>`, `--sweep [presets...]`, `--list-presets`, `--smoke` (quick 3-per-category smoke test), `--group <name>` (run a named group of presets), `--list-groups`, `--resume <file>` (resume from partial results), `--detailed` (generate LLM narrative report after sweep/group). Saves atomic checkpoints every 10 questions/judge calls. Results include `"status"` field (`"in_progress"`, `"complete"`, or `"aborted: <reason>"`). Sweep mode isolates errors per preset so one failure doesn't crash the entire multi-model run.
+- `report.py` — Standalone tool to regenerate reports from saved result JSON files, compare multiple runs with `--compare`, or generate LLM narrative reports with `--detailed`. Supports `--group-name NAME` (label the report) and `--output FILE` (write to file).
+- `config.yaml` — Configuration for the LLM judge (defaults to Gemini 2.5 Flash on OpenRouter), scoring params, model presets for `--preset`/`--sweep` (each with optional `meta:` block for vendor/architecture/params/local_capable), named groups for `--group`, and `group_descriptions:` for detailed report generation.
 - `benchmark.json` — The generated question bank. Do not edit manually; regenerate via `build_benchmark.py`.
 
 ## Benchmark Categories
@@ -69,7 +71,9 @@ python3 run.py --smoke --preset finetuned                        # Smoke test a 
 python3 run.py --group budget                                    # Run all presets in a named group
 python3 run.py --smoke --group budget                            # Smoke test all budget models
 python3 run.py --list-groups                                     # List available groups
-python3 report.py results/<file>.json                           # View a result
-python3 report.py results/a.json results/b.json --compare       # Compare runs
-python3 run.py --resume results/<partial>.json --preset <name> --judge  # Resume from partial results
+python3 report.py results/raw/<file>.json                       # View a result
+python3 report.py results/raw/a.json results/raw/b.json --compare  # Compare runs
+python3 report.py --all --detailed --group-name "Frontier" --output results/reports/frontier-comparison.md  # LLM narrative report
+python3 run.py --group frontier --detailed                       # Run group + generate narrative report
+python3 run.py --resume results/raw/<partial>.json --preset <name> --judge  # Resume from partial results
 ```

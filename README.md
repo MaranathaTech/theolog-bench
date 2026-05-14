@@ -55,10 +55,10 @@ python run.py --backend api --model qwen3:1.7b --categories catechism_recall,doc
 python run.py --backend api --model qwen3:1.7b --no-judge
 
 # Compare runs
-python report.py --compare results/qwen3_1.7b_*.json results/reformed-qwen3-1.7b_*.json
+python report.py --compare results/raw/qwen3_1.7b_*.json results/raw/reformed-qwen3-1.7b_*.json
 ```
 
-Results are saved to `results/{model}_{timestamp}.json`.
+Results are saved to `results/raw/{model}_{timestamp}.json`. Narrative comparison reports are saved to `results/reports/`.
 
 ## Quick Smoke Test
 
@@ -138,7 +138,8 @@ List them with:
 
     python run.py --sweep                      # All presets
     python run.py --sweep finetuned base-qwen3-1.7b deepseek-v4-flash gpt-5.5  # Selected
-    python report.py --compare results/*.json
+    python report.py --compare results/raw/*.json
+    python report.py --all --detailed --group-name "Frontier" --output results/reports/frontier-comparison.md
 
 ### Expected Results by Model Size
 
@@ -242,7 +243,7 @@ After changes, regenerate with `python build_benchmark.py`. The `benchmark.json`
 2. **Query model** — Send each question to the target model via the selected backend (local or API)
 3. **Automated scoring** — Score each response using the category's method (semantic similarity, position detection, or reference check)
 4. **LLM judge** (optional) — For complex categories, an LLM judge evaluates theological accuracy on a 0-100 scale with justification
-5. **Save results** — Write scored results to `results/{model}_{timestamp}.json`
+5. **Save results** — Write scored results to `results/raw/{model}_{timestamp}.json`
 6. **Report** — Print a formatted report with per-category breakdown and overall weighted score
 
 ## Confessional Sources

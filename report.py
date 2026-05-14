@@ -5,7 +5,13 @@ import argparse
 import json
 from pathlib import Path
 
-from lib.report import generate_comparison_report, generate_report
+import yaml
+from dotenv import load_dotenv
+
+# Load .env file from the theolog-bench directory
+load_dotenv(Path(__file__).parent / ".env")
+
+from lib.report import generate_comparison_report, generate_detailed_report, generate_report
 from lib.scorer import score_response
 
 
@@ -48,10 +54,27 @@ def main():
         action="store_true",
         help="Re-run automated scorer on all questions (keeps judge scores)",
     )
+    parser.add_argument(
+        "--detailed",
+        action="store_true",
+        help="Generate a detailed narrative report using the judge LLM",
+    )
+    parser.add_argument(
+        "--group-name",
+        type=str,
+        default=None,
+        help="Label for the report (e.g. 'Frontier Cloud Models')",
+    )
+    parser.add_argument(
+        "--output",
+        type=str,
+        default=None,
+        help="Write report to this file instead of stdout",
+    )
     args = parser.parse_args()
 
     if args.all:
-        results_dir = Path(__file__).parent / "results"
+        results_dir = Path(__file__).parent / "results" / "raw"
         paths = sorted(results_dir.glob("*.json"))
         # Collect all complete, non-smoke results; keep latest per model
         by_model: dict[str, dict] = {}
@@ -79,7 +102,22 @@ def main():
             return
         if args.rescore:
             results_list = [_rescore(r) for r in results_list]
-        print(generate_comparison_report(results_list))
+        if args.detailed:
+            config_path = Path(__file__).parent / "config.yaml"
+            with open(config_path) as f:
+                config = yaml.safe_load(f)
+            report = generate_detailed_report(
+                results_list, config,
+                group_name=args.group_name,
+            )
+        else:
+            report = generate_comparison_report(results_list)
+        if args.output:
+            Path(args.output).parent.mkdir(parents=True, exist_ok=True)
+            Path(args.output).write_text(report)
+            print(f"Report written to {args.output}")
+        else:
+            print(report)
         return
 
     if not args.results and not args.all:
@@ -95,8 +133,23 @@ def main():
     if args.rescore:
         results_list = [_rescore(r) for r in results_list]
 
-    if args.compare and len(results_list) >= 2:
-        print(generate_comparison_report(results_list))
+    if (args.compare or args.detailed) and len(results_list) >= 2:
+        if args.detailed:
+            config_path = Path(__file__).parent / "config.yaml"
+            with open(config_path) as f:
+                config = yaml.safe_load(f)
+            report = generate_detailed_report(
+                results_list, config,
+                group_name=args.group_name,
+            )
+        else:
+            report = generate_comparison_report(results_list)
+        if args.output:
+            Path(args.output).parent.mkdir(parents=True, exist_ok=True)
+            Path(args.output).write_text(report)
+            print(f"Report written to {args.output}")
+        else:
+            print(report)
     elif len(results_list) == 1:
         print(generate_report(results_list[0]))
     else:

@@ -185,5 +185,5 @@ def sample_results():
                 "score_details": {},
             },
         ],
-        "results_path": "results/test-model_20260512.json",
+        "results_path": "results/raw/test-model_20260512.json",
     }

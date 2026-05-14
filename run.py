@@ -68,8 +68,8 @@ def parse_args():
         help="Override judge model name",
     )
     parser.add_argument(
-        "--output-dir", default="results/",
-        help="Directory to save results (default: results/)",
+        "--output-dir", default="results/raw/",
+        help="Directory to save results (default: results/raw/)",
     )
     parser.add_argument(
         "--resume", type=str, default=None,
@@ -107,6 +107,10 @@ def parse_args():
     parser.add_argument(
         "--list-groups", action="store_true",
         help="List available groups and their presets, then exit",
+    )
+    parser.add_argument(
+        "--detailed", action="store_true",
+        help="Generate a detailed narrative report (LLM-generated) after sweep/group",
     )
     return parser
 
@@ -454,14 +458,34 @@ def main():
 
         # Auto-generate comparison report
         if len(all_result_paths) >= 2:
-            from lib.report import generate_comparison_report
-
             results_list = []
             for p in all_result_paths:
                 with open(p) as f:
                     results_list.append(json.load(f))
-            print(f"\n{'=' * 60}")
-            print(generate_comparison_report(results_list))
+
+            if args.detailed:
+                from lib.report import generate_detailed_report
+
+                # Determine group name from --group flag or default
+                detail_group_name = args.group or "Sweep Comparison"
+                report = generate_detailed_report(
+                    results_list, config,
+                    group_name=detail_group_name,
+                )
+                # Save to file
+                safe_group = detail_group_name.lower().replace(" ", "-")
+                reports_dir = Path("results/reports")
+                reports_dir.mkdir(parents=True, exist_ok=True)
+                output_path = reports_dir / f"{safe_group}-comparison.md"
+                output_path.write_text(report)
+                print(f"\n{'=' * 60}")
+                print(f"Detailed report saved to {output_path}")
+                print(report)
+            else:
+                from lib.report import generate_comparison_report
+
+                print(f"\n{'=' * 60}")
+                print(generate_comparison_report(results_list))
 
         return
 

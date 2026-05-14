@@ -1,0 +1,435 @@
+{
+  "model_name": "google/gemini-3.1-pro-preview",
+  "timestamp": "2026-05-14T14:40:53.764183",
+  "category_weights": {
+    "catechism_recall": 0.25,
+    "confessional_knowledge": 0.15,
+    "doctrinal_position": 0.2,
+    "biblical_reference": 0.15,
+    "error_detection": 0.15,
+    "comparative_theology": 0.1
+  },
+  "questions": [
+    {
+      "id": "wsc-001",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q1",
+      "question": "What is the chief end of man?",
+      "reference_answer": "Man's chief end is to glorify God, and to enjoy him for ever.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "Man's chief end is to glorify God",
+          "and to enjoy him for ever"
+        ],
+        "key_concepts": [
+          "Man's chief end is to glorify God",
+          "and to enjoy him for ever"
+        ]
+      },
+      "response": "The most famous and traditional answer to this question comes from the **Westminster Shorter Catechism**,"
+    },
+    {
+      "id": "wsc-002",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q2",
+      "question": "What rule hath God given to direct us how we may glorify and enjoy him?",
+      "reference_answer": "The Word of God, which is contained in the Scriptures of the Old and New Testaments, is the only rule to direct us how we may glorify and enjoy him.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "which is contained in the Scriptures of the Old and New Testaments",
+          "is the only rule to direct us how we may glorify and enjoy him"
+        ],
+        "key_concepts": [
+          "The Word of God",
+          "which is contained in the Scriptures of the Old and New Testaments",
+          "is the only rule to direct us how we may glorify and enjoy him"
+        ]
+      },
+      "response": "This question is Question 2 from the **Westminster Shorter Catechism**. \n\nThe"
+    },
+    {
+      "id": "wsc-003",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q3",
+      "question": "What do the Scriptures principally teach?",
+      "reference_answer": "The Scriptures principally teach what man is to believe concerning God, and what duty God requires of man.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "The Scriptures principally teach what man is to believe concerning God",
+          "and what duty God requires of man"
+        ],
+        "key_concepts": [
+          "The Scriptures principally teach what man is to believe concerning God",
+          "and what duty God requires of man"
+        ]
+      },
+      "response": "The classic and most famous answer to this question comes from Question 3 of the **Westminster"
+    },
+    {
+      "id": "wsc-004",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q4",
+      "question": "What is God?",
+      "reference_answer": "God is a Spirit, infinite, eternal, and unchangeable in his being, wisdom, power, holiness, justice, goodness, and truth.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "and unchangeable in his being"
+        ],
+        "key_concepts": [
+          "God is a Spirit",
+          "and unchangeable in his being"
+        ]
+      },
+      "response": "The question \"What is God?\" is one of the oldest and most profound questions in human history"
+    },
+    {
+      "id": "wsc-005",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q5",
+      "question": "Are there more Gods than one?",
+      "reference_answer": "There is but one only, the living and true God.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "There is but one only",
+          "the living and true God"
+        ],
+        "key_concepts": [
+          "There is but one only",
+          "the living and true God"
+        ]
+      },
+      "response": "The answer to whether there is more than one God depends entirely on the religious, philosophical, or"
+    },
+    {
+      "id": "wsc-006",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q6",
+      "question": "How many persons are there in the Godhead?",
+      "reference_answer": "There are three persons in the Godhead; the Father, the Son, and the Holy Ghost; and these three are one God, the same in substance, equal in power and glory.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "There are three persons in the Godhead",
+          "and the Holy Ghost",
+          "and these three are one God",
+          "the same in substance"
+        ],
+        "key_concepts": [
+          "There are three persons in the Godhead",
+          "and the Holy Ghost",
+          "and these three are one God",
+          "the same in substance"
+        ]
+      },
+      "response": "In mainstream, orthodox Christianity, there are **three** persons in the Godhead."
+    },
+    {
+      "id": "wsc-007",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q7",
+      "question": "What are the decrees of God?",
+      "reference_answer": "The decrees of God are, his eternal purpose, according to the counsel of his will, whereby, for his own glory, he hath foreordained whatsoever comes to pass.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "The decrees of God are",
+          "his eternal purpose",
+          "according to the counsel of his will",
+          "for his own glory"
+        ],
+        "key_concepts": [
+          "The decrees of God are",
+          "his eternal purpose",
+          "according to the counsel of his will",
+          "for his own glory"
+        ]
+      },
+      "response": "**\n\n**1. Introduction:**\nStart strong. \"In Christian theology, the '"
+    },
+    {
+      "id": "wsc-008",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q8",
+      "question": "How doth God execute his decrees?",
+      "reference_answer": "God executeth his decrees in the works of creation and providence.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "God executeth his decrees in the works of creation and providence"
+        ],
+        "key_concepts": [
+          "God executeth his decrees in the works of creation and providence"
+        ]
+      },
+      "response": "This question comes directly from **Question 8 of the Westminster Shorter Catechism**, a foundational"
+    },
+    {
+      "id": "wsc-009",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q9",
+      "question": "What is the work of creation?",
+      "reference_answer": "The work of creation is, God's making all things of nothing, by the word of his power, in the space of six days, and all very good.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "The work of creation is",
+          "God's making all things of nothing",
+          "by the word of his power",
+          "in the space of six days"
+        ],
+        "key_concepts": [
+          "The work of creation is",
+          "God's making all things of nothing",
+          "by the word of his power",
+          "in the space of six days"
+        ]
+      },
+      "response": "The \"work of creation\" is a profound and multi-layered concept that can be understood through several"
+    },
+    {
+      "id": "wsc-010",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q10",
+      "question": "How did God create man?",
+      "reference_answer": "God created man male and female, after his own image, in knowledge, righteousness, and holiness, with dominion over the creatures.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "God created man male and female",
+          "after his own image",
+          "with dominion over the creatures"
+        ],
+        "key_concepts": [
+          "God created man male and female",
+          "after his own image",
+          "in knowledge",
+          "righteousness"
+        ]
+      },
+      "response": "The answer to how God created man depends on the religious, theological, or philosophical tradition you are looking at"
+    },
+    {
+      "id": "wsc-011",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q11",
+      "question": "What are God's works of providence?",
+      "reference_answer": "God's works of providence are, his most holy, wise, and powerful preserving and governing all his creatures, and all their actions.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "God's works of providence are",
+          "and powerful preserving and governing all his creatures",
+          "and all their actions"
+        ],
+        "key_concepts": [
+          "God's works of providence are",
+          "his most holy",
+          "and powerful preserving and governing all his creatures",
+          "and all their actions"
+        ]
+      },
+      "response": "**Drafting the Content (Iterative refinement):**\n\n    *   *Introduction:*"
+    },
+    {
+      "id": "wsc-012",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q12",
+      "question": "What special act of providence did God exercise toward man in the estate wherein he was created?",
+      "reference_answer": "When God had created man, he entered into a covenant of life with him, upon condition of perfect obedience; forbidding him to eat of the tree of the knowledge of good and evil, upon pain of death.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "When God had created man",
+          "he entered into a covenant of life with him",
+          "upon condition of perfect obedience",
+          "forbidding him to eat of the tree of the knowledge of good and evil"
+        ],
+        "key_concepts": [
+          "When God had created man",
+          "he entered into a covenant of life with him",
+          "upon condition of perfect obedience",
+          "forbidding him to eat of the tree of the knowledge of good and evil"
+        ]
+      },
+      "response": "This question is taken directly from **Question 12 of the Westminster Shorter Catechism**, a"
+    },
+    {
+      "id": "wsc-013",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q13",
+      "question": "Did our first parents continue in the estate wherein they were created?",
+      "reference_answer": "Our first parents, being left to the freedom of their own will, fell from the estate wherein they were created, by sinning against God.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "Our first parents",
+          "being left to the freedom of their own will",
+          "fell from the estate wherein they were created",
+          "by sinning against God"
+        ],
+        "key_concepts": [
+          "Our first parents",
+          "being left to the freedom of their own will",
+          "fell from the estate wherein they were created",
+          "by sinning against God"
+        ]
+      },
+      "response": "This question comes directly from the **Westminster Shorter Catechism (Question"
+    },
+    {
+      "id": "wsc-014",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q14",
+      "question": "What is sin?",
+      "reference_answer": "Sin is any want of conformity unto, or transgression of, the law of God.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "Sin is any want of conformity unto",
+          "or transgression of"
+        ],
+        "key_concepts": [
+          "Sin is any want of conformity unto",
+          "or transgression of",
+          "the law of God"
+        ]
+      },
+      "response": "**Conclusion:** Summary of the concept as a universal human attempt to grapple with right, wrong, and human"
+    },
+    {
+      "id": "wsc-015",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q15",
+      "question": "What was the sin whereby our first parents fell from the estate wherein they were created?",
+      "reference_answer": "The sin whereby our first parents fell from the estate wherein they were created, was their eating the forbidden fruit.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "The sin whereby our first parents fell from the estate wherein they were created",
+          "was their eating the forbidden fruit"
+        ],
+        "key_concepts": [
+          "The sin whereby our first parents fell from the estate wherein they were created",
+          "was their eating the forbidden fruit"
+        ]
+      },
+      "response": "The question you are asking is a direct quote from Question 15 of the **West"
+    },
+    {
+      "id": "wsc-016",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q16",
+      "question": "Did all mankind fall in Adam's first transgression?",
+      "reference_answer": "The covenant being made with Adam, not only for himself, but for his posterity; all mankind, descending from him by ordinary generation, sinned in him, and fell with him, in his first transgression.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "The covenant being made with Adam",
+          "not only for himself",
+          "but for his posterity",
+          "descending from him by ordinary generation"
+        ],
+        "key_concepts": [
+          "The covenant being made with Adam",
+          "not only for himself",
+          "but for his posterity",
+          "all mankind"
+        ]
+      },
+      "response": "The question you are asking is a famous one in Christian theology, specifically taken word-for-word from"
+    },
+    {
+      "id": "wsc-017",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q17",
+      "question": "Into what estate did the fall bring mankind?",
+      "reference_answer": "The fall brought mankind into an estate of sin and misery.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "The fall brought mankind into an estate of sin and misery"
+        ],
+        "key_concepts": [
+          "The fall brought mankind into an estate of sin and misery"
+        ]
+      },
+      "response": "This question comes directly from the **Westminster Shorter Catechism** ("
+    },
+    {
+      "id": "wsc-018",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q18",
+      "question": "Wherein consists the sinfulness of that estate whereinto man fell?",
+      "reference_answer": "The sinfulness of that estate whereinto man fell, consists in the guilt of Adam's first sin, the want of original righteousness, and the corruption of his whole nature, which is commonly called original sin; together with all actual transgressions which proceed from it.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "The sinfulness of that estate whereinto man fell",
+          "consists in the guilt of Adam's first sin",
+          "the want of original righteousness",
+          "and the corruption of his whole nature"
+        ],
+        "key_concepts": [
+          "The sinfulness of that estate whereinto man fell",
+          "consists in the guilt of Adam's first sin",
+          "the want of original righteousness",
+          "and the corruption of his whole nature"
+        ]
+      },
+      "response": "This question is famously from the **Westminster Shorter Catechism (Question 1"
+    },
+    {
+      "id": "wsc-019",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q19",
+      "question": "What is the misery of that estate whereinto man fell?",
+      "reference_answer": "All mankind by their fall lost communion with God, are under his wrath and curse, and so made liable to all miseries in this life, to death itself, and to the pains of hell for ever.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "All mankind by their fall lost communion with God",
+          "are under his wrath and curse",
+          "and so made liable to all miseries in this life",
+          "and to the pains of hell for ever"
+        ],
+        "key_concepts": [
+          "All mankind by their fall lost communion with God",
+          "are under his wrath and curse",
+          "and so made liable to all miseries in this life",
+          "to death itself"
+        ]
+      },
+      "response": "This question comes directly from the **Westminster Shorter Catechism** (Question 19),"
+    },
+    {
+      "id": "wsc-020",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q20",
+      "question": "Did God leave all mankind to perish in the estate of sin and misery?",
+      "reference_answer": "God having, out of his mere good pleasure, from all eternity, elected some to everlasting life did enter into a covenant of grace, to deliver them out of the estate of sin and misery, and to bring them into an estate of salvation by a Redeemer.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "out of his mere good pleasure",
+          "from all eternity",
+          "elected some to everlasting life did enter into a covenant of grace",
+          "to deliver them out of the estate of sin and misery"
+        ],
+        "key_concepts": [
+          "out of his mere good pleasure",
+          "from all eternity",
+          "elected some to everlasting life did enter into a covenant of grace",
+          "to deliver them out of the estate of sin and misery"
+        ]
+      },
+      "response": "This specific question comes directly from the **Westminster Shorter Catechism (Question 2"
+    }
+  ],
+  "results_path": "results/google_gemini-3.1-pro-preview_20260514_144053.json",
+  "status": "in_progress"
+}

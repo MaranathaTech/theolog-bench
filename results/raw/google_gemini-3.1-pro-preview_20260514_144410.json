@@ -1,0 +1,1748 @@
+{
+  "model_name": "google/gemini-3.1-pro-preview",
+  "timestamp": "2026-05-14T14:44:10.394436",
+  "category_weights": {
+    "catechism_recall": 0.25,
+    "confessional_knowledge": 0.15,
+    "doctrinal_position": 0.2,
+    "biblical_reference": 0.15,
+    "error_detection": 0.15,
+    "comparative_theology": 0.1
+  },
+  "questions": [
+    {
+      "id": "wsc-001",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q1",
+      "question": "What is the chief end of man?",
+      "reference_answer": "Man's chief end is to glorify God, and to enjoy him for ever.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "Man's chief end is to glorify God",
+          "and to enjoy him for ever"
+        ],
+        "key_concepts": [
+          "Man's chief end is to glorify God",
+          "and to enjoy him for ever"
+        ]
+      },
+      "response": "The most famous and direct answer to the question **\"What is the chief end of man"
+    },
+    {
+      "id": "wsc-002",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q2",
+      "question": "What rule hath God given to direct us how we may glorify and enjoy him?",
+      "reference_answer": "The Word of God, which is contained in the Scriptures of the Old and New Testaments, is the only rule to direct us how we may glorify and enjoy him.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "which is contained in the Scriptures of the Old and New Testaments",
+          "is the only rule to direct us how we may glorify and enjoy him"
+        ],
+        "key_concepts": [
+          "The Word of God",
+          "which is contained in the Scriptures of the Old and New Testaments",
+          "is the only rule to direct us how we may glorify and enjoy him"
+        ]
+      },
+      "response": "This question is **Question 2 of the Westminster Shorter Catechism**. \n\nThe traditional answer"
+    },
+    {
+      "id": "wsc-003",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q3",
+      "question": "What do the Scriptures principally teach?",
+      "reference_answer": "The Scriptures principally teach what man is to believe concerning God, and what duty God requires of man.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "The Scriptures principally teach what man is to believe concerning God",
+          "and what duty God requires of man"
+        ],
+        "key_concepts": [
+          "The Scriptures principally teach what man is to believe concerning God",
+          "and what duty God requires of man"
+        ]
+      },
+      "response": "The classic answer to this question comes directly from Question 3 of the **Westminster Shorter Cate"
+    },
+    {
+      "id": "wsc-004",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q4",
+      "question": "What is God?",
+      "reference_answer": "God is a Spirit, infinite, eternal, and unchangeable in his being, wisdom, power, holiness, justice, goodness, and truth.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "and unchangeable in his being"
+        ],
+        "key_concepts": [
+          "God is a Spirit",
+          "and unchangeable in his being"
+        ]
+      },
+      "response": "The question \"What is God?\" is one of the oldest and most profound questions in human history. Because"
+    },
+    {
+      "id": "wsc-005",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q5",
+      "question": "Are there more Gods than one?",
+      "reference_answer": "There is but one only, the living and true God.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "There is but one only",
+          "the living and true God"
+        ],
+        "key_concepts": [
+          "There is but one only",
+          "the living and true God"
+        ]
+      },
+      "response": "The answer to whether there is more than one God depends entirely on who you ask. Throughout human history"
+    },
+    {
+      "id": "wsc-006",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q6",
+      "question": "How many persons are there in the Godhead?",
+      "reference_answer": "There are three persons in the Godhead; the Father, the Son, and the Holy Ghost; and these three are one God, the same in substance, equal in power and glory.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "There are three persons in the Godhead",
+          "and the Holy Ghost",
+          "and these three are one God",
+          "the same in substance"
+        ],
+        "key_concepts": [
+          "There are three persons in the Godhead",
+          "and the Holy Ghost",
+          "and these three are one God",
+          "the same in substance"
+        ]
+      },
+      "response": "In mainstream, orthodox Christianity, there are **three** persons in the Godhead."
+    },
+    {
+      "id": "wsc-007",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q7",
+      "question": "What are the decrees of God?",
+      "reference_answer": "The decrees of God are, his eternal purpose, according to the counsel of his will, whereby, for his own glory, he hath foreordained whatsoever comes to pass.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "The decrees of God are",
+          "his eternal purpose",
+          "according to the counsel of his will",
+          "for his own glory"
+        ],
+        "key_concepts": [
+          "The decrees of God are",
+          "his eternal purpose",
+          "according to the counsel of his will",
+          "for his own glory"
+        ]
+      },
+      "response": "The concept of the \"decrees of God\" is a foundational doctrine in Christian theology"
+    },
+    {
+      "id": "wsc-008",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q8",
+      "question": "How doth God execute his decrees?",
+      "reference_answer": "God executeth his decrees in the works of creation and providence.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "God executeth his decrees in the works of creation and providence"
+        ],
+        "key_concepts": [
+          "God executeth his decrees in the works of creation and providence"
+        ]
+      },
+      "response": "This question comes directly from the **Westminster Shorter Catechism** (Question 8),"
+    },
+    {
+      "id": "wsc-009",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q9",
+      "question": "What is the work of creation?",
+      "reference_answer": "The work of creation is, God's making all things of nothing, by the word of his power, in the space of six days, and all very good.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "The work of creation is",
+          "God's making all things of nothing",
+          "by the word of his power",
+          "in the space of six days"
+        ],
+        "key_concepts": [
+          "The work of creation is",
+          "God's making all things of nothing",
+          "by the word of his power",
+          "in the space of six days"
+        ]
+      },
+      "response": "The \"work of creation\" is a profound and multi-layered concept that can be understood through several"
+    },
+    {
+      "id": "wsc-010",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q10",
+      "question": "How did God create man?",
+      "reference_answer": "God created man male and female, after his own image, in knowledge, righteousness, and holiness, with dominion over the creatures.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "God created man male and female",
+          "after his own image",
+          "with dominion over the creatures"
+        ],
+        "key_concepts": [
+          "God created man male and female",
+          "after his own image",
+          "in knowledge",
+          "righteousness"
+        ]
+      },
+      "response": "The answer to how God created man depends on the religious tradition you are looking at. The most well-"
+    },
+    {
+      "id": "wsc-011",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q11",
+      "question": "What are God's works of providence?",
+      "reference_answer": "God's works of providence are, his most holy, wise, and powerful preserving and governing all his creatures, and all their actions.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "God's works of providence are",
+          "and powerful preserving and governing all his creatures",
+          "and all their actions"
+        ],
+        "key_concepts": [
+          "God's works of providence are",
+          "his most holy",
+          "and powerful preserving and governing all his creatures",
+          "and all their actions"
+        ]
+      },
+      "response": "Conclusion/Practical Application:** Why does this matter to a believer? (Comfort, trust"
+    },
+    {
+      "id": "wsc-012",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q12",
+      "question": "What special act of providence did God exercise toward man in the estate wherein he was created?",
+      "reference_answer": "When God had created man, he entered into a covenant of life with him, upon condition of perfect obedience; forbidding him to eat of the tree of the knowledge of good and evil, upon pain of death.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "When God had created man",
+          "he entered into a covenant of life with him",
+          "upon condition of perfect obedience",
+          "forbidding him to eat of the tree of the knowledge of good and evil"
+        ],
+        "key_concepts": [
+          "When God had created man",
+          "he entered into a covenant of life with him",
+          "upon condition of perfect obedience",
+          "forbidding him to eat of the tree of the knowledge of good and evil"
+        ]
+      },
+      "response": "This question is exactly **Question 12 of the Westminster Shorter Catechism**,"
+    },
+    {
+      "id": "wsc-013",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q13",
+      "question": "Did our first parents continue in the estate wherein they were created?",
+      "reference_answer": "Our first parents, being left to the freedom of their own will, fell from the estate wherein they were created, by sinning against God.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "Our first parents",
+          "being left to the freedom of their own will",
+          "fell from the estate wherein they were created",
+          "by sinning against God"
+        ],
+        "key_concepts": [
+          "Our first parents",
+          "being left to the freedom of their own will",
+          "fell from the estate wherein they were created",
+          "by sinning against God"
+        ]
+      },
+      "response": "This question is famously from the **Westminster Shorter Catechism (Question 15)**"
+    },
+    {
+      "id": "wsc-014",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q14",
+      "question": "What is sin?",
+      "reference_answer": "Sin is any want of conformity unto, or transgression of, the law of God.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "Sin is any want of conformity unto",
+          "or transgression of"
+        ],
+        "key_concepts": [
+          "Sin is any want of conformity unto",
+          "or transgression of",
+          "the law of God"
+        ]
+      },
+      "response": "The concept of **sin** is primarily a religious and theological one, generally defined as"
+    },
+    {
+      "id": "wsc-015",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q15",
+      "question": "What was the sin whereby our first parents fell from the estate wherein they were created?",
+      "reference_answer": "The sin whereby our first parents fell from the estate wherein they were created, was their eating the forbidden fruit.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "The sin whereby our first parents fell from the estate wherein they were created",
+          "was their eating the forbidden fruit"
+        ],
+        "key_concepts": [
+          "The sin whereby our first parents fell from the estate wherein they were created",
+          "was their eating the forbidden fruit"
+        ]
+      },
+      "response": "The answer to this question, which comes directly from Question 15 of the **Westminster Shorter"
+    },
+    {
+      "id": "wsc-016",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q16",
+      "question": "Did all mankind fall in Adam's first transgression?",
+      "reference_answer": "The covenant being made with Adam, not only for himself, but for his posterity; all mankind, descending from him by ordinary generation, sinned in him, and fell with him, in his first transgression.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "The covenant being made with Adam",
+          "not only for himself",
+          "but for his posterity",
+          "descending from him by ordinary generation"
+        ],
+        "key_concepts": [
+          "The covenant being made with Adam",
+          "not only for himself",
+          "but for his posterity",
+          "all mankind"
+        ]
+      },
+      "response": "The question you are asking is famously phrased exactly as Question 16 in the **Westminster Sh"
+    },
+    {
+      "id": "wsc-017",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q17",
+      "question": "Into what estate did the fall bring mankind?",
+      "reference_answer": "The fall brought mankind into an estate of sin and misery.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "The fall brought mankind into an estate of sin and misery"
+        ],
+        "key_concepts": [
+          "The fall brought mankind into an estate of sin and misery"
+        ]
+      },
+      "response": "According to the historic **Westminster Shorter Catechism** (Question 17), the answer"
+    },
+    {
+      "id": "wsc-018",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q18",
+      "question": "Wherein consists the sinfulness of that estate whereinto man fell?",
+      "reference_answer": "The sinfulness of that estate whereinto man fell, consists in the guilt of Adam's first sin, the want of original righteousness, and the corruption of his whole nature, which is commonly called original sin; together with all actual transgressions which proceed from it.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "The sinfulness of that estate whereinto man fell",
+          "consists in the guilt of Adam's first sin",
+          "the want of original righteousness",
+          "and the corruption of his whole nature"
+        ],
+        "key_concepts": [
+          "The sinfulness of that estate whereinto man fell",
+          "consists in the guilt of Adam's first sin",
+          "the want of original righteousness",
+          "and the corruption of his whole nature"
+        ]
+      },
+      "response": "This question is a direct quote from **Question 18 of the Westminster Shorter Catechism"
+    },
+    {
+      "id": "wsc-019",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q19",
+      "question": "What is the misery of that estate whereinto man fell?",
+      "reference_answer": "All mankind by their fall lost communion with God, are under his wrath and curse, and so made liable to all miseries in this life, to death itself, and to the pains of hell for ever.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "All mankind by their fall lost communion with God",
+          "are under his wrath and curse",
+          "and so made liable to all miseries in this life",
+          "and to the pains of hell for ever"
+        ],
+        "key_concepts": [
+          "All mankind by their fall lost communion with God",
+          "are under his wrath and curse",
+          "and so made liable to all miseries in this life",
+          "to death itself"
+        ]
+      },
+      "response": "This question and its answer come directly from the **Westminster Shorter Catechism"
+    },
+    {
+      "id": "wsc-020",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q20",
+      "question": "Did God leave all mankind to perish in the estate of sin and misery?",
+      "reference_answer": "God having, out of his mere good pleasure, from all eternity, elected some to everlasting life did enter into a covenant of grace, to deliver them out of the estate of sin and misery, and to bring them into an estate of salvation by a Redeemer.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "out of his mere good pleasure",
+          "from all eternity",
+          "elected some to everlasting life did enter into a covenant of grace",
+          "to deliver them out of the estate of sin and misery"
+        ],
+        "key_concepts": [
+          "out of his mere good pleasure",
+          "from all eternity",
+          "elected some to everlasting life did enter into a covenant of grace",
+          "to deliver them out of the estate of sin and misery"
+        ]
+      },
+      "response": "This question is famously from the **Westminster Shorter Catechism (Question"
+    },
+    {
+      "id": "wsc-021",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q21",
+      "question": "Who is the Redeemer of God's elect?",
+      "reference_answer": "The only Redeemer of God's elect is the Lord Jesus Christ, who, being the eternal Son of God, became man and so was, and continueth to be, God and man in two distinct natures, and one person, forever.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "The only Redeemer of God's elect is the Lord Jesus Christ",
+          "being the eternal Son of God",
+          "became man and so was",
+          "and continueth to be"
+        ],
+        "key_concepts": [
+          "The only Redeemer of God's elect is the Lord Jesus Christ",
+          "being the eternal Son of God",
+          "became man and so was",
+          "and continueth to be"
+        ]
+      },
+      "response": "Based on Christian theology, specifically as articulated in the historic **Westminster Shorter Catechism ("
+    },
+    {
+      "id": "wsc-022",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q22",
+      "question": "How did Christ, being the Son of God, become man?",
+      "reference_answer": "Christ, the Son of God, became man, by taking to himself a true body, and a reasonable soul, being conceived by the power of the Holy Ghost, in the womb of the virgin Mary, and born of her yet without sin.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "by taking to himself a true body",
+          "and a reasonable soul",
+          "being conceived by the power of the Holy Ghost",
+          "in the womb of the virgin Mary"
+        ],
+        "key_concepts": [
+          "the Son of God",
+          "by taking to himself a true body",
+          "and a reasonable soul",
+          "being conceived by the power of the Holy Ghost"
+        ]
+      },
+      "response": "Holy Spirit overshadowed Mary (Luke 1:35).\n        *   Result: He was born"
+    },
+    {
+      "id": "wsc-023",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q23",
+      "question": "What offices doth Christ execute as our Redeemer?",
+      "reference_answer": "Christ, as our Redeemer, executeth the offices of a prophet, of a priest, and of a king, both in his estate of humiliation and exaltation.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "executeth the offices of a prophet",
+          "both in his estate of humiliation and exaltation"
+        ],
+        "key_concepts": [
+          "as our Redeemer",
+          "executeth the offices of a prophet",
+          "of a priest",
+          "and of a king"
+        ]
+      },
+      "response": "This question is a famous one, taken directly from **Question 23 of the Westminster Shorter Cate"
+    },
+    {
+      "id": "wsc-024",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q24",
+      "question": "How doth Christ execute the office of a prophet?",
+      "reference_answer": "Christ executeth the office of a prophet, in revealing to us, by his Word and Spirit the will of God for our salvation.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "Christ executeth the office of a prophet",
+          "in revealing to us",
+          "by his Word and Spirit the will of God for our salvation"
+        ],
+        "key_concepts": [
+          "Christ executeth the office of a prophet",
+          "in revealing to us",
+          "by his Word and Spirit the will of God for our salvation"
+        ]
+      },
+      "response": ":* It's not just historical words (the Bible/Scripture), but the active illumination by"
+    },
+    {
+      "id": "wsc-025",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q25",
+      "question": "How doth Christ execute the office of a priest?",
+      "reference_answer": "Christ executeth the office of a priest, in his once offering up of himself a sacrifice to satisfy divine justice, and reconcile us to God; and in making continual intercession for us.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "Christ executeth the office of a priest",
+          "in his once offering up of himself a sacrifice to satisfy divine justice",
+          "and reconcile us to God",
+          "and in making continual intercession for us"
+        ],
+        "key_concepts": [
+          "Christ executeth the office of a priest",
+          "in his once offering up of himself a sacrifice to satisfy divine justice",
+          "and reconcile us to God",
+          "and in making continual intercession for us"
+        ]
+      },
+      "response": "This question comes directly from the **Westminster Shorter Catechism (Question 2"
+    },
+    {
+      "id": "wsc-026",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q26",
+      "question": "How doth Christ execute the office of a king?",
+      "reference_answer": "Christ executeth the office of a king, in subduing us to himself, in ruling and defending us, and in restraining and conquering all his and our enemies.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "Christ executeth the office of a king",
+          "in subduing us to himself",
+          "in ruling and defending us",
+          "and in restraining and conquering all his and our enemies"
+        ],
+        "key_concepts": [
+          "Christ executeth the office of a king",
+          "in subduing us to himself",
+          "in ruling and defending us",
+          "and in restraining and conquering all his and our enemies"
+        ]
+      },
+      "response": "Your people will offer themselves freely...\"), Acts 15:14.\n        *"
+    },
+    {
+      "id": "wsc-027",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q27",
+      "question": "Wherein did Christ's humiliation consist?",
+      "reference_answer": "Christ's humiliation consisted in his being born, and that in a low condition, made under the law, undergoing the miseries of this life, the wrath of God, and the cursed death of the cross; in being buried, and continuing under the power of death for a time.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "Christ's humiliation consisted in his being born",
+          "and that in a low condition",
+          "made under the law",
+          "undergoing the miseries of this life"
+        ],
+        "key_concepts": [
+          "Christ's humiliation consisted in his being born",
+          "and that in a low condition",
+          "made under the law",
+          "undergoing the miseries of this life"
+        ]
+      },
+      "response": "Iteration & Refinement):**\n\n    *   *Introduction:* Acknowledge the"
+    },
+    {
+      "id": "wsc-028",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q28",
+      "question": "Wherein consisteth Christ's exaltation?",
+      "reference_answer": "Christ's exaltation consisteth in his rising again from the dead on the third day, in ascending up into heaven, in sitting at the right hand of God the Father, and in coming to judge the world at the last day.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "Christ's exaltation consisteth in his rising again from the dead on the third day",
+          "in ascending up into heaven",
+          "in sitting at the right hand of God the Father",
+          "and in coming to judge the world at the last day"
+        ],
+        "key_concepts": [
+          "Christ's exaltation consisteth in his rising again from the dead on the third day",
+          "in ascending up into heaven",
+          "in sitting at the right hand of God the Father",
+          "and in coming to judge the world at the last day"
+        ]
+      },
+      "response": "*Rising again (Resurrection):* Overcoming death, proving He is the Son of God, securing"
+    },
+    {
+      "id": "wsc-029",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q29",
+      "question": "How are we made partakers of the redemption purchased by Christ?",
+      "reference_answer": "We are made partakers of the redemption purchased by Christ, by the effectual application of it to us by his Holy Spirit.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "We are made partakers of the redemption purchased by Christ",
+          "by the effectual application of it to us by his Holy Spirit"
+        ],
+        "key_concepts": [
+          "We are made partakers of the redemption purchased by Christ",
+          "by the effectual application of it to us by his Holy Spirit"
+        ]
+      },
+      "response": "The question you are asking is exactly Question 29 of the **Westminster Sh"
+    },
+    {
+      "id": "wsc-030",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q30",
+      "question": "How doth the Spirit apply to us the redemption purchased by Christ?",
+      "reference_answer": "The Spirit applieth to us the redemption purchased by Christ, by working faith in us, and thereby uniting us to Christ in our effectual calling.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "The Spirit applieth to us the redemption purchased by Christ",
+          "by working faith in us",
+          "and thereby uniting us to Christ in our effectual calling"
+        ],
+        "key_concepts": [
+          "The Spirit applieth to us the redemption purchased by Christ",
+          "by working faith in us",
+          "and thereby uniting us to Christ in our effectual calling"
+        ]
+      },
+      "response": "This question is exactly **Question 29 of the Westminster Shorter Catechism**, a foundational"
+    },
+    {
+      "id": "hc-001",
+      "category": "catechism_recall",
+      "source": "Heidelberg Catechism Q1",
+      "question": "What is your only comfort in life and death?",
+      "reference_answer": "That I am not my own, but belong with body and soul, both in life and in death, to my faithful Saviour Jesus Christ. He has fully paid for all my sins with His precious blood, and has set me free from all the power of the devil. He also preserves me in such a way that without the will of my heavenly Father not a hair can fall from my head; indeed, all things must work together for my salvation. Therefore, by His Holy Spirit He also assures me of eternal life and makes me heartily willing and ready from now on to live for Him.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "That I am not my own",
+          "but belong with body and soul",
+          "both in life and in death",
+          "to my faithful Saviour Jesus Christ. He has fully paid for all my sins with His precious blood"
+        ],
+        "key_concepts": [
+          "That I am not my own",
+          "but belong with body and soul",
+          "both in life and in death",
+          "to my faithful Saviour Jesus Christ"
+        ]
+      },
+      "response": "That is the famous first question of the Heidelberg Catechism, a foundational document of Reformed Christian theology"
+    },
+    {
+      "id": "hc-021",
+      "category": "catechism_recall",
+      "source": "Heidelberg Catechism Q21",
+      "question": "What is true faith?",
+      "reference_answer": "True faith is a sure knowledge whereby I accept as true all that God has revealed to us in His Word. At the same time it is a firm confidence that not only to others, but also to me, God has granted forgiveness of sins, everlasting righteousness, and salvation, out of mere grace, only for the sake of Christ's merits. This faith the Holy Spirit works in my heart by the gospel.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "True faith is a sure knowledge whereby I accept as true all that God has revealed to us in His Word. At the same time it is a firm confidence that not only to others",
+          "God has granted forgiveness of sins",
+          "everlasting righteousness",
+          "out of mere grace"
+        ],
+        "key_concepts": [
+          "True faith is a sure knowledge whereby I accept as true all that God has revealed to us in His Word",
+          "At the same time it is a firm confidence that not only to others",
+          "but also to me",
+          "God has granted forgiveness of sins"
+        ]
+      },
+      "response": "*Christianity:* Hebrews 11:1 is essential (\"substance of things hoped for"
+    },
+    {
+      "id": "hc-026",
+      "category": "catechism_recall",
+      "source": "Heidelberg Catechism Q26",
+      "question": "What do you believe when you say: I believe in God the Father almighty, Creator of heaven and earth?",
+      "reference_answer": "That the eternal Father of our Lord Jesus Christ, who out of nothing created heaven and earth and all that is in them, and who still upholds and governs them by His eternal counsel and providence, is, for the sake of Christ His Son, my God and my Father. In Him I trust so completely as to have no doubt that He will provide me with all things necessary for body and soul, and will also turn to my good whatever adversity He sends me in this life of sorrow. He is able to do so as almighty God, and willing also as a faithful Father.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "That the eternal Father of our Lord Jesus Christ",
+          "who out of nothing created heaven and earth and all that is in them",
+          "and who still upholds and governs them by His eternal counsel and providence",
+          "for the sake of Christ His Son"
+        ],
+        "key_concepts": [
+          "That the eternal Father of our Lord Jesus Christ",
+          "who out of nothing created heaven and earth and all that is in them",
+          "and who still upholds and governs them by His eternal counsel and providence",
+          "for the sake of Christ His Son"
+        ]
+      },
+      "response": "When a person recites the phrase, **\"I believe in God the Father almighty,"
+    },
+    {
+      "id": "hc-027",
+      "category": "catechism_recall",
+      "source": "Heidelberg Catechism Q27",
+      "question": "What do you understand by the providence of God?",
+      "reference_answer": "God's providence is His almighty and ever present power, whereby, as with His hand, He still upholds heaven and earth and all creatures, and so governs them that leaf and blade, rain and drought, fruitful and barren years, food and drink, health and sickness, riches and poverty, indeed, all things, come not by chance but by His fatherly hand.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "God's providence is His almighty and ever present power",
+          "as with His hand",
+          "He still upholds heaven and earth and all creatures",
+          "and so governs them that leaf and blade"
+        ],
+        "key_concepts": [
+          "God's providence is His almighty and ever present power",
+          "as with His hand",
+          "He still upholds heaven and earth and all creatures",
+          "and so governs them that leaf and blade"
+        ]
+      },
+      "response": "The **providence of God** is a foundational concept in theology (most prominently in Christianity"
+    },
+    {
+      "id": "hc-028",
+      "category": "catechism_recall",
+      "source": "Heidelberg Catechism Q28",
+      "question": "What does it benefit us to know that God has created all things and still upholds them by His providence?",
+      "reference_answer": "We can be patient in adversity, thankful in prosperity, and with a view to the future we can have a firm confidence in our faithful God and Father that no creature shall separate us from His love; for all creatures are so completely in His hand that without His will they cannot so much as move.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "We can be patient in adversity",
+          "thankful in prosperity",
+          "and with a view to the future we can have a firm confidence in our faithful God and Father that no creature shall separate us from His love",
+          "for all creatures are so completely in His hand that without His will they cannot so much as move"
+        ],
+        "key_concepts": [
+          "We can be patient in adversity",
+          "thankful in prosperity",
+          "and with a view to the future we can have a firm confidence in our faithful God and Father that no creature shall separate us from His love",
+          "for all creatures are so completely in His hand that without His will they cannot so much as move"
+        ]
+      },
+      "response": "This question is actually a famous one\u2014it is Question 28 of the **He"
+    },
+    {
+      "id": "hc-029",
+      "category": "catechism_recall",
+      "source": "Heidelberg Catechism Q29",
+      "question": "Why is the Son of God called Jesus, that is, Saviour?",
+      "reference_answer": "Because He saves us from all our sins, and because salvation is not to be sought or found in anyone else.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "Because He saves us from all our sins",
+          "and because salvation is not to be sought or found in anyone else"
+        ],
+        "key_concepts": [
+          "Because He saves us from all our sins",
+          "and because salvation is not to be sought or found in anyone else"
+        ]
+      },
+      "response": "The Son of God is called **Jesus** (which means \"Saviour\") because His very name"
+    },
+    {
+      "id": "hc-030",
+      "category": "catechism_recall",
+      "source": "Heidelberg Catechism Q30",
+      "question": "Do those believe in the only Saviour Jesus who seek their salvation and well-being from saints, in themselves, or anywhere else?",
+      "reference_answer": "No. Though they boast of Him in words, they in fact deny the only Saviour Jesus. For one of two things must be true: either Jesus is not a complete Saviour, or those who by true faith accept this Saviour must find in Him all that is necessary for their salvation.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "No. Though they boast of Him in words",
+          "they in fact deny the only Saviour Jesus. For one of two things must be true: either Jesus is not a complete Saviour",
+          "or those who by true faith accept this Saviour must find in Him all that is necessary for their salvation"
+        ],
+        "key_concepts": [
+          "Though they boast of Him in words",
+          "they in fact deny the only Saviour Jesus",
+          "For one of two things must be true: either Jesus is not a complete Saviour",
+          "or those who by true faith accept this Saviour must find in Him all that is necessary for their salvation"
+        ]
+      },
+      "response": "This question is a direct quote from **Question 30 of the Heidelberg Catechism**,"
+    },
+    {
+      "id": "hc-031",
+      "category": "catechism_recall",
+      "source": "Heidelberg Catechism Q31",
+      "question": "Why is He called Christ, that is, Anointed?",
+      "reference_answer": "Because He has been ordained by God the Father, and anointed with the Holy Spirit, to be our chief Prophet and Teacher, who has fully revealed to us the secret counsel and will of God concerning our redemption; our only High Priest, who by the one sacrifice of His body has redeemed us, and who continually intercedes for us before the Father; and our eternal King, who governs us by His Word and Spirit, and who defends and preserves us in the redemption obtained for us.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "Because He has been ordained by God the Father",
+          "and anointed with the Holy Spirit",
+          "to be our chief Prophet and Teacher",
+          "who has fully revealed to us the secret counsel and will of God concerning our redemption"
+        ],
+        "key_concepts": [
+          "Because He has been ordained by God the Father",
+          "and anointed with the Holy Spirit",
+          "to be our chief Prophet and Teacher",
+          "who has fully revealed to us the secret counsel and will of God concerning our redemption"
+        ]
+      },
+      "response": "Because He is ordained by God the Father and anointed with the Holy Spirit to be our chief"
+    },
+    {
+      "id": "hc-032",
+      "category": "catechism_recall",
+      "source": "Heidelberg Catechism Q32",
+      "question": "Why are you called a Christian?",
+      "reference_answer": "Because I am a member of Christ by faith and thus share in His anointing, so that I may as prophet confess His Name, as priest present myself a living sacrifice of thankfulness to Him, and as king fight with a free and good conscience against sin and the devil in this life, and hereafter reign with Him eternally over all creatures.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "Because I am a member of Christ by faith and thus share in His anointing",
+          "so that I may as prophet confess His Name",
+          "as priest present myself a living sacrifice of thankfulness to Him",
+          "and as king fight with a free and good conscience against sin and the devil in this life"
+        ],
+        "key_concepts": [
+          "Because I am a member of Christ by faith and thus share in His anointing",
+          "so that I may as prophet confess His Name",
+          "as priest present myself a living sacrifice of thankfulness to Him",
+          "and as king fight with a free and good conscience against sin and the devil in this life"
+        ]
+      },
+      "response": "Actually, I am not a Christian. I am an artificial intelligence, a large language model developed"
+    },
+    {
+      "id": "hc-033",
+      "category": "catechism_recall",
+      "source": "Heidelberg Catechism Q33",
+      "question": "Why is He called God's only begotten Son, since we also are children of God?",
+      "reference_answer": "Because Christ alone is the eternal, natural Son of God. We, however, are children of God by adoption, through grace, for Christ's sake.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "Because Christ alone is the eternal",
+          "natural Son of God. We",
+          "are children of God by adoption",
+          "for Christ's sake"
+        ],
+        "key_concepts": [
+          "Because Christ alone is the eternal",
+          "natural Son of God",
+          "are children of God by adoption",
+          "through grace"
+        ]
+      },
+      "response": "In Christian theology, the distinction between Jesus as the \"only begotten Son\" and humans as"
+    },
+    {
+      "id": "hc-034",
+      "category": "catechism_recall",
+      "source": "Heidelberg Catechism Q34",
+      "question": "Why do you call Him our Lord?",
+      "reference_answer": "Because He has ransomed us, body and soul, from all our sins, not with silver or gold but with His precious blood, and has freed us from all the power of the devil to make us His own possession.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "Because He has ransomed us",
+          "from all our sins",
+          "not with silver or gold but with His precious blood",
+          "and has freed us from all the power of the devil to make us His own possession"
+        ],
+        "key_concepts": [
+          "Because He has ransomed us",
+          "body and soul",
+          "from all our sins",
+          "not with silver or gold but with His precious blood"
+        ]
+      },
+      "response": "Mirroring:* Adapting to the user's phrasing to be respectful and conversational.\n            *"
+    },
+    {
+      "id": "hc-044",
+      "category": "catechism_recall",
+      "source": "Heidelberg Catechism Q44",
+      "question": "Why is there added: He descended into hell?",
+      "reference_answer": "In my greatest sorrows and temptations I may be assured and comforted that my Lord Jesus Christ, by His unspeakable anguish, pain, terror, and agony, which He endured throughout all His sufferings but especially on the cross, has delivered me from the anguish and torment of hell.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "In my greatest sorrows and temptations I may be assured and comforted that my Lord Jesus Christ",
+          "by His unspeakable anguish",
+          "which He endured throughout all His sufferings but especially on the cross",
+          "has delivered me from the anguish and torment of hell"
+        ],
+        "key_concepts": [
+          "In my greatest sorrows and temptations I may be assured and comforted that my Lord Jesus Christ",
+          "by His unspeakable anguish",
+          "which He endured throughout all His sufferings but especially on the cross",
+          "has delivered me from the anguish and torment of hell"
+        ]
+      },
+      "response": "The phrase **\"He descended into hell\"** (in Latin, *descendit ad inferos"
+    },
+    {
+      "id": "hc-045",
+      "category": "catechism_recall",
+      "source": "Heidelberg Catechism Q45",
+      "question": "How does Christ's resurrection benefit us?",
+      "reference_answer": "First, by His resurrection He has overcome death, so that He could make us share in the righteousness which He had obtained for us by His death. Second, by His power we too are raised up to a new life. Third, Christ's resurrection is to us a sure pledge of our glorious resurrection.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "by His resurrection He has overcome death",
+          "so that He could make us share in the righteousness which He had obtained for us by His death. Second",
+          "by His power we too are raised up to a new life. Third",
+          "Christ's resurrection is to us a sure pledge of our glorious resurrection"
+        ],
+        "key_concepts": [
+          "by His resurrection He has overcome death",
+          "so that He could make us share in the righteousness which He had obtained for us by His death",
+          "by His power we too are raised up to a new life",
+          "Christ's resurrection is to us a sure pledge of our glorious resurrection"
+        ]
+      },
+      "response": "In Christian theology, the resurrection of Jesus Christ is not just a historical event; it is the cornerstone"
+    },
+    {
+      "id": "hc-054",
+      "category": "catechism_recall",
+      "source": "Heidelberg Catechism Q54",
+      "question": "What do you believe concerning the holy catholic Christian church?",
+      "reference_answer": "I believe that the Son of God, out of the whole human race, from the beginning of the world to its end, gathers, defends, and preserves for Himself,  by His Spirit and Word, in the unity of the true faith, a church chosen to everlasting life. And I believe that I am and forever shall remain a living member of it.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "I believe that the Son of God",
+          "out of the whole human race",
+          "from the beginning of the world to its end",
+          "and preserves for Himself"
+        ],
+        "key_concepts": [
+          "I believe that the Son of God",
+          "out of the whole human race",
+          "from the beginning of the world to its end",
+          "and preserves for Himself"
+        ]
+      },
+      "response": "As an artificial intelligence, I do not have personal beliefs, faith, or a soul."
+    },
+    {
+      "id": "hc-055",
+      "category": "catechism_recall",
+      "source": "Heidelberg Catechism Q55",
+      "question": "What do you understand by the communion of saints?",
+      "reference_answer": "First, that believers, all and everyone, as members of Christ have communion with Him and share in all His treasures and gifts. Second, that everyone is duty-bound to use his gifts readily and cheerfully for the benefit and well-being of the other members.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "all and everyone",
+          "as members of Christ have communion with Him and share in all His treasures and gifts. Second",
+          "that everyone is duty-bound to use his gifts readily and cheerfully for the benefit and well-being of the other members"
+        ],
+        "key_concepts": [
+          "that believers",
+          "all and everyone",
+          "as members of Christ have communion with Him and share in all His treasures and gifts",
+          "that everyone is duty-bound to use his gifts readily and cheerfully for the benefit and well-being of the other members"
+        ]
+      },
+      "response": "The **Communion of Saints** (*Communio Sanctorum* in Latin) is a foundational concept"
+    },
+    {
+      "id": "hc-056",
+      "category": "catechism_recall",
+      "source": "Heidelberg Catechism Q56",
+      "question": "What do you believe concerning the forgiveness of sins?",
+      "reference_answer": "I believe that God, because of Christ's satisfaction, will no more remember my sins, nor my sinful nature, against which I have to struggle all my life, but He will graciously grant me the righteousness of Christ, that I may never come into condemnation.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "I believe that God",
+          "because of Christ's satisfaction",
+          "will no more remember my sins",
+          "nor my sinful nature"
+        ],
+        "key_concepts": [
+          "I believe that God",
+          "because of Christ's satisfaction",
+          "will no more remember my sins",
+          "nor my sinful nature"
+        ]
+      },
+      "response": "As an artificial intelligence, I do not have personal beliefs, religious convictions, or a soul."
+    },
+    {
+      "id": "hc-057",
+      "category": "catechism_recall",
+      "source": "Heidelberg Catechism Q57",
+      "question": "What comfort does the resurrection of the body offer you?",
+      "reference_answer": "Not only shall my soul after this life immediately be taken up to Christ, my Head, but also this my flesh, raised by the power of Christ, shall be reunited with my soul and made like Christ's glorious body.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "Not only shall my soul after this life immediately be taken up to Christ",
+          "but also this my flesh",
+          "raised by the power of Christ",
+          "shall be reunited with my soul and made like Christ's glorious body"
+        ],
+        "key_concepts": [
+          "Not only shall my soul after this life immediately be taken up to Christ",
+          "but also this my flesh",
+          "raised by the power of Christ",
+          "shall be reunited with my soul and made like Christ's glorious body"
+        ]
+      },
+      "response": "2: Complete Healing and Wholeness.**\n        *   *Concept:* The \"g"
+    },
+    {
+      "id": "hc-058",
+      "category": "catechism_recall",
+      "source": "Heidelberg Catechism Q58",
+      "question": "What comfort do you receive from the article about the life everlasting?",
+      "reference_answer": "Since I now already feel in my heart the beginning of eternal joy,  I shall after this life possess perfect blessedness, such as no eye has seen, nor ear heard, nor the heart of man conceived-- a blessedness in which to praise God forever.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "Since I now already feel in my heart the beginning of eternal joy",
+          "I shall after this life possess perfect blessedness",
+          "such as no eye has seen",
+          "nor the heart of man conceived-- a blessedness in which to praise God forever"
+        ],
+        "key_concepts": [
+          "Since I now already feel in my heart the beginning of eternal joy",
+          "I shall after this life possess perfect blessedness",
+          "such as no eye has seen",
+          "nor ear heard"
+        ]
+      },
+      "response": "The question you are asking is a famous and beautiful one, drawn directly from **Question 58 of"
+    },
+    {
+      "id": "hc-059",
+      "category": "catechism_recall",
+      "source": "Heidelberg Catechism Q59",
+      "question": "But what does it help you now that you believe all this?",
+      "reference_answer": "In Christ I am righteous before God and heir to life everlasting.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "In Christ I am righteous before God and heir to life everlasting"
+        ],
+        "key_concepts": [
+          "In Christ I am righteous before God and heir to life everlasting"
+        ]
+      },
+      "response": "*   **Philosophical Reflection (Optional but engaging):** Briefly touch upon why having a structured"
+    },
+    {
+      "id": "hc-060",
+      "category": "catechism_recall",
+      "source": "Heidelberg Catechism Q60",
+      "question": "How are you righteous before God?",
+      "reference_answer": "Only by true faith in Jesus Christ. Although my conscience accuses me that I have grievously sinned against all God's commandments, have never kept any of them, and am still inclined to all evil, yet God, without any merit of my own, out of mere grace, imputes to me the perfect satisfaction, righteousness, and holiness of Christ. He grants these to me as if I had never had nor committed any sin, and as if I myself had accomplished all the obedience which Christ has rendered for me, if only I accept this gift with a believing heart.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "Only by true faith in Jesus Christ. Although my conscience accuses me that I have grievously sinned against all God's commandments",
+          "have never kept any of them",
+          "and am still inclined to all evil",
+          "without any merit of my own"
+        ],
+        "key_concepts": [
+          "Only by true faith in Jesus Christ",
+          "Although my conscience accuses me that I have grievously sinned against all God's commandments",
+          "have never kept any of them",
+          "and am still inclined to all evil"
+        ]
+      },
+      "response": "As an artificial intelligence, I don't have a soul, consciousness, or a spiritual life,"
+    },
+    {
+      "id": "hc-061",
+      "category": "catechism_recall",
+      "source": "Heidelberg Catechism Q61",
+      "question": "Why do you say that you are righteous only by faith?",
+      "reference_answer": "Not that I am acceptable to God on account of the worthiness of my faith, for only the satisfaction, righteousness, and holiness of Christ is my righteousness before God. I can receive this righteousness and make it mine my own by faith only.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "Not that I am acceptable to God on account of the worthiness of my faith",
+          "for only the satisfaction",
+          "and holiness of Christ is my righteousness before God. I can receive this righteousness and make it mine my own by faith only"
+        ],
+        "key_concepts": [
+          "Not that I am acceptable to God on account of the worthiness of my faith",
+          "for only the satisfaction",
+          "righteousness",
+          "and holiness of Christ is my righteousness before God"
+        ]
+      },
+      "response": "**The Core Meaning (What it is):**\n        *   Explain that \"righteousness\" means"
+    },
+    {
+      "id": "hc-062",
+      "category": "catechism_recall",
+      "source": "Heidelberg Catechism Q62",
+      "question": "But why can our good works not be our righteousness before God, or at least a part of it?",
+      "reference_answer": "Because the righteousness which can stand before God's judgment must be absolutely perfect and in complete agreement with the law of God, whereas even our best works in this life are all imperfect and defiled with sin.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "Because the righteousness which can stand before God's judgment must be absolutely perfect and in complete agreement with the law of God",
+          "whereas even our best works in this life are all imperfect and defiled with sin"
+        ],
+        "key_concepts": [
+          "Because the righteousness which can stand before God's judgment must be absolutely perfect and in complete agreement with the law of God",
+          "whereas even our best works in this life are all imperfect and defiled with sin"
+        ]
+      },
+      "response": "This question is one of the most central and historically significant questions in Christian theology. In fact, your phrasing"
+    },
+    {
+      "id": "hc-063",
+      "category": "catechism_recall",
+      "source": "Heidelberg Catechism Q63",
+      "question": "But do our good works earn nothing, even though God promises to reward them in this life and the next?",
+      "reference_answer": "This reward is not earned; it is a gift of grace.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "This reward is not earned",
+          "it is a gift of grace"
+        ],
+        "key_concepts": [
+          "This reward is not earned",
+          "it is a gift of grace"
+        ]
+      },
+      "response": "This question is actually a famous one\u2014it is **Question 63 of the Heidelberg Catech"
+    },
+    {
+      "id": "hc-064",
+      "category": "catechism_recall",
+      "source": "Heidelberg Catechism Q64",
+      "question": "Does this teaching not make people careless and wicked?",
+      "reference_answer": "No. It is impossible that those grafted into Christ by true faith should not bring forth fruits of thankfulness.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "No. It is impossible that those grafted into Christ by true faith should not bring forth fruits of thankfulness"
+        ],
+        "key_concepts": [
+          "It is impossible that those grafted into Christ by true faith should not bring forth fruits of thankfulness"
+        ]
+      },
+      "response": "Draft the Content (Iterative refinement):**\n\n    *   *Introduction:* You are asking"
+    },
+    {
+      "id": "hc-065",
+      "category": "catechism_recall",
+      "source": "Heidelberg Catechism Q65",
+      "question": "Since then faith alone makes us share in Christ and all His benefits, where does this faith come from?",
+      "reference_answer": "From the Holy Spirit, who works it in our hearts by the preaching of the gospel, and strengthens it by the use of the sacraments.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "From the Holy Spirit",
+          "who works it in our hearts by the preaching of the gospel",
+          "and strengthens it by the use of the sacraments"
+        ],
+        "key_concepts": [
+          "From the Holy Spirit",
+          "who works it in our hearts by the preaching of the gospel",
+          "and strengthens it by the use of the sacraments"
+        ]
+      },
+      "response": "This question is a direct quote from **Question 65 of the Heidelberg Catechism**, a"
+    },
+    {
+      "id": "hc-066",
+      "category": "catechism_recall",
+      "source": "Heidelberg Catechism Q66",
+      "question": "What are the sacraments?",
+      "reference_answer": "The sacraments are holy, visible signs and seals. They were instituted by God so that by their use He might the more fully declare and seal to us the promise of the gospel. And this is the promise: that God graciously grants us forgiveness of sins and everlasting life because of the one sacrifice of Christ accomplished on the cross.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "The sacraments are holy",
+          "visible signs and seals. They were instituted by God so that by their use He might the more fully declare and seal to us the promise of the gospel. And this is the promise: that God graciously grants us forgiveness of sins and everlasting life because of the one sacrifice of Christ accomplished on the cross"
+        ],
+        "key_concepts": [
+          "The sacraments are holy",
+          "visible signs and seals",
+          "They were instituted by God so that by their use He might the more fully declare and seal to us the promise of the gospel",
+          "And this is the promise: that God graciously grants us forgiveness of sins and everlasting life because of the one sacrifice of Christ accomplished on the cross"
+        ]
+      },
+      "response": "In Christianity, a **sacrament** is generally defined as an outward, visible sign of an inward,"
+    },
+    {
+      "id": "hc-080",
+      "category": "catechism_recall",
+      "source": "Heidelberg Catechism Q80",
+      "question": "What difference is there between the Lord's supper and the papal mass?",
+      "reference_answer": "The Lord's supper testifies to us, first, that we have complete forgiveness of all our sins through the one sacrifice of Jesus Christ, which He Himself accomplished on the cross once for all; and, second, that through the Holy Spirit we are grafted into Christ, who with His true body is now in heaven at the right hand of the Father, and this is where He wants to be worshipped. But the mass teaches, first, that the living and the dead do not have forgiveness of sins through the suffering of Christ unless He is still offered for them daily by the priests; and, second, that Christ is bodily present in the form of bread and wine, and there is to be worshipped. Therefore the mass is basically nothing but a denial of the one sacrifice and suffering of Jesus Christ, and an accursed idolatry.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "The Lord's supper testifies to us",
+          "that we have complete forgiveness of all our sins through the one sacrifice of Jesus Christ",
+          "which He Himself accomplished on the cross once for all",
+          "that through the Holy Spirit we are grafted into Christ"
+        ],
+        "key_concepts": [
+          "The Lord's supper testifies to us",
+          "that we have complete forgiveness of all our sins through the one sacrifice of Jesus Christ",
+          "which He Himself accomplished on the cross once for all",
+          "that through the Holy Spirit we are grafted into Christ"
+        ]
+      },
+      "response": "The theological differences between the Protestant observance of the \"Lord\u2019s Supper\" and the Roman Catholic \""
+    },
+    {
+      "id": "hc-086",
+      "category": "catechism_recall",
+      "source": "Heidelberg Catechism Q86",
+      "question": "Since we have been delivered from our misery by grace alone through Christ, without any merit of our own, why must we yet do good works?",
+      "reference_answer": "Because Christ, having redeemed us by His blood, also renews us by His Holy Spirit to be His image, so that with our whole life we may show ourselves thankful to God for His benefits, and He may be praised by us. Further, that we ourselves may be assured of our faith by its fruits, and that by our godly walk of life we may win our neighbours for Christ.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "having redeemed us by His blood",
+          "also renews us by His Holy Spirit to be His image",
+          "so that with our whole life we may show ourselves thankful to God for His benefits",
+          "and He may be praised by us. Further"
+        ],
+        "key_concepts": [
+          "Because Christ",
+          "having redeemed us by His blood",
+          "also renews us by His Holy Spirit to be His image",
+          "so that with our whole life we may show ourselves thankful to God for His benefits"
+        ]
+      },
+      "response": "*Reason 3: Assurance of Faith.* (Good works are evidence/fruit of a"
+    },
+    {
+      "id": "hc-115",
+      "category": "catechism_recall",
+      "source": "Heidelberg Catechism Q115",
+      "question": "If in this life no one can keep the ten commandments perfectly, why does God have them preached so strictly?",
+      "reference_answer": "First, that throughout our life we may more and more become aware of our sinful nature, and therefore seek more eagerly the forgiveness of sins and righteousness in Christ. Second, that we may be zealous for good deeds and constantly pray to God for the grace of the Holy Spirit, that He may more and more renew us after God's image, until after this life we reach the goal of perfection.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "that throughout our life we may more and more become aware of our sinful nature",
+          "and therefore seek more eagerly the forgiveness of sins and righteousness in Christ. Second",
+          "that we may be zealous for good deeds and constantly pray to God for the grace of the Holy Spirit",
+          "that He may more and more renew us after God's image"
+        ],
+        "key_concepts": [
+          "that throughout our life we may more and more become aware of our sinful nature",
+          "and therefore seek more eagerly the forgiveness of sins and righteousness in Christ",
+          "that we may be zealous for good deeds and constantly pray to God for the grace of the Holy Spirit",
+          "that He may more and more renew us after God's image"
+        ]
+      },
+      "response": "Bridle\")**\n        *   *Concept:* The law provides a moral baseline for human"
+    },
+    {
+      "id": "hc-129",
+      "category": "catechism_recall",
+      "source": "Heidelberg Catechism Q129",
+      "question": "What does the word Amen mean?",
+      "reference_answer": "Amen means: It is true and certain. For God has much more certainly heard my prayer than I feel in my heart that I desire this of Him.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "Amen means: It is true and certain. For God has much more certainly heard my prayer than I feel in my heart that I desire this of Him"
+        ],
+        "key_concepts": [
+          "Amen means: It is true and certain",
+          "For God has much more certainly heard my prayer than I feel in my heart that I desire this of Him"
+        ]
+      },
+      "response": "The word **\"Amen\"** is an ancient declaration of affirmation found in Judaism, Christianity,"
+    },
+    {
+      "id": "wlc-001",
+      "category": "catechism_recall",
+      "source": "Westminster Larger Catechism Q1",
+      "question": "What is the chief and highest end of man?",
+      "reference_answer": "Man's chief and highest end is to glorify God, and fully to enjoy him forever.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "Man's chief and highest end is to glorify God",
+          "and fully to enjoy him forever"
+        ],
+        "key_concepts": [
+          "Man's chief and highest end is to glorify God",
+          "and fully to enjoy him forever"
+        ]
+      },
+      "response": "According to the historic **Westminster Shorter Catechism** (written in 1647"
+    },
+    {
+      "id": "wlc-002",
+      "category": "catechism_recall",
+      "source": "Westminster Larger Catechism Q2",
+      "question": "How doth it appear that there is a God?",
+      "reference_answer": "The very light of nature in man, and the works of God, declare plainly that there is a God; but his word and Spirit only do sufficiently and effectually reveal him unto men for their salvation.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "The very light of nature in man",
+          "and the works of God",
+          "declare plainly that there is a God",
+          "but his word and Spirit only do sufficiently and effectually reveal him unto men for their salvation"
+        ],
+        "key_concepts": [
+          "The very light of nature in man",
+          "and the works of God",
+          "declare plainly that there is a God",
+          "but his word and Spirit only do sufficiently and effectually reveal him unto men for their salvation"
+        ]
+      },
+      "response": "The phrasing of your question echoes the classic language of historical theology and catechisms (such as the Westminster"
+    },
+    {
+      "id": "wlc-003",
+      "category": "catechism_recall",
+      "source": "Westminster Larger Catechism Q3",
+      "question": "What is the word of God?",
+      "reference_answer": "The holy scriptures of the Old and New Testaments are the word of God, the only rule of faith and obedience.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "The holy scriptures of the Old and New Testaments are the word of God",
+          "the only rule of faith and obedience"
+        ],
+        "key_concepts": [
+          "The holy scriptures of the Old and New Testaments are the word of God",
+          "the only rule of faith and obedience"
+        ]
+      },
+      "response": "The phrase \"the word of God\" has different meanings depending on the religious, theological"
+    },
+    {
+      "id": "wlc-004",
+      "category": "catechism_recall",
+      "source": "Westminster Larger Catechism Q4",
+      "question": "How doth it appear that the scriptures are the word of God?",
+      "reference_answer": "The scriptures manifest themselves to be the word of God, by their majesty  and purity; by the consent of all the parts, and the scope of the whole, which is to give all glory to God; by their light and power to convince and convert sinners, to comfort and build up believers unto salvation: but the Spirit of God bearing witness by and with the scriptures in the heart of man, is alone able fully to persuade it that they are the very word of God.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "The scriptures manifest themselves to be the word of God",
+          "by their majesty  and purity",
+          "by the consent of all the parts",
+          "and the scope of the whole"
+        ],
+        "key_concepts": [
+          "The scriptures manifest themselves to be the word of God",
+          "by their majesty  and purity",
+          "by the consent of all the parts",
+          "and the scope of the whole"
+        ]
+      },
+      "response": "The phrasing of your question, \"How doth it appear that the scriptures are the word of God"
+    },
+    {
+      "id": "wlc-005",
+      "category": "catechism_recall",
+      "source": "Westminster Larger Catechism Q5",
+      "question": "What do the scriptures principally teach?",
+      "reference_answer": "The scriptures principally teach, what man is to believe concerning God, and what duty God requires of man.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "The scriptures principally teach",
+          "what man is to believe concerning God",
+          "and what duty God requires of man"
+        ],
+        "key_concepts": [
+          "The scriptures principally teach",
+          "what man is to believe concerning God",
+          "and what duty God requires of man"
+        ]
+      },
+      "response": "). It's the \"indicative\" (what is true).\n        *"
+    },
+    {
+      "id": "wlc-006",
+      "category": "catechism_recall",
+      "source": "Westminster Larger Catechism Q6",
+      "question": "What do the scriptures make known of God?",
+      "reference_answer": "The scriptures make known what God is, the persons in the Godhead, his decrees, and the execution of his decrees.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "The scriptures make known what God is",
+          "the persons in the Godhead",
+          "and the execution of his decrees"
+        ],
+        "key_concepts": [
+          "The scriptures make known what God is",
+          "the persons in the Godhead",
+          "his decrees",
+          "and the execution of his decrees"
+        ]
+      },
+      "response": "According to the Christian scriptures (the Bible), God reveals Himself not just as a distant force,"
+    },
+    {
+      "id": "wlc-007",
+      "category": "catechism_recall",
+      "source": "Westminster Larger Catechism Q7",
+      "question": "What is God?",
+      "reference_answer": "God is a Spirit, in and of himself infinite in being, glory, blessedness, and perfection; all-sufficient, eternal, unchangeable, incomprehensible, everywhere present, almighty, knowing all things, most wise, most holy, most just, most merciful and gracious, long-suffering, and abundant in goodness and truth.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "in and of himself infinite in being",
+          "incomprehensible",
+          "everywhere present",
+          "knowing all things"
+        ],
+        "key_concepts": [
+          "God is a Spirit",
+          "in and of himself infinite in being",
+          "blessedness",
+          "and perfection"
+        ]
+      },
+      "response": "The question \"What is God?\" is one of the oldest and most profound questions in human history"
+    },
+    {
+      "id": "wlc-008",
+      "category": "catechism_recall",
+      "source": "Westminster Larger Catechism Q8",
+      "question": "Are there more Gods than one?",
+      "reference_answer": "There is but one only, the living and true God.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "There is but one only",
+          "the living and true God"
+        ],
+        "key_concepts": [
+          "There is but one only",
+          "the living and true God"
+        ]
+      },
+      "response": "The answer to whether there is more than one God depends entirely on which religion, philosophy, or cultural tradition"
+    },
+    {
+      "id": "wlc-009",
+      "category": "catechism_recall",
+      "source": "Westminster Larger Catechism Q9",
+      "question": "How many persons are there in the Godhead?",
+      "reference_answer": "There be three persons in the Godhead, the Father, the Son, and the Holy Ghost; and these three are one true, eternal God, the same in substance, equal in power and glory; although distinguished by their personal properties.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "There be three persons in the Godhead",
+          "and the Holy Ghost",
+          "and these three are one true",
+          "the same in substance"
+        ],
+        "key_concepts": [
+          "There be three persons in the Godhead",
+          "and the Holy Ghost",
+          "and these three are one true",
+          "eternal God"
+        ]
+      },
+      "response": "(Optional but helpful):** Keep the tone objective, informative, and respectful of different"
+    },
+    {
+      "id": "wlc-010",
+      "category": "catechism_recall",
+      "source": "Westminster Larger Catechism Q10",
+      "question": "What are the personal properties of the three persons in the Godhead?",
+      "reference_answer": "It is proper to the Father to beget the Son, and to the Son to be begotten of the Father, and to the Holy Ghost to proceed from the Father and the Son from all eternity.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "It is proper to the Father to beget the Son",
+          "and to the Son to be begotten of the Father",
+          "and to the Holy Ghost to proceed from the Father and the Son from all eternity"
+        ],
+        "key_concepts": [
+          "It is proper to the Father to beget the Son",
+          "and to the Son to be begotten of the Father",
+          "and to the Holy Ghost to proceed from the Father and the Son from all eternity"
+        ]
+      },
+      "response": "Drafting the Content (Iterative refinement):**\n\n    *   *Intro:* Start strong. In historic"
+    },
+    {
+      "id": "wlc-017",
+      "category": "catechism_recall",
+      "source": "Westminster Larger Catechism Q17",
+      "question": "How did God create man?",
+      "reference_answer": "After God had made all other creatures, he created man male and female; formed the body of the man of the dust of the ground, and the woman of the rib of the man, endued them with living, reasonable, and immortal souls; made them after his own image, in knowledge, righteousness,and holiness; having the law of God written in their hearts, and power to fulfil it, and dominion over the creatures; yet subject to fall.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "After God had made all other creatures",
+          "he created man male and female",
+          "formed the body of the man of the dust of the ground",
+          "and the woman of the rib of the man"
+        ],
+        "key_concepts": [
+          "After God had made all other creatures",
+          "he created man male and female",
+          "formed the body of the man of the dust of the ground",
+          "and the woman of the rib of the man"
+        ]
+      },
+      "response": "The answer to how God created man depends on the religious and theological tradition you are looking at. Because the"
+    },
+    {
+      "id": "wlc-018",
+      "category": "catechism_recall",
+      "source": "Westminster Larger Catechism Q18",
+      "question": "What are God's works of providence?",
+      "reference_answer": "God's works of providence are his most holy, wise, and powerful preserving  and governing  all his creatures; ordering them, and all their actions, to his own glory.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "God's works of providence are his most holy",
+          "and powerful preserving  and governing  all his creatures",
+          "and all their actions",
+          "to his own glory"
+        ],
+        "key_concepts": [
+          "God's works of providence are his most holy",
+          "and powerful preserving  and governing  all his creatures",
+          "ordering them",
+          "and all their actions"
+        ]
+      },
+      "response": "*Scripture:* Hebrews 1:3 (upholding the universe by the word of his"
+    },
+    {
+      "id": "wlc-019",
+      "category": "catechism_recall",
+      "source": "Westminster Larger Catechism Q19",
+      "question": "What is God's providence towards the angels?",
+      "reference_answer": "God by his providence permitted some of the angels, wilfully and irrecoverably, to fall into sin and damnation, limiting and ordering that, and all their sins, to his own glory; and established the rest in holiness and happiness; employing them all, at his pleasure, in the administrations of his power, mercy, and justice.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "God by his providence permitted some of the angels",
+          "wilfully and irrecoverably",
+          "to fall into sin and damnation",
+          "limiting and ordering that"
+        ],
+        "key_concepts": [
+          "God by his providence permitted some of the angels",
+          "wilfully and irrecoverably",
+          "to fall into sin and damnation",
+          "limiting and ordering that"
+        ]
+      },
+      "response": "idence Towards the Fallen Angels (Demons):**\n        *   *Permission of the Fall:* God"
+    },
+    {
+      "id": "wlc-020",
+      "category": "catechism_recall",
+      "source": "Westminster Larger Catechism Q20",
+      "question": "What was the providence of God toward man in the estate in which he was created?",
+      "reference_answer": "The providence of God toward man in the estate in which he was created, was the placing him in paradise, appointing him to dress it, giving him liberty to eat of the fruit of the earth; putting the creatures under his dominion, and ordaining marriage for his help; affording him communion with himself; instituting the sabbath; entering into a covenant of life with him, upon condition of personal, perfect, and perpetual obedience, of which the tree of life was a pledge; and forbidding to eat of the tree of the knowledge of good and evil, upon the pain of death.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "The providence of God toward man in the estate in which he was created",
+          "was the placing him in paradise",
+          "appointing him to dress it",
+          "giving him liberty to eat of the fruit of the earth"
+        ],
+        "key_concepts": [
+          "The providence of God toward man in the estate in which he was created",
+          "was the placing him in paradise",
+          "appointing him to dress it",
+          "giving him liberty to eat of the fruit of the earth"
+        ]
+      },
+      "response": "This question is a direct quote from **Question 12 of the Westminster Shorter Cate"
+    },
+    {
+      "id": "wlc-025",
+      "category": "catechism_recall",
+      "source": "Westminster Larger Catechism Q25",
+      "question": "Wherein consists the sinfulness of that estate whereinto man fell?",
+      "reference_answer": "The sinfulness of that estate whereinto man fell, consisteth in the guilt of Adam's first sin, the want of that righteousness wherein he was created, and the corruption of his nature, whereby he is utterly indisposed, disabled, and made opposite unto all that is spiritually good, and wholly inclined to all evil, and that continually; which is commonly called Original Sin, and from which do proceed all actual transgressions.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "The sinfulness of that estate whereinto man fell",
+          "consisteth in the guilt of Adam's first sin",
+          "the want of that righteousness wherein he was created",
+          "and the corruption of his nature"
+        ],
+        "key_concepts": [
+          "The sinfulness of that estate whereinto man fell",
+          "consisteth in the guilt of Adam's first sin",
+          "the want of that righteousness wherein he was created",
+          "and the corruption of his nature"
+        ]
+      },
+      "response": "This question is a direct quote from **Question 18 of the Westminster Shorter Catech"
+    },
+    {
+      "id": "wlc-027",
+      "category": "catechism_recall",
+      "source": "Westminster Larger Catechism Q27",
+      "question": "What misery did the fall bring upon mankind?",
+      "reference_answer": "The fall brought upon mankind the loss of communion with God, his displeasure and curse; so as we are by nature children of wrath, bond slaves to Satan, and justly liable to all punishments in this world, and that which is to come.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "The fall brought upon mankind the loss of communion with God",
+          "his displeasure and curse",
+          "so as we are by nature children of wrath",
+          "bond slaves to Satan"
+        ],
+        "key_concepts": [
+          "The fall brought upon mankind the loss of communion with God",
+          "his displeasure and curse",
+          "so as we are by nature children of wrath",
+          "bond slaves to Satan"
+        ]
+      },
+      "response": "Genesis 3) and state that it introduced a profound fracture in human existence.\n    *   **"
+    },
+    {
+      "id": "wlc-029",
+      "category": "catechism_recall",
+      "source": "Westminster Larger Catechism Q29",
+      "question": "What are the punishments of sin in the world to come?",
+      "reference_answer": "The punishments of sin in the world to come, are everlasting separation from the comfortable presence of God, and most grievous torments in soul and body, without intermission, in hell fire forever.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "The punishments of sin in the world to come",
+          "are everlasting separation from the comfortable presence of God",
+          "and most grievous torments in soul and body",
+          "without intermission"
+        ],
+        "key_concepts": [
+          "The punishments of sin in the world to come",
+          "are everlasting separation from the comfortable presence of God",
+          "and most grievous torments in soul and body",
+          "without intermission"
+        ]
+      },
+      "response": "The concept of the \"world to come\" (the afterlife or eschatological future) and"
+    },
+    {
+      "id": "wlc-030",
+      "category": "catechism_recall",
+      "source": "Westminster Larger Catechism Q30",
+      "question": "Doth God leave all mankind to perish in the estate of sin and misery?",
+      "reference_answer": "God doth not leave all men to perish in the estate of sin and misery, into which they fell by the breach of the first covenant, commonly called the Covenant of Works; but of his mere love and mercy delivereth his elect out of it, and bringeth them into an estate of salvation by the second covenant, commonly called the Covenant of Grace.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "God doth not leave all men to perish in the estate of sin and misery",
+          "into which they fell by the breach of the first covenant",
+          "commonly called the Covenant of Works",
+          "but of his mere love and mercy delivereth his elect out of it"
+        ],
+        "key_concepts": [
+          "God doth not leave all men to perish in the estate of sin and misery",
+          "into which they fell by the breach of the first covenant",
+          "commonly called the Covenant of Works",
+          "but of his mere love and mercy delivereth his elect out of it"
+        ]
+      },
+      "response": "This question is exactly **Question 20 of the Westminster Shorter Catechism**, a foundational"
+    },
+    {
+      "id": "wlc-031",
+      "category": "catechism_recall",
+      "source": "Westminster Larger Catechism Q31",
+      "question": "With whom was the covenant of grace made?",
+      "reference_answer": "The covenant of grace was made with Christ as the second Adam, and in him with all the elect as his seed.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "The covenant of grace was made with Christ as the second Adam",
+          "and in him with all the elect as his seed"
+        ],
+        "key_concepts": [
+          "The covenant of grace was made with Christ as the second Adam",
+          "and in him with all the elect as his seed"
+        ]
+      },
+      "response": "**Christ (The Second Adam):** Just as the Covenant of Works was made with Adam representing all humanity"
+    },
+    {
+      "id": "wlc-032",
+      "category": "catechism_recall",
+      "source": "Westminster Larger Catechism Q32",
+      "question": "How is the grace of God manifested in the second covenant?",
+      "reference_answer": "The grace of God is manifested in the second covenant, in that he freely provideth and offereth to sinners a Mediator, and life and salvation by him; and requiring faith as the condition to interest them in him, promiseth and giveth his Holy Spirit  to all his elect, to work in them that faith, with all other saving graces; and to enable them unto all holy obedience, as the evidence of the truth of their faith  and thankfulness to God, and as the way which he hath appointed them to salvation.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "The grace of God is manifested in the second covenant",
+          "in that he freely provideth and offereth to sinners a Mediator",
+          "and life and salvation by him",
+          "and requiring faith as the condition to interest them in him"
+        ],
+        "key_concepts": [
+          "The grace of God is manifested in the second covenant",
+          "in that he freely provideth and offereth to sinners a Mediator",
+          "and life and salvation by him",
+          "and requiring faith as the condition to interest them in him"
+        ]
+      },
+      "response": "The grace of God is the defining characteristic of the second covenant, commonly known in Christian theology as the New"
+    }
+  ],
+  "results_path": "results/google_gemini-3.1-pro-preview_20260514_144410.json",
+  "status": "in_progress"
+}

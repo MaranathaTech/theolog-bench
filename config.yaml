@@ -27,6 +27,11 @@ presets:
     backend: local
     model_path: ../models/reformed-qwen3-1.7b
     description: "Fine-tuned Reformed Qwen3-1.7B (local Unsloth)"
+    meta:
+      vendor: "Custom (Unsloth fine-tune)"
+      architecture: "1.7B dense"
+      params: "1.7B"
+      local_capable: true
 
   # Direct base model comparison (local via Ollama)
   base-qwen3-1.7b:
@@ -34,36 +39,66 @@ presets:
     api_url: http://localhost:11434/v1
     model: qwen3:1.7b
     description: "Base Qwen3 1.7B (Ollama)"
+    meta:
+      vendor: "Qwen"
+      architecture: "1.7B dense"
+      params: "1.7B"
+      local_capable: true
 
   qwen3-4b:
     backend: api
     api_url: http://localhost:11434/v1
     model: qwen3:4b
     description: "Qwen3 4B (Ollama)"
+    meta:
+      vendor: "Qwen"
+      architecture: "4B dense"
+      params: "4B"
+      local_capable: true
 
   gemma4-e2b:
     backend: api
     api_url: http://localhost:11434/v1
     model: gemma4:e2b
     description: "Gemma 4 E2B — 2.3B effective (Ollama)"
+    meta:
+      vendor: "Google"
+      architecture: "MoE, 2.3B effective"
+      params: "2.3B"
+      local_capable: true
 
   gemma4-e4b:
     backend: api
     api_url: http://localhost:11434/v1
     model: gemma4:e4b
     description: "Gemma 4 E4B — 4.5B effective (Ollama)"
+    meta:
+      vendor: "Google"
+      architecture: "MoE, 4.5B effective"
+      params: "4.5B"
+      local_capable: true
 
   qwen3-8b-local:
     backend: api
     api_url: http://localhost:11434/v1
     model: qwen3:8b
     description: "Qwen3 8B (Ollama)"
+    meta:
+      vendor: "Qwen"
+      architecture: "8B dense"
+      params: "8B"
+      local_capable: true
 
   gemma4-26b:
     backend: api
     api_url: http://localhost:11434/v1
     model: gemma4
     description: "Gemma 4 26B MoE — 4B active (Ollama)"
+    meta:
+      vendor: "Google"
+      architecture: "26B MoE, 4B active"
+      params: "26B"
+      local_capable: true
 
   deepseek-r1-8b:
     backend: api
@@ -71,6 +106,11 @@ presets:
     model: deepseek-r1:8b
     max_tokens: 4096
     description: "DeepSeek R1 8B distill (Ollama)"
+    meta:
+      vendor: "DeepSeek"
+      architecture: "8B dense (R1 distill)"
+      params: "8B"
+      local_capable: true
 
   # ============================================================
   # 70B-TIER OPEN MODELS (fit on single 96GB GPU locally)
@@ -81,6 +121,11 @@ presets:
     api_url: https://openrouter.ai/api/v1
     model: meta-llama/llama-3.3-70b-instruct
     description: "Llama 3.3 70B dense — 40GB Q4 local (OpenRouter)"
+    meta:
+      vendor: "Meta"
+      architecture: "70B dense"
+      params: "70B"
+      local_capable: true
 
   deepseek-r1-70b:
     backend: api
@@ -88,72 +133,141 @@ presets:
     model: deepseek/deepseek-r1-distill-llama-70b
     max_tokens: 4096
     description: "DeepSeek R1 70B distill — 40GB Q4 local (OpenRouter)"
+    meta:
+      vendor: "DeepSeek"
+      architecture: "70B dense (R1 distill)"
+      params: "70B"
+      local_capable: true
 
   qwen3.5-122b:
     backend: api
     api_url: https://openrouter.ai/api/v1
     model: qwen/qwen3.5-122b-a10b
+    max_tokens: 4096
     description: "Qwen3.5 122B MoE — 10B active, 70GB Q4 local (OpenRouter)"
+    meta:
+      vendor: "Qwen"
+      architecture: "122B MoE, 10B active"
+      params: "122B"
+      local_capable: true
 
   mistral-medium-3.5:
     backend: api
     api_url: https://openrouter.ai/api/v1
     model: mistralai/mistral-medium-3-5
     description: "Mistral Medium 3.5 — 128B dense, 70GB Q4 local (OpenRouter)"
+    meta:
+      vendor: "Mistral"
+      architecture: "128B dense"
+      params: "128B"
+      local_capable: true
 
   # ============================================================
   # 24GB-TIER OPEN MODELS (fit on RTX 3090/4090/5090 locally)
   # ============================================================
-
-  qwen3-32b:
-    backend: api
-    api_url: https://openrouter.ai/api/v1
-    model: qwen/qwen3-32b
-    max_tokens: 4096
-    description: "Qwen3 32B dense — 18GB Q4 local (OpenRouter)"
 
   gemma4-31b:
     backend: api
     api_url: https://openrouter.ai/api/v1
     model: google/gemma-4-31b-it
     description: "Gemma 4 31B dense — 18GB Q4 local (OpenRouter)"
-
-  qwen3-30b-a3b:
-    backend: api
-    api_url: https://openrouter.ai/api/v1
-    model: qwen/qwen3-30b-a3b
-    max_tokens: 4096
-    description: "Qwen3 30B MoE — 3B active, 17GB Q4 local (OpenRouter)"
+    meta:
+      vendor: "Google"
+      architecture: "31B dense"
+      params: "31B"
+      local_capable: true
 
   gemma4-26b-a4b:
     backend: api
     api_url: https://openrouter.ai/api/v1
     model: google/gemma-4-26b-a4b-it
     description: "Gemma 4 26B MoE — 4B active, 15GB Q4 local (OpenRouter)"
+    meta:
+      vendor: "Google"
+      architecture: "26B MoE, 4B active"
+      params: "26B"
+      local_capable: true
+
+  gemma3-27b:
+    backend: api
+    api_url: https://openrouter.ai/api/v1
+    model: google/gemma-3-27b-it
+    description: "Gemma 3 27B dense — 16GB Q4 local (OpenRouter)"
+    meta:
+      vendor: "Google"
+      architecture: "27B dense"
+      params: "27B"
+      local_capable: true
 
   mistral-small-3.2:
     backend: api
     api_url: https://openrouter.ai/api/v1
     model: mistralai/mistral-small-3.2-24b-instruct
     description: "Mistral Small 3.2 24B dense — 14GB Q4 local (OpenRouter)"
+    meta:
+      vendor: "Mistral"
+      architecture: "24B dense"
+      params: "24B"
+      local_capable: true
 
-  qwen3-14b:
+  qwen3.6-27b:
     backend: api
     api_url: https://openrouter.ai/api/v1
-    model: qwen/qwen3-14b
-    description: "Qwen3 14B dense — 9GB Q4 local (OpenRouter)"
+    model: qwen/qwen3.6-27b
+    max_tokens: 4096
+    description: "Qwen3.6 27B dense — 16GB Q4 local (OpenRouter)"
+    meta:
+      vendor: "Qwen"
+      architecture: "27B dense"
+      params: "27B"
+      local_capable: true
+
+  qwen3.5-27b:
+    backend: api
+    api_url: https://openrouter.ai/api/v1
+    model: qwen/qwen3.5-27b
+    max_tokens: 4096
+    description: "Qwen3.5 27B dense — 16GB Q4 local (OpenRouter)"
+    meta:
+      vendor: "Qwen"
+      architecture: "27B dense"
+      params: "27B"
+      local_capable: true
+
+  qwen3.6-35b:
+    backend: api
+    api_url: https://openrouter.ai/api/v1
+    model: qwen/qwen3.6-35b-a3b
+    max_tokens: 4096
+    description: "Qwen3.6 35B MoE — 3B active, 20GB Q4 local (OpenRouter)"
+    meta:
+      vendor: "Qwen"
+      architecture: "35B MoE, 3B active"
+      params: "35B"
+      local_capable: true
 
   phi-4:
     backend: api
     api_url: https://openrouter.ai/api/v1
     model: microsoft/phi-4
     description: "Phi 4 14B dense — 9GB Q4 local (OpenRouter)"
+    meta:
+      vendor: "Microsoft"
+      architecture: "14B dense"
+      params: "14B"
+      local_capable: true
 
-  qwen3-8b:
+  qwen3.5-9b:
     backend: api
     api_url: https://openrouter.ai/api/v1
-    model: qwen/qwen3-8b
-    description: "Qwen3 8B dense — 5.5GB Q4 local (OpenRouter)"
+    model: qwen/qwen3.5-9b
+    max_tokens: 4096
+    description: "Qwen3.5 9B dense — 6GB Q4 local (OpenRouter)"
+    meta:
+      vendor: "Qwen"
+      architecture: "9B dense"
+      params: "9B"
+      local_capable: true
 
   # ============================================================
   # BUDGET CLOUD MODELS (OpenRouter, <$0.15/run)
@@ -164,18 +278,33 @@ presets:
     api_url: https://openrouter.ai/api/v1
     model: meta-llama/llama-4-scout
     description: "Llama 4 Scout 17B — 10M context, ~$0.05/run (OpenRouter)"
+    meta:
+      vendor: "Meta"
+      architecture: "17B MoE"
+      params: "17B"
+      local_capable: false
 
   deepseek-v4-flash:
     backend: api
     api_url: https://openrouter.ai/api/v1
     model: deepseek/deepseek-v4-flash
     description: "DeepSeek V4 Flash — 13B active, ~$0.05/run (OpenRouter)"
+    meta:
+      vendor: "DeepSeek"
+      architecture: "MoE, 13B active"
+      params: "unknown"
+      local_capable: false
 
   llama-4-maverick:
     backend: api
     api_url: https://openrouter.ai/api/v1
     model: meta-llama/llama-4-maverick
     description: "Llama 4 Maverick 17B — 400B MoE, ~$0.10/run (OpenRouter)"
+    meta:
+      vendor: "Meta"
+      architecture: "400B MoE, 17B active"
+      params: "400B"
+      local_capable: false
 
   # ============================================================
   # MID-TIER CLOUD MODELS (OpenRouter, $0.08-$0.50/run)
@@ -186,36 +315,55 @@ presets:
     api_url: https://openrouter.ai/api/v1
     model: x-ai/grok-4-fast
     description: "Grok 4 Fast — ~$0.08/run (OpenRouter)"
+    meta:
+      vendor: "xAI"
+      architecture: "proprietary"
+      params: "unknown"
+      local_capable: false
 
   deepseek-v4-pro:
     backend: api
     api_url: https://openrouter.ai/api/v1
     model: deepseek/deepseek-v4-pro
     description: "DeepSeek V4 Pro — 49B active/1.6T total, ~$0.14/run (OpenRouter)"
-
-  qwen3.6-35b:
-    backend: api
-    api_url: https://openrouter.ai/api/v1
-    model: qwen/qwen3.6-35b-a3b
-    description: "Qwen3.6 35B MoE — 3B active, ~$0.16/run (OpenRouter)"
+    meta:
+      vendor: "DeepSeek"
+      architecture: "1.6T MoE, 49B active"
+      params: "1.6T"
+      local_capable: false
 
   mistral-large-3:
     backend: api
     api_url: https://openrouter.ai/api/v1
     model: mistralai/mistral-large-2512
     description: "Mistral Large 3 — 41B active/675B total, ~$0.24/run (OpenRouter)"
+    meta:
+      vendor: "Mistral"
+      architecture: "675B MoE, 41B active"
+      params: "675B"
+      local_capable: false
 
   gpt-4.1-mini:
     backend: api
     api_url: https://openrouter.ai/api/v1
     model: openai/gpt-4.1-mini
     description: "GPT-4.1 Mini — ~$0.26/run (OpenRouter)"
+    meta:
+      vendor: "OpenAI"
+      architecture: "proprietary"
+      params: "~7B"
+      local_capable: false
 
   gemini-2.5-flash:
     backend: api
     api_url: https://openrouter.ai/api/v1
     model: google/gemini-2.5-flash
     description: "Gemini 2.5 Flash — ~$0.40/run (OpenRouter)"
+    meta:
+      vendor: "Google"
+      architecture: "proprietary"
+      params: "unknown"
+      local_capable: false
 
   # ============================================================
   # FRONTIER CLOUD MODELS (OpenRouter, >$1.50/run)
@@ -225,31 +373,70 @@ presets:
     backend: api
     api_url: https://openrouter.ai/api/v1
     model: google/gemini-3.1-pro-preview
+    max_tokens: 2048
     description: "Gemini 3.1 Pro — 1M context, ~$1.90/run (OpenRouter)"
+    meta:
+      vendor: "Google"
+      architecture: "proprietary"
+      params: "unknown"
+      local_capable: false
 
   grok-4:
     backend: api
     api_url: https://openrouter.ai/api/v1
     model: x-ai/grok-4.3
     description: "Grok 4.3 — reasoning model, ~$2.40/run (OpenRouter)"
+    meta:
+      vendor: "xAI"
+      architecture: "proprietary, reasoning"
+      params: "~3T MoE"
+      local_capable: false
 
   claude-sonnet-4.6:
     backend: api
     api_url: https://openrouter.ai/api/v1
     model: anthropic/claude-sonnet-4.6
     description: "Claude Sonnet 4.6 — 128K output, ~$2.40/run (OpenRouter)"
+    meta:
+      vendor: "Anthropic"
+      architecture: "proprietary"
+      params: "unknown"
+      local_capable: false
 
   claude-opus-4.7:
     backend: api
     api_url: https://openrouter.ai/api/v1
     model: anthropic/claude-opus-4.7
     description: "Claude Opus 4.7 — best coding/reasoning, ~$4.00/run (OpenRouter)"
+    meta:
+      vendor: "Anthropic"
+      architecture: "proprietary"
+      params: "~2-5T"
+      local_capable: false
 
   gpt-5.5:
     backend: api
     api_url: https://openrouter.ai/api/v1
     model: openai/gpt-5.5
     description: "GPT-5.5 — best agentic, ~$4.80/run (OpenRouter)"
+    meta:
+      vendor: "OpenAI"
+      architecture: "proprietary"
+      params: "unknown"
+      local_capable: false
+
+# Group descriptions for detailed reports
+group_descriptions:
+  frontier: "Frontier cloud models representing the highest-capability LLMs available via API. These are proprietary models with no local inference option, costing >$1.50 per benchmark run."
+  local-70b: "Open-weight models in the 70B+ parameter tier that fit on a single 96GB GPU (e.g., NVIDIA RTX PRO 6000 Blackwell) at Q4 quantization."
+  local-24gb: "Open-weight models that fit on a consumer GPU with 24GB VRAM (RTX 3090/4090/5090) at Q4 quantization."
+  budget: "The cheapest cloud API models, each costing less than $0.15 per benchmark run. Good for high-volume or cost-sensitive deployments."
+  mid: "Mid-tier cloud models balancing cost and capability, ranging from $0.08 to $0.50 per benchmark run."
+  local: "Models runnable locally via Ollama or Unsloth with no API cost. Includes fine-tuned and base models for direct comparison."
+  cloud: "All cloud-hosted models across budget, mid-tier, and frontier tiers."
+  all: "Every model in the benchmark suite — local and cloud."
+  finetune-compare: "Direct comparison of the fine-tuned Reformed Qwen3-1.7B against its base model."
+  smoke: "Minimal smoke test set using the cheapest available model."
 
 # Named groups of presets for batch testing
 # Use with: python run.py --group <name>
@@ -338,15 +525,15 @@ groups:
 
   # 24GB-tier open models — fit on RTX 3090/4090/5090
   local-24gb:
-    - qwen3-32b
     - gemma4-31b
-    - qwen3-30b-a3b
     - gemma4-26b-a4b
+    - gemma3-27b
     - mistral-small-3.2
-    - qwen3-14b
-    - phi-4
-    - qwen3-8b
+    - qwen3.6-27b
+    - qwen3.5-27b
     - qwen3.6-35b
+    - phi-4
+    - qwen3.5-9b
 
   # Fine-tuned vs base comparison (the most common use case)
   finetune-compare:
