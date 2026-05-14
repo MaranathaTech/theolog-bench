@@ -1,0 +1,5 @@
+# Smoke tests (partial runs, not useful for comparison)
+*_smoke_*
+
+# Fine-tuned model results (private/local model)
+reformed-*
