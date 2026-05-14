@@ -1,0 +1,10 @@
+results/
+__pycache__/
+.pytest_cache/
+*.pyc
+*.pyo
+.env
+benchmark.json
+todo.md
+unsloth_compiled_cache/
+_unsloth_sentencepiece_temp/

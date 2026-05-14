@@ -1,0 +1,355 @@
+# theolog-bench configuration
+
+# Judge model — used for nuanced theological evaluation
+# Gemini 2.5 Flash: strong reasoning at low cost (~$0.35 per full benchmark judge pass)
+judge:
+  backend: api
+  api_url: https://openrouter.ai/api/v1
+  model: google/gemini-2.5-flash
+  # Set OPENROUTER_API_KEY env var, or uncomment below:
+  # api_key: your-key-here
+
+# Scoring defaults
+scoring:
+  temperature: 0.3
+  max_tokens: 512
+  semantic_threshold: 0.6
+
+# Model presets for benchmarking
+# Use with: python run.py --preset <name>
+presets:
+  # ============================================================
+  # LOCAL MODELS (free, requires Ollama or Unsloth)
+  # ============================================================
+
+  # Your fine-tuned model (local via Unsloth)
+  finetuned:
+    backend: local
+    model_path: ../models/reformed-qwen3-1.7b
+    description: "Fine-tuned Reformed Qwen3-1.7B (local Unsloth)"
+
+  # Direct base model comparison (local via Ollama)
+  base-qwen3-1.7b:
+    backend: api
+    api_url: http://localhost:11434/v1
+    model: qwen3:1.7b
+    description: "Base Qwen3 1.7B (Ollama)"
+
+  qwen3-4b:
+    backend: api
+    api_url: http://localhost:11434/v1
+    model: qwen3:4b
+    description: "Qwen3 4B (Ollama)"
+
+  gemma4-e2b:
+    backend: api
+    api_url: http://localhost:11434/v1
+    model: gemma4:e2b
+    description: "Gemma 4 E2B — 2.3B effective (Ollama)"
+
+  gemma4-e4b:
+    backend: api
+    api_url: http://localhost:11434/v1
+    model: gemma4:e4b
+    description: "Gemma 4 E4B — 4.5B effective (Ollama)"
+
+  qwen3-8b-local:
+    backend: api
+    api_url: http://localhost:11434/v1
+    model: qwen3:8b
+    description: "Qwen3 8B (Ollama)"
+
+  gemma4-26b:
+    backend: api
+    api_url: http://localhost:11434/v1
+    model: gemma4
+    description: "Gemma 4 26B MoE — 4B active (Ollama)"
+
+  deepseek-r1-8b:
+    backend: api
+    api_url: http://localhost:11434/v1
+    model: deepseek-r1:8b
+    description: "DeepSeek R1 8B distill (Ollama)"
+
+  # ============================================================
+  # 70B-TIER OPEN MODELS (fit on single 96GB GPU locally)
+  # ============================================================
+
+  llama-3.3-70b:
+    backend: api
+    api_url: https://openrouter.ai/api/v1
+    model: meta-llama/llama-3.3-70b-instruct
+    description: "Llama 3.3 70B dense — 40GB Q4 local (OpenRouter)"
+
+  deepseek-r1-70b:
+    backend: api
+    api_url: https://openrouter.ai/api/v1
+    model: deepseek/deepseek-r1-distill-llama-70b
+    description: "DeepSeek R1 70B distill — 40GB Q4 local (OpenRouter)"
+
+  qwen3.5-122b:
+    backend: api
+    api_url: https://openrouter.ai/api/v1
+    model: qwen/qwen3.5-122b-a10b
+    description: "Qwen3.5 122B MoE — 10B active, 70GB Q4 local (OpenRouter)"
+
+  mistral-medium-3.5:
+    backend: api
+    api_url: https://openrouter.ai/api/v1
+    model: mistralai/mistral-medium-3-5
+    description: "Mistral Medium 3.5 — 128B dense, 70GB Q4 local (OpenRouter)"
+
+  # ============================================================
+  # 24GB-TIER OPEN MODELS (fit on RTX 3090/4090/5090 locally)
+  # ============================================================
+
+  qwen3-32b:
+    backend: api
+    api_url: https://openrouter.ai/api/v1
+    model: qwen/qwen3-32b
+    description: "Qwen3 32B dense — 18GB Q4 local (OpenRouter)"
+
+  gemma4-31b:
+    backend: api
+    api_url: https://openrouter.ai/api/v1
+    model: google/gemma-4-31b-it
+    description: "Gemma 4 31B dense — 18GB Q4 local (OpenRouter)"
+
+  qwen3-30b-a3b:
+    backend: api
+    api_url: https://openrouter.ai/api/v1
+    model: qwen/qwen3-30b-a3b
+    description: "Qwen3 30B MoE — 3B active, 17GB Q4 local (OpenRouter)"
+
+  gemma4-26b-a4b:
+    backend: api
+    api_url: https://openrouter.ai/api/v1
+    model: google/gemma-4-26b-a4b-it
+    description: "Gemma 4 26B MoE — 4B active, 15GB Q4 local (OpenRouter)"
+
+  mistral-small-3.2:
+    backend: api
+    api_url: https://openrouter.ai/api/v1
+    model: mistralai/mistral-small-3.2-24b-instruct
+    description: "Mistral Small 3.2 24B dense — 14GB Q4 local (OpenRouter)"
+
+  qwen3-14b:
+    backend: api
+    api_url: https://openrouter.ai/api/v1
+    model: qwen/qwen3-14b
+    description: "Qwen3 14B dense — 9GB Q4 local (OpenRouter)"
+
+  phi-4:
+    backend: api
+    api_url: https://openrouter.ai/api/v1
+    model: microsoft/phi-4
+    description: "Phi 4 14B dense — 9GB Q4 local (OpenRouter)"
+
+  qwen3-8b:
+    backend: api
+    api_url: https://openrouter.ai/api/v1
+    model: qwen/qwen3-8b
+    description: "Qwen3 8B dense — 5.5GB Q4 local (OpenRouter)"
+
+  # ============================================================
+  # BUDGET CLOUD MODELS (OpenRouter, <$0.15/run)
+  # ============================================================
+
+  llama-4-scout:
+    backend: api
+    api_url: https://openrouter.ai/api/v1
+    model: meta-llama/llama-4-scout
+    description: "Llama 4 Scout 17B — 10M context, ~$0.05/run (OpenRouter)"
+
+  deepseek-v4-flash:
+    backend: api
+    api_url: https://openrouter.ai/api/v1
+    model: deepseek/deepseek-v4-flash
+    description: "DeepSeek V4 Flash — 13B active, ~$0.05/run (OpenRouter)"
+
+  llama-4-maverick:
+    backend: api
+    api_url: https://openrouter.ai/api/v1
+    model: meta-llama/llama-4-maverick
+    description: "Llama 4 Maverick 17B — 400B MoE, ~$0.10/run (OpenRouter)"
+
+  # ============================================================
+  # MID-TIER CLOUD MODELS (OpenRouter, $0.08-$0.50/run)
+  # ============================================================
+
+  grok-4-fast:
+    backend: api
+    api_url: https://openrouter.ai/api/v1
+    model: x-ai/grok-4-fast
+    description: "Grok 4 Fast — ~$0.08/run (OpenRouter)"
+
+  deepseek-v4-pro:
+    backend: api
+    api_url: https://openrouter.ai/api/v1
+    model: deepseek/deepseek-v4-pro
+    description: "DeepSeek V4 Pro — 49B active/1.6T total, ~$0.14/run (OpenRouter)"
+
+  qwen3.6-35b:
+    backend: api
+    api_url: https://openrouter.ai/api/v1
+    model: qwen/qwen3.6-35b-a3b
+    description: "Qwen3.6 35B MoE — 3B active, ~$0.16/run (OpenRouter)"
+
+  mistral-large-3:
+    backend: api
+    api_url: https://openrouter.ai/api/v1
+    model: mistralai/mistral-large-2512
+    description: "Mistral Large 3 — 41B active/675B total, ~$0.24/run (OpenRouter)"
+
+  gpt-4.1-mini:
+    backend: api
+    api_url: https://openrouter.ai/api/v1
+    model: openai/gpt-4.1-mini
+    description: "GPT-4.1 Mini — ~$0.26/run (OpenRouter)"
+
+  gemini-2.5-flash:
+    backend: api
+    api_url: https://openrouter.ai/api/v1
+    model: google/gemini-2.5-flash
+    description: "Gemini 2.5 Flash — ~$0.40/run (OpenRouter)"
+
+  # ============================================================
+  # FRONTIER CLOUD MODELS (OpenRouter, >$1.50/run)
+  # ============================================================
+
+  gemini-3.1-pro:
+    backend: api
+    api_url: https://openrouter.ai/api/v1
+    model: google/gemini-3.1-pro-preview
+    description: "Gemini 3.1 Pro — 1M context, ~$1.90/run (OpenRouter)"
+
+  grok-4:
+    backend: api
+    api_url: https://openrouter.ai/api/v1
+    model: x-ai/grok-4.3
+    description: "Grok 4.3 — reasoning model, ~$2.40/run (OpenRouter)"
+
+  claude-sonnet-4.6:
+    backend: api
+    api_url: https://openrouter.ai/api/v1
+    model: anthropic/claude-sonnet-4.6
+    description: "Claude Sonnet 4.6 — 128K output, ~$2.40/run (OpenRouter)"
+
+  claude-opus-4.7:
+    backend: api
+    api_url: https://openrouter.ai/api/v1
+    model: anthropic/claude-opus-4.7
+    description: "Claude Opus 4.7 — best coding/reasoning, ~$4.00/run (OpenRouter)"
+
+  gpt-5.5:
+    backend: api
+    api_url: https://openrouter.ai/api/v1
+    model: openai/gpt-5.5
+    description: "GPT-5.5 — best agentic, ~$4.80/run (OpenRouter)"
+
+# Named groups of presets for batch testing
+# Use with: python run.py --group <name>
+groups:
+  # Quick local test — just your models, no API needed
+  local:
+    - finetuned
+    - base-qwen3-1.7b
+    - qwen3-4b
+    - gemma4-e4b
+    - qwen3-8b-local
+    - gemma4-26b
+    - deepseek-r1-8b
+
+  # Cheapest cloud models — verify OpenRouter works, <$0.25 total
+  budget:
+    - llama-4-scout
+    - deepseek-v4-flash
+    - llama-4-maverick
+    - grok-4-fast
+
+  # Mid-tier — good balance of cost and capability, ~$1.50 total
+  mid:
+    - deepseek-v4-pro
+    - qwen3.6-35b
+    - mistral-large-3
+    - gpt-4.1-mini
+    - gemini-2.5-flash
+
+  # Frontier — the big guns, ~$15 total
+  frontier:
+    - gemini-3.1-pro
+    - grok-4
+    - claude-sonnet-4.6
+    - claude-opus-4.7
+    - gpt-5.5
+
+  # All cloud models (no local)
+  cloud:
+    - llama-4-scout
+    - deepseek-v4-flash
+    - llama-4-maverick
+    - grok-4-fast
+    - deepseek-v4-pro
+    - qwen3.6-35b
+    - mistral-large-3
+    - gpt-4.1-mini
+    - gemini-2.5-flash
+    - gemini-3.1-pro
+    - grok-4
+    - claude-sonnet-4.6
+    - claude-opus-4.7
+    - gpt-5.5
+
+  # Everything — local + cloud
+  all:
+    - finetuned
+    - base-qwen3-1.7b
+    - qwen3-4b
+    - gemma4-e2b
+    - gemma4-e4b
+    - qwen3-8b-local
+    - gemma4-26b
+    - deepseek-r1-8b
+    - llama-4-scout
+    - deepseek-v4-flash
+    - llama-4-maverick
+    - grok-4-fast
+    - deepseek-v4-pro
+    - qwen3.6-35b
+    - mistral-large-3
+    - gpt-4.1-mini
+    - gemini-2.5-flash
+    - gemini-3.1-pro
+    - grok-4
+    - claude-sonnet-4.6
+    - claude-opus-4.7
+    - gpt-5.5
+
+  # 70B-tier local models — fits on a single 96GB GPU
+  # 70B-tier open models — all fit on a single 96GB GPU
+  local-70b:
+    - llama-3.3-70b
+    - deepseek-r1-70b
+    - qwen3.5-122b
+
+  # 24GB-tier open models — fit on RTX 3090/4090/5090
+  local-24gb:
+    - qwen3-32b
+    - gemma4-31b
+    - qwen3-30b-a3b
+    - gemma4-26b-a4b
+    - mistral-small-3.2
+    - qwen3-14b
+    - phi-4
+    - qwen3-8b
+    - qwen3.6-35b
+
+  # Fine-tuned vs base comparison (the most common use case)
+  finetune-compare:
+    - finetuned
+    - base-qwen3-1.7b
+
+  # Smoke test set — cheapest possible
+  smoke:
+    - deepseek-v4-flash
+    - llama-4-scout

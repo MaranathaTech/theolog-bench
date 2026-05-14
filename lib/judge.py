@@ -1,0 +1,156 @@
+"""LLM-as-judge scoring for theolog-bench.
+
+Handles categories requiring nuanced theological evaluation:
+confessional_knowledge, comparative_theology, and error_detection quality checks.
+Uses an APIBackend to call a judge LLM (configured in config.yaml).
+"""
+
+import json
+import logging
+import re
+from pathlib import Path
+
+import yaml
+
+# Categories that benefit from judge scoring
+_JUDGE_CATEGORIES = {"confessional_knowledge", "comparative_theology", "error_detection"}
+
+
+class JudgeScorer:
+    """LLM-as-judge for nuanced theological evaluation."""
+
+    def __init__(self, backend=None, config_path: str = None):
+        """Initialize the judge.
+
+        If backend is not provided, create one from config.yaml settings.
+        """
+        if backend is None:
+            config_path = config_path or str(
+                Path(__file__).parent.parent / "config.yaml"
+            )
+            with open(config_path) as f:
+                config = yaml.safe_load(f)
+            judge_cfg = config.get("judge", {})
+            from lib.backends import APIBackend
+
+            backend = APIBackend(
+                api_url=judge_cfg.get("api_url", "https://openrouter.ai/api/v1"),
+                model=judge_cfg.get("model", "google/gemini-2.5-flash"),
+                api_key=judge_cfg.get("api_key"),
+            )
+        self.backend = backend
+
+    def score(self, question: dict, response: str) -> dict:
+        """Score a response using the judge LLM."""
+        prompt = self._build_prompt(question, response)
+        try:
+            raw_output = self.backend.generate(prompt)
+        except Exception as e:
+            logging.getLogger(__name__).warning(
+                "Judge call failed for %s: %s", question.get("id", "?"), e
+            )
+            return {
+                "score": 0,
+                "method": "llm_judge",
+                "details": {
+                    "justification": f"Judge call failed: {e}",
+                    "raw_output": "",
+                    "error": True,
+                },
+            }
+        return self._parse_output(raw_output)
+
+    def _build_prompt(self, question: dict, response: str) -> str:
+        """Build the judge prompt."""
+        source = question.get("source", "Unknown")
+        reference = question.get("reference_answer", "")
+        rubric = question.get("scoring", {}).get(
+            "rubric",
+            "Evaluate theological accuracy and alignment with Reformed confessional standards.",
+        )
+
+        return (
+            "You are a Reformed theology expert evaluating an AI model's response "
+            "for theological accuracy.\n\n"
+            f"Question asked: {question['question']}\n"
+            f"Expected answer source: {source}\n"
+            f"Reference text: {reference}\n"
+            f"Scoring rubric: {rubric}\n\n"
+            f"Model's response:\n{response}\n\n"
+            "Score this response 0-100 on theological accuracy and alignment with "
+            "Reformed confessional standards.\n"
+            "Consider:\n"
+            "- Accuracy: Does the response correctly represent the confessional/biblical teaching?\n"
+            "- Completeness: Does it cover the key points from the reference text?\n"
+            "- Orthodoxy: Does it avoid heterodox statements?\n"
+            "- Clarity: Is the theological explanation clear and well-organized?\n\n"
+            'You MUST respond with ONLY a JSON object, no other text:\n'
+            '{"score": <0-100>, "justification": "<brief 1-2 sentence explanation>"}'
+        )
+
+    def _parse_output(self, raw_output: str) -> dict:
+        """Parse the judge's JSON output."""
+        # Try to extract JSON from the response.
+        # The judge might wrap it in markdown code blocks or add extra text.
+        json_match = re.search(r'\{[^}]*"score"[^}]*\}', raw_output)
+        if json_match:
+            try:
+                result = json.loads(json_match.group())
+                score = max(0, min(100, int(result.get("score", 0))))
+                justification = result.get("justification", "")
+                return {
+                    "score": score,
+                    "method": "llm_judge",
+                    "details": {
+                        "justification": justification,
+                        "raw_output": raw_output,
+                    },
+                }
+            except (json.JSONDecodeError, ValueError):
+                pass
+
+        # Fallback: try to find a number in the response
+        numbers = re.findall(r"\b(\d{1,3})\b", raw_output)
+        for n in numbers:
+            n_int = int(n)
+            if 0 <= n_int <= 100:
+                return {
+                    "score": n_int,
+                    "method": "llm_judge",
+                    "details": {
+                        "justification": "Score extracted from unstructured output",
+                        "raw_output": raw_output,
+                    },
+                }
+
+        # Complete failure to parse
+        return {
+            "score": 0,
+            "method": "llm_judge",
+            "details": {
+                "justification": "Failed to parse judge output",
+                "raw_output": raw_output,
+            },
+        }
+
+
+def score_with_judge(question: dict, response: str, judge: JudgeScorer = None) -> dict:
+    """Score a response using the LLM judge.
+
+    Creates a JudgeScorer if not provided.
+    """
+    if judge is None:
+        judge = JudgeScorer()
+    return judge.score(question, response)
+
+
+def should_use_judge(question: dict) -> bool:
+    """Return True if this question should be scored by the LLM judge.
+
+    Checks the scoring method and category.
+    """
+    scoring = question.get("scoring", {})
+    if scoring.get("method") == "llm_judge":
+        return True
+    category = question.get("category", "")
+    return category in _JUDGE_CATEGORIES
