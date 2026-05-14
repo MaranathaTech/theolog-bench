@@ -69,6 +69,7 @@ presets:
     backend: api
     api_url: http://localhost:11434/v1
     model: deepseek-r1:8b
+    max_tokens: 4096
     description: "DeepSeek R1 8B distill (Ollama)"
 
   # ============================================================
@@ -85,6 +86,7 @@ presets:
     backend: api
     api_url: https://openrouter.ai/api/v1
     model: deepseek/deepseek-r1-distill-llama-70b
+    max_tokens: 4096
     description: "DeepSeek R1 70B distill — 40GB Q4 local (OpenRouter)"
 
   qwen3.5-122b:
@@ -107,6 +109,7 @@ presets:
     backend: api
     api_url: https://openrouter.ai/api/v1
     model: qwen/qwen3-32b
+    max_tokens: 4096
     description: "Qwen3 32B dense — 18GB Q4 local (OpenRouter)"
 
   gemma4-31b:
@@ -119,6 +122,7 @@ presets:
     backend: api
     api_url: https://openrouter.ai/api/v1
     model: qwen/qwen3-30b-a3b
+    max_tokens: 4096
     description: "Qwen3 30B MoE — 3B active, 17GB Q4 local (OpenRouter)"
 
   gemma4-26b-a4b:

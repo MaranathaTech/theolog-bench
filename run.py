@@ -130,6 +130,8 @@ def apply_preset(args, parser, config=None):
         args.api_url = preset.get("api_url")
     if args.model_path == parser.get_default("model_path") and "model_path" in preset:
         args.model_path = preset["model_path"]
+    if "max_tokens" in preset:
+        args.max_tokens = preset["max_tokens"]
 
 
 def apply_preset_config(args, parser, preset_config):
@@ -142,6 +144,8 @@ def apply_preset_config(args, parser, preset_config):
         args.api_url = preset_config.get("api_url")
     if args.model_path == parser.get_default("model_path") and "model_path" in preset_config:
         args.model_path = preset_config["model_path"]
+    if "max_tokens" in preset_config:
+        args.max_tokens = preset_config["max_tokens"]
 
 
 def _save_checkpoint(results: dict, output_path: Path):
@@ -157,6 +161,7 @@ def run_single_benchmark(args, config, questions, category_weights):
     from lib.backends import BenchmarkAPIError
 
     # Initialize backend
+    max_tokens = getattr(args, "max_tokens", None) or 512
     if args.backend == "local":
         from lib.backends import UnslothBackend
         backend = UnslothBackend(model_path=args.model_path)
@@ -166,6 +171,7 @@ def run_single_benchmark(args, config, questions, category_weights):
             api_url=args.api_url or "http://localhost:11434/v1",
             model=args.model or "qwen3:1.7b",
             api_key=args.api_key,
+            max_tokens=max_tokens,
         )
     else:
         print("Error: --backend is required (or use --preset to set it)")

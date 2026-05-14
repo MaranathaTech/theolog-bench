@@ -42,6 +42,8 @@ class JudgeScorer:
 
     def score(self, question: dict, response: str) -> dict:
         """Score a response using the judge LLM."""
+        from lib.scorer import strip_think_blocks
+        response = strip_think_blocks(response)
         prompt = self._build_prompt(question, response)
         try:
             raw_output = self.backend.generate(prompt)

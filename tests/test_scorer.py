@@ -11,6 +11,7 @@ from lib.scorer import (
     score_semantic_similarity,
     score_position_detection,
     score_reference_check,
+    strip_think_blocks,
 )
 
 
@@ -425,3 +426,48 @@ class TestScoreResponseDispatch:
         result = score_response(question, "Some response.")
         assert result["score"] == 0
         assert "error" in result["details"]
+
+    def test_score_response_strips_think_blocks(self, catechism_question):
+        """Think blocks should be stripped before scoring."""
+        result = score_response(
+            catechism_question,
+            "<think>Let me reason about this... the chief end of man...</think>"
+            "Man's chief end is to glorify God, and to enjoy him forever.",
+        )
+        assert result["score"] >= 60
+
+
+# ---------------------------------------------------------------------------
+# strip_think_blocks tests
+# ---------------------------------------------------------------------------
+
+
+class TestStripThinkBlocks:
+    def test_strips_single_think_block(self):
+        text = "<think>internal reasoning here</think>The final answer."
+        assert strip_think_blocks(text) == "The final answer."
+
+    def test_strips_multiline_think_block(self):
+        text = (
+            "<think>\nLet me think step by step.\n"
+            "Step 1: consider the question.\n"
+            "Step 2: formulate answer.\n</think>\n"
+            "The answer is yes."
+        )
+        assert strip_think_blocks(text) == "The answer is yes."
+
+    def test_strips_multiple_think_blocks(self):
+        text = "<think>first</think>Part one. <think>second</think>Part two."
+        assert strip_think_blocks(text) == "Part one. Part two."
+
+    def test_no_think_blocks_unchanged(self):
+        text = "A normal response with no thinking."
+        assert strip_think_blocks(text) == text
+
+    def test_empty_string(self):
+        assert strip_think_blocks("") == ""
+
+    def test_only_think_block_returns_original(self):
+        """If stripping leaves nothing, return the original text."""
+        text = "<think>All reasoning, no final answer</think>"
+        assert strip_think_blocks(text) == text

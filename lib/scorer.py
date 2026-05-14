@@ -11,6 +11,24 @@ import string
 
 
 # ---------------------------------------------------------------------------
+# Think block stripping
+# ---------------------------------------------------------------------------
+
+_THINK_RE = re.compile(r'<think>.*?</think>', re.DOTALL)
+
+
+def strip_think_blocks(text: str) -> str:
+    """Remove <think>...</think> reasoning traces from model output.
+
+    Chain-of-thought models (DeepSeek R1, Qwen3 in thinking mode, etc.) wrap
+    internal reasoning in <think> tags. The scorer should evaluate only the
+    final answer, not the reasoning process.
+    """
+    stripped = _THINK_RE.sub('', text).strip()
+    return stripped if stripped else text  # fallback to original if nothing left
+
+
+# ---------------------------------------------------------------------------
 # Main dispatcher
 # ---------------------------------------------------------------------------
 
@@ -19,6 +37,7 @@ def score_response(question: dict, response: str) -> dict:
 
     Returns dict with keys: score (int 0-100), method (str), details (dict).
     """
+    response = strip_think_blocks(response)
     method = question["scoring"]["method"]
     if method == "semantic_similarity":
         return score_semantic_similarity(question, response)
