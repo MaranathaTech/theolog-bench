@@ -7,3 +7,7 @@ benchmark.json
 todo.md
 unsloth_compiled_cache/
 _unsloth_sentencepiece_temp/
+
+# Raw result JSONs (too large for git, ~1MB each)
+results/raw/
+results/*.json

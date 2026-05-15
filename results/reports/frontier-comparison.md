@@ -1,7 +1,7 @@
 # theolog-bench: Frontier Cloud Models
 
-Comparative evaluation of leading proprietary large language models available
-via API, focusing on their performance in Reformed theology.
+Comparative evaluation of leading proprietary large language models, focusing on
+their performance in Reformed theology.
 
 Benchmark: 270 questions across 6 categories of Reformed theological knowledge.
 Scoring: automated pattern matching + LLM-as-judge (Gemini 2.5 Flash) for
@@ -18,20 +18,19 @@ confessional knowledge, error detection, and comparative theology.
 | 3 | anthropic/claude-opus-4.7 | proprietary | 66.7% |
 | 4 | openai/gpt-5.5 | proprietary | 63.3% |
 | 5 | anthropic/claude-sonnet-4.6 | proprietary | 61.6% |
-| 6 | x-ai/grok-4-fast | proprietary | 59.5% |
 
 ---
 
 ## Category Breakdown
 
-| Category (weight) | Grok 4.3 | Gemini 3.1 Pro | Claude Opus 4.7 | GPT-5.5 | Claude Sonnet 4.6 | Grok 4 Fast |
-|---|---|---|---|---|---|---|
-| Biblical Reference (15%) | 71.6 | 67.1 | 68.2 | 50.3 | **73.0** | 48.7 |
-| Catechism Recall (25%) | 60.2 | **69.9** | 53.6 | 45.1 | 35.3 | 20.6 |
-| Comparative Theology (10%) | **96.0** | 86.0 | 92.0 | 91.0 | 95.9 | 92.2 |
-| Confessional Knowledge (15%) | 93.7 | **98.8** | 96.4 | 77.5 | 94.4 | 83.7 |
-| Doctrinal Position (20%) | **77.8** | 61.2 | 48.5 | 68.6 | 42.9 | 72.0 |
-| Error Detection (15%) | **95.7** | 91.0 | 64.7 | 67.2 | 63.3 | 72.5 |
+| Category (weight) | x-ai/grok-4.3 | google/gemini-3.1-pro-preview | anthropic/claude-opus-4.7 | openai/gpt-5.5 | anthropic/claude-sonnet-4.6 |
+|---|---|---|---|---|---|
+| Biblical Reference (15%) | 71.6 | 67.1 | 68.2 | 50.3 | **73.0** |
+| Catechism Recall (25%) | 60.2 | **69.9** | 53.6 | 45.1 | 35.3 |
+| Comparative Theology (10%) | **96.0** | 86.0 | 92.0 | 91.0 | 95.9 |
+| Confessional Knowledge (15%) | 93.7 | **98.8** | 96.4 | 77.5 | 94.4 |
+| Doctrinal Position (20%) | **77.8** | 61.2 | 48.5 | 68.6 | 42.9 |
+| Error Detection (15%) | **95.7** | 91.0 | 64.7 | 67.2 | 63.3 |
 
 ---
 
@@ -39,128 +38,120 @@ confessional knowledge, error detection, and comparative theology.
 
 ### 1. x-ai/grok-4.3 (proprietary, reasoning) — 79.4%
 
-**Top performer overall.** Grok 4.3 demonstrates exceptional reasoning capabilities,
-leading in 4 of the 6 categories, including the highly weighted Doctrinal Position (20%)
-and Error Detection (15%), as well as Comparative Theology (10%). It exhibits the
-lowest number of severe failures (12/270) and zeros (7) among all models tested.
+**Top performer overall.** Grok-4.3 demonstrates exceptional performance in
+categories requiring advanced theological reasoning and discernment. It leads
+in 3 of the 6 categories, including the highly weighted Doctrinal Position
+(20%) and Error Detection (15%), as well as Comparative Theology (10%). Its
+failure rate is remarkably low, with only 12 severe failures and 7 zeros out
+of 270 questions.
 
 - **Strengths**: Comparative Theology (96.0%), Error Detection (95.7%), and
-  Confessional Knowledge (93.7%). Its strong performance in these categories
-  suggests advanced theological reasoning and discernment.
+  Confessional Knowledge (93.7%) highlight its ability to navigate complex
+  theological nuances and identify deviations.
 - **Weaknesses**: Biblical Reference (71.6%) and Catechism Recall (60.2%) are
-  its relatively weaker areas, though still strong compared to other models.
-  Its Catechism Recall is notably lower than Gemini 3.1 Pro.
-- **Architecture note**: Described as a "reasoning" model, its architecture
-  likely emphasizes complex logical processing, which aligns with its high
-  scores in categories requiring nuanced theological understanding.
+  its lowest scores, though still strong compared to other models. This suggests
+  a slight preference for reasoning over verbatim recall or direct scriptural
+  citation.
+- **Architecture note**: Described as a "reasoning" model with ~3T MoE
+  parameters, its strong performance in complex categories aligns with its
+  design for sophisticated problem-solving.
 
 ### 2. google/gemini-3.1-pro-preview (proprietary) — 76.8%
 
-**Strong runner-up with excellent confessional recall.** Gemini 3.1 Pro shows
-outstanding performance in Confessional Knowledge (98.8%) and leads decisively
-in Catechism Recall (69.9%), a category where many models struggle. It has a
-very low failure rate, with only 10 severe failures and 7 zeros.
+**Strong contender with excellent recall.** Gemini 3.1 Pro Preview is a close
+second, excelling particularly in recall-based categories. It leads in
+Catechism Recall (25% weight) and Confessional Knowledge (15% weight),
+demonstrating a robust understanding of established theological standards. Its
+failure rate is on par with Grok-4.3, with 10 severe failures and 7 zeros.
 
-- **Strengths**: Confessional Knowledge (98.8%), Catechism Recall (69.9%), and
-  Error Detection (91.0%). Its ability to accurately recall and apply
-  confessional standards is a significant advantage.
-- **Weaknesses**: Doctrinal Position (61.2%) is its lowest score, indicating
-  potential areas for improvement in synthesizing complex doctrinal arguments.
-  Biblical Reference (67.1%) is also not its strongest suit.
-- **Architecture note**: As a general-purpose frontier model, its broad
-  training likely contributes to its strong performance across various
-  theological sub-domains, particularly in factual recall.
+- **Strengths**: Confessional Knowledge (98.8%) and Catechism Recall (69.9%)
+  are outstanding, indicating strong memorization and accurate reproduction of
+  theological content. Error Detection (91.0%) is also very strong.
+- **Weaknesses**: Doctrinal Position (61.2%) and Biblical Reference (67.1%) are
+  its comparatively weaker areas, suggesting that while it recalls well, its
+  ability to articulate nuanced doctrinal stances or cite scripture precisely
+  is slightly less developed than its top-tier peers.
+- **Architecture note**: As a proprietary model, specific architectural details
+  are unknown, but its performance profile suggests a strong emphasis on factual
+  accuracy and knowledge retrieval.
 
 ### 3. anthropic/claude-opus-4.7 (proprietary) — 66.7%
 
-**Solid performance, but with higher failure rates.** Claude Opus 4.7 performs
-respectably, particularly in Confessional Knowledge (96.4%) and Comparative
-Theology (92.0%). However, it shows a higher number of severe failures (51/270)
-and zeros (47) compared to the top two models.
+**Reliable, but with more failures.** Claude Opus 4.7 provides solid performance
+across the board, particularly in knowledge-intensive categories. While not
+leading any category, its scores in Confessional Knowledge (96.4%) and
+Comparative Theology (92.0%) are very high. However, its failure rate is
+significantly higher than the top two, with 51 severe failures and 47 zeros.
 
-- **Strengths**: Confessional Knowledge (96.4%), Comparative Theology (92.0%),
-  and Biblical Reference (68.2%). It demonstrates a good grasp of core
-  theological concepts and inter-theological comparisons.
-- **Weaknesses**: Doctrinal Position (48.5%) and Catechism Recall (53.6%) are
-  its weakest areas, suggesting challenges in articulating complex doctrinal
-  nuances and verbatim recall.
-- **Architecture note**: As a large proprietary model, its performance is
-  generally strong, but the higher failure rate in certain categories indicates
-  less consistency than the top two.
+- **Strengths**: Confessional Knowledge (96.4%) and Comparative Theology (92.0%)
+  show its capacity for deep theological understanding. Biblical Reference
+  (68.2%) is also respectable.
+- **Weaknesses**: Catechism Recall (53.6%) and Doctrinal Position (48.5%) are
+  its lowest scores, indicating potential struggles with verbatim recall and
+  articulating precise doctrinal nuances compared to the leaders. The higher
+  number of zeros suggests occasional complete failures to answer.
+- **Architecture note**: Estimated at ~2-5T parameters, its broad knowledge base
+  is evident, but the higher failure rate suggests less consistent performance
+  than the top models.
 
 ### 4. openai/gpt-5.5 (proprietary) — 63.3%
 
-**Consistent but not leading.** GPT-5.5 offers a balanced performance across
-categories but does not lead in any. It shows a moderate number of severe
-failures (66/270) and zeros (56).
+**Consistent but not leading.** GPT-5.5 offers a generally consistent
+performance, particularly strong in Comparative Theology (91.0%). However, it
+struggles more with recall and biblical citation compared to other frontier
+models. It has a notable number of severe failures (66) and zeros (56).
 
-- **Strengths**: Comparative Theology (91.0%) and Confessional Knowledge (77.5%).
-  It can effectively compare theological positions.
+- **Strengths**: Comparative Theology (91.0%) is a highlight, showing its ability
+  to analyze and compare different theological viewpoints. Doctrinal Position
+  (68.6%) is also decent.
 - **Weaknesses**: Biblical Reference (50.3%) and Catechism Recall (45.1%) are
-  its lowest scores, indicating potential areas for improvement in direct
-  scriptural citation and confessional memorization.
-- **Architecture note**: As a flagship model, its broad general knowledge is
-  evident, but it may lack the specialized theological fine-tuning seen in
-  higher-ranked models for specific tasks.
+  its weakest points, indicating challenges in accurately citing scripture or
+  recalling confessional standards verbatim. Its Confessional Knowledge (77.5%)
+  is also significantly lower than its peers.
+- **Architecture note**: As a proprietary model, details are unknown, but its
+  performance suggests a general-purpose capability that is less specialized
+  for theological recall and precision than the top models.
 
 ### 5. anthropic/claude-sonnet-4.6 (proprietary) — 61.6%
 
-**Strong in Biblical Reference, but struggles with recall.** Claude Sonnet 4.6
-surprisingly leads in Biblical Reference (73.0%), outperforming all other
-models in this category. However, it has a high number of severe failures
-(73/270) and zeros (65), particularly struggling with Catechism Recall.
+**Best at Scripture, but with significant recall issues.** Claude Sonnet 4.6
+stands out for its leading performance in Biblical Reference (73.0%),
+suggesting strong training on scriptural texts. It also performs very well in
+Comparative Theology (95.9%) and Confessional Knowledge (94.4%). However, it
+has the highest number of severe failures (73) and zeros (65) among all models
+tested, particularly in Catechism Recall and Doctrinal Position.
 
-- **Strengths**: Biblical Reference (73.0%), Comparative Theology (95.9%), and
-  Confessional Knowledge (94.4%). Its ability to cite scripture accurately is
-  a notable highlight.
+- **Strengths**: Biblical Reference (73.0%) is its strongest suit, making it
+  the best model for scriptural citation. Comparative Theology (95.9%) and
+  Confessional Knowledge (94.4%) are also very high.
 - **Weaknesses**: Catechism Recall (35.3%) and Doctrinal Position (42.9%) are
-  significant weaknesses, suggesting difficulties in precise confessional
-  formulation and complex doctrinal articulation.
-- **Architecture note**: While part of the Claude family, Sonnet's performance
-  profile differs from Opus, indicating potential architectural or training
-  differences that favor biblical citation over verbatim recall.
-
-### 6. x-ai/grok-4-fast (proprietary) — 59.5%
-
-**Lowest overall, with high failure rates.** Grok 4 Fast is the lowest-scoring
-model in this comparison, with the highest number of severe failures (92/270)
-and zeros (85). While it shows some strengths in higher-level reasoning, its
-recall capabilities are significantly limited.
-
-- **Strengths**: Comparative Theology (92.2%), Confessional Knowledge (83.7%),
-  and Error Detection (72.5%). It can still perform well in tasks requiring
-  broader theological understanding.
-- **Weaknesses**: Catechism Recall (20.6%) and Biblical Reference (48.7%) are
-  its most significant weaknesses, indicating a struggle with precise factual
-  recall and scriptural citation.
-- **Architecture note**: Likely a smaller or more optimized version of Grok 4.3,
-  trading off overall performance and consistency for potentially faster
-  inference or lower resource usage.
+  its most significant weaknesses, indicating a struggle with verbatim recall
+  of confessional standards and articulating precise doctrinal stances. The
+  high number of zeros points to frequent complete failures in these areas.
+- **Architecture note**: While details are proprietary, its bimodal performance
+  (excellent in some areas, very weak in others) suggests a different internal
+  knowledge representation or retrieval mechanism compared to Opus.
 
 ---
 
 ## Recommendation
 
-**x-ai/grok-4.3 is the clear leader** among frontier cloud models for
-Reformed theology evaluation. Its superior performance across most categories,
-especially in doctrinal position and error detection, combined with the lowest
-failure rate, makes it the most reliable choice for nuanced theological tasks.
+For comprehensive and nuanced theological reasoning, **x-ai/grok-4.3 is the
+clear leader**, demonstrating superior performance across critical reasoning
+categories and the lowest failure rate.
 
-**google/gemini-3.1-pro-preview is a strong alternative**, particularly if
-accurate Catechism Recall and Confessional Knowledge are paramount. Its
-exceptionally low failure rate and high scores in these critical areas make it
-a highly dependable option.
+If strong recall of confessional standards and high accuracy in knowledge
+retrieval are paramount, **google/gemini-3.1-pro-preview** is an excellent
+alternative, leading in Catechism Recall and Confessional Knowledge.
 
-For tasks heavily reliant on **Biblical Reference, anthropic/claude-sonnet-4.6**
-surprisingly excels, but its overall lower score and high failure rate in
-other categories should be considered.
-
-**Avoid x-ai/grok-4-fast** for tasks requiring high accuracy or reliable recall,
-as its performance is significantly lower than other frontier models.
+While **anthropic/claude-sonnet-4.6** excels in Biblical Reference, its
+significant weaknesses in Catechism Recall and Doctrinal Position, coupled
+with the highest failure rate, make it less suitable for a broad range of
+theological tasks compared to the top two.
 
 ---
 
 *Generated by theolog-bench. Scores use weighted category averages.*
 *Scorer: v2 (improved position detection for multi-view responses).*
 *Judge model: Gemini 2.5 Flash via OpenRouter.*
-*Run date: May 14, 2026.*
+*Run date: May 15, 2026.*

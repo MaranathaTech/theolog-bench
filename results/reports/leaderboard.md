@@ -1,26 +1,74 @@
-================================================================================
-theolog-bench Comparison Report
-================================================================================
+# theolog-bench Leaderboard
 
-  #  Model                                     BibRef  Catech  Compar  Confes  Doctrn  ErrDet  OVERALL
-------------------------------------------------------------------------------------------------------
-  1  anthropic/claude-opus-4.7                  68.2%   71.8%   92.0%   96.4%   51.7%   78.0%    73.9%
-  2  openai/gpt-5.5                             50.3%   67.2%   91.0%   77.5%   68.6%   79.5%    70.7%
-  3  x-ai/grok-4-fast                           48.7%   51.7%   92.2%   83.7%   72.0%   87.0%    69.4%
-  4  anthropic/claude-sonnet-4.6                73.0%   59.1%   95.9%   94.4%   45.3%   69.5%    69.0%
-  5  openai/gpt-4.1-mini                        63.9%   44.1%   93.8%   86.5%   64.3%   87.5%    68.9%
-  6  mistralai/mistral-large-2512               49.5%   49.2%   93.5%   91.0%   59.1%   82.7%    66.9%
-  7  mistralai/mistral-medium-3-5               52.2%   49.5%   91.7%   87.8%   62.4%   76.2%    66.5%
-  8  deepseek/deepseek-v4-pro                   49.6%   53.5%   89.8%   90.5%   51.5%   82.5%    66.0%
-  9  google/gemini-2.5-flash                    43.7%   48.9%   85.8%   86.6%   61.3%   82.3%    65.0%
- 10  meta-llama/llama-4-maverick                58.1%   51.9%   89.2%   70.0%   66.6%   64.5%    64.1%
- 11  meta-llama/llama-3.3-70b-instruct          67.3%   45.7%   83.2%   81.0%   59.0%   67.7%    63.9%
- 12  meta-llama/llama-4-scout                   60.5%   45.0%   85.0%   64.6%   61.8%   80.8%    63.0%
- 13  deepseek/deepseek-v4-flash                 50.6%   47.5%   74.8%   82.6%   55.9%   70.7%    61.1%
- 14  qwen/qwen3.5-122b-a10b                     47.8%   47.7%   87.0%   79.6%   56.6%   61.8%    60.3%
- 15  qwen/qwen3.6-35b-a3b                       30.7%   20.1%   64.2%   33.1%   14.1%   38.3%    29.6%
- 16  qwen/qwen3-32b                             16.3%   17.5%   72.8%   29.4%    5.9%   26.5%    23.6%
- 17  deepseek/deepseek-r1-distill-llama-70b      1.5%    5.3%   58.2%   15.8%    1.7%    1.7%    10.3%
- 18  google/gemini-3.1-pro-preview               2.4%    9.7%    2.5%    4.1%    8.3%    9.3%     6.7%
-------------------------------------------------------------------------------------------------------
-================================================================================
+Full ranking of 33 LLMs on Reformed theology benchmark — 270 questions across 6 categories.
+
+Scoring: automated pattern matching + LLM-as-judge (Gemini 2.5 Flash).
+
+---
+
+| # | Model | Tier | BibRef | Catech | Compar | Confes | Doctrn | ErrDet | **Overall** |
+|--:|-------|------|-------:|-------:|-------:|-------:|-------:|-------:|------------:|
+| 1 | **x-ai/grok-4.3** | frontier | 71.6 | 60.2 | 96.0 | 93.7 | 77.8 | 95.7 | **79.3** |
+| 2 | qwen/qwen3.6-35b-a3b | 24gb | 74.6 | 58.5 | 97.8 | 83.2 | 70.9 | 97.3 | **76.9** |
+| 3 | google/gemini-3.1-pro-preview | frontier | 67.1 | 69.9 | 86.0 | 98.8 | 61.2 | 91.0 | **76.8** |
+| 4 | qwen/qwen3.5-122b-a10b | 96gb | 73.9 | 66.1 | 97.4 | 87.9 | 56.0 | 100.0 | **76.7** |
+| 5 | qwen/qwen3.6-27b | 24gb | 76.8 | 57.1 | 97.7 | 83.7 | 67.7 | 98.3 | **76.4** |
+| 6 | qwen/qwen3.5-27b | 24gb | 75.0 | 64.8 | 92.7 | 84.5 | 57.7 | 100.0 | **75.9** |
+| 7 | google/gemma-4-31b-it | 24gb | 62.8 | 44.8 | 92.9 | 84.5 | 54.1 | 89.8 | **66.9** |
+| 8 | z-ai/glm-4-32b | 24gb | 55.5 | 47.1 | 88.0 | 71.6 | 66.3 | 92.0 | **66.7** |
+| 9 | anthropic/claude-opus-4.7 | frontier | 68.2 | 53.6 | 92.0 | 96.4 | 48.5 | 64.7 | **66.7** |
+| 10 | mistralai/mistral-small-3.2-24b | 24gb | 66.4 | 45.3 | 90.5 | 81.3 | 50.1 | 86.8 | **65.6** |
+| 11 | mistralai/mistral-medium-3-5 | 96gb | 52.2 | 49.5 | 91.7 | 87.8 | 61.1 | 63.8 | **64.3** |
+| 12 | openai/gpt-5.5 | frontier | 50.3 | 45.1 | 91.0 | 77.5 | 68.6 | 67.2 | **63.3** |
+| 13 | qwen/qwen3.5-9b | 12gb | 69.3 | 46.0 | 89.9 | 46.3 | 54.4 | 95.7 | **63.1** |
+| 14 | google/gemma-4-26b-a4b-it | 12gb | 54.8 | 44.7 | 92.2 | 83.8 | 50.5 | 75.5 | **62.6** |
+| 15 | anthropic/claude-sonnet-4.6 | frontier | 73.0 | 35.3 | 95.9 | 94.4 | 42.9 | 63.3 | **61.6** |
+| 16 | deepseek/deepseek-r1-distill-70b | 48gb | 67.8 | 33.6 | 88.8 | 83.0 | 39.9 | 79.0 | **59.7** |
+| 17 | x-ai/grok-4-fast | mid | 48.7 | 20.6 | 92.2 | 83.7 | 72.0 | 72.5 | **59.5** |
+| 18 | meta-llama/llama-3.3-70b | 48gb | 67.3 | 45.7 | 83.2 | 81.0 | 55.4 | 39.8 | **59.1** |
+| 19 | openai/gpt-4.1-mini | mid | 63.9 | 14.6 | 93.8 | 86.5 | 63.0 | 65.5 | **58.0** |
+| 20 | deepseek/deepseek-v4-pro | mid | 49.6 | 26.0 | 89.8 | 90.5 | 51.1 | 66.8 | **56.7** |
+| 21 | google/gemma-3-27b-it | 24gb | 41.1 | 41.1 | 81.2 | 70.2 | 47.4 | 78.7 | **56.4** |
+| 22 | mistralai/mistral-large-2512 | mid | 49.5 | 12.6 | 93.5 | 91.0 | 59.1 | 63.2 | **54.9** |
+| 23 | microsoft/phi-4 | 12gb | 53.5 | 37.6 | 85.0 | 74.9 | 41.2 | 61.0 | **54.5** |
+| 24 | minimax/minimax-m2.7 | budget | 44.9 | 28.7 | 74.0 | 67.6 | 51.1 | 79.3 | **53.6** |
+| 25 | deepseek/deepseek-v4-flash | budget | 50.6 | 15.6 | 74.8 | 82.6 | 54.5 | 69.0 | **52.6** |
+| 26 | google/gemini-2.5-flash | mid | 43.7 | 15.8 | 85.8 | 86.6 | 55.3 | 63.0 | **52.6** |
+| 27 | meta-llama/llama-4-maverick | budget | 58.1 | 24.4 | 89.2 | 70.0 | 63.0 | 37.8 | **52.5** |
+| 28 | meta-llama/llama-4-scout | budget | 60.5 | 10.9 | 85.0 | 64.6 | 57.9 | 56.8 | **50.1** |
+| 29 | xiaomi/mimo-v2.5-pro | mid | 32.1 | 48.3 | 70.4 | 42.2 | 34.2 | 3.3 | **37.6** |
+| 30 | z-ai/glm-4.7 | budget | 22.5 | 21.4 | 60.0 | 52.2 | 40.3 | 19.5 | **33.5** |
+| 31 | moonshotai/kimi-k2.6 | mid | 12.8 | 20.7 | 50.0 | 18.4 | 21.6 | 5.7 | **20.0** |
+| 32 | z-ai/glm-5 | mid | 6.7 | 6.7 | 64.0 | 21.6 | 0.0 | 13.3 | **14.3** |
+| 33 | z-ai/glm-5.1 | mid | 5.3 | 6.0 | 59.0 | 19.1 | 8.3 | 0.0 | **12.7** |
+
+---
+
+### Category Weights
+
+| Category | Weight | Description |
+|----------|-------:|-------------|
+| Catechism Recall | 25% | Verbatim recall of catechism Q&A |
+| Doctrinal Position | 20% | TULIP, Solas, Reformed distinctives |
+| Biblical Reference | 15% | Scripture citation accuracy |
+| Confessional Knowledge | 15% | Knowledge of confessional teaching |
+| Error Detection | 15% | Identifying heterodox statements |
+| Comparative Theology | 10% | Reformed vs other traditions |
+
+### Tier Key
+
+| Tier | Description |
+|------|-------------|
+| 12gb | RTX 3060/4060 — up to ~14B dense at Q4 |
+| 24gb | RTX 3090/4090/5090 — 24B-35B at Q4 |
+| 48gb | A6000 / dual-GPU — 70B dense at Q4 |
+| 96gb | RTX PRO 6000 / A100 — 70B-128B at Q4 |
+| budget | Cloud API, <$0.15/run |
+| mid | Cloud API, $0.08-$0.55/run |
+| frontier | Cloud API, >$1.50/run |
+
+---
+
+*Generated by theolog-bench. Scores use weighted category averages.*
+*Scorer: v2. Judge model: Gemini 2.5 Flash via OpenRouter.*
+*Run date: May 15, 2026.*
