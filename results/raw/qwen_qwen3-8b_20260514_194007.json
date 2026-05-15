@@ -1,0 +1,655 @@
+{
+  "model_name": "qwen/qwen3-8b",
+  "timestamp": "2026-05-14T19:40:07.457888",
+  "category_weights": {
+    "catechism_recall": 0.25,
+    "confessional_knowledge": 0.15,
+    "doctrinal_position": 0.2,
+    "biblical_reference": 0.15,
+    "error_detection": 0.15,
+    "comparative_theology": 0.1
+  },
+  "questions": [
+    {
+      "id": "wsc-001",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q1",
+      "question": "What is the chief end of man?",
+      "reference_answer": "Man's chief end is to glorify God, and to enjoy him for ever.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "Man's chief end is to glorify God",
+          "and to enjoy him for ever"
+        ],
+        "key_concepts": [
+          "Man's chief end is to glorify God",
+          "and to enjoy him for ever"
+        ]
+      },
+      "response": "The question \"What is the chief end of man?\" is a classic theological inquiry, most famously addressed in the **Westminster Shorter Catechism**, a 17th-century Christian theological document. According to this tradition, the answer is:\n\n**\"To glorify God and enjoy Him forever.\"**\n\n### Explanation:\n1. **Glorifying God**: This refers to living a life that reflects God's character, obeying His commandments, and seeking to honor Him through actions, worship, and service. It involves aligning one's will with God's will and recognizing Him as the ultimate source of all goodness and truth.\n2. **Enjoying God**: This emphasizes the relational aspect of humanity's purpose\u2014finding joy, fulfillment, and meaning in a relationship with God. It suggests that true happiness and satisfaction are found in communion with the divine.\n\n### Context and Variations:\n- **Christian Theology**: The Westminster Catechism's answer is rooted in the belief that humans were created by God with a purpose centered on Him. This perspective is influenced by biblical teachings, such as the creation account in Genesis and the New Testament's emphasis on loving and serving God.\n- **Other Traditions**: In secular or non-theistic frameworks, the \"chief end of man\" might be interpreted differently. For example:\n  - **Secular Humanism**: Might focus on self-actualization, flourishing, or contributing to the well-being of others.\n  - **Eastern Philosophies**: Could emphasize enlightenment (Buddhism), union with the divine (Hinduism), or harmony with the universe (Confucianism).\n\n### Summary:\nThe answer \"to glorify God and enjoy Him forever\" is the most widely recognized response within Christian theology. However, the interpretation of humanity's purpose varies across cultural, philosophical, and religious traditions. If you're exploring this question from a specific context (e.g., secular, Buddhist, or existential), further clarification could help tailor the response."
+    },
+    {
+      "id": "wsc-002",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q2",
+      "question": "What rule hath God given to direct us how we may glorify and enjoy him?",
+      "reference_answer": "The Word of God, which is contained in the Scriptures of the Old and New Testaments, is the only rule to direct us how we may glorify and enjoy him.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "which is contained in the Scriptures of the Old and New Testaments",
+          "is the only rule to direct us how we may glorify and enjoy him"
+        ],
+        "key_concepts": [
+          "The Word of God",
+          "which is contained in the Scriptures of the Old and New Testaments",
+          "is the only rule to direct us how we may glorify and enjoy him"
+        ]
+      },
+      "response": "The rule given by God to direct us in how we may glorify and enjoy Him is the **Word of God**, which is contained in the **holy scriptures of the Old and New Testaments**. This rule is summarized in the **Ten Commandments**, which are the moral law given by God to humanity. \n\n### Key Points:\n1. **The Word of God as the Rule**:  \n   The entire Bible (Old and New Testaments) is God\u2019s revelation to humanity, containing His will and instructions for living in a way that honors Him and brings joy to His people.\n\n2. **The Ten Commandments**:  \n   The Ten Commandments (Exodus 20:1\u201317) are the specific moral law given to Israel at Mount Sinai. They are divided into two parts:  \n   - **The First Four Commandments**: Focus on loving and worshiping God (e.g., no idols, keeping the Sabbath).  \n   - **The Last Six Commandments**: Focus on loving and respecting others (e.g., honoring parents, not stealing, lying, or coveting).  \n\n3. **Summarizing the Law**:  \n   In the New Testament, Jesus emphasizes the **two greatest commandments** as the summary of God\u2019s law:  \n   - \"Love the Lord your God with all your heart, soul, mind, and strength.\" (Matthew 22:37\u201338)  \n   - \"Love your neighbor as yourself.\" (Matthew 22:39)  \n   These two commandments encapsulate the essence of the Ten Commandments and the broader moral law.\n\n4. **Purpose of the Law**:  \n   The law (including the Ten Commandments) is given to guide humanity in **glorifying God** (by living in obedience to His will) and **enjoying Him** (by experiencing His grace, love, and blessings through faith in Jesus Christ).\n\n### Conclusion:  \nThe rule of God is the **Word of God** (the Bible), which includes the **Ten Commandments** as the moral law. These commandments, summarized in the two greatest commandments, direct us to live in a way that honors God and finds joy in His presence through faith in Jesus Christ."
+    },
+    {
+      "id": "wsc-003",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q3",
+      "question": "What do the Scriptures principally teach?",
+      "reference_answer": "The Scriptures principally teach what man is to believe concerning God, and what duty God requires of man.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "The Scriptures principally teach what man is to believe concerning God",
+          "and what duty God requires of man"
+        ],
+        "key_concepts": [
+          "The Scriptures principally teach what man is to believe concerning God",
+          "and what duty God requires of man"
+        ]
+      },
+      "response": "The Scriptures principally teach **what is necessary for salvation**, which includes the **knowledge of God and His will**. This encompasses the following key truths:\n\n1. **The Fall of Humanity**: The Scriptures reveal that humanity, through the fall of Adam, has lost communion with God, is under His wrath and curse, and is incapable of saving itself (Romans 3:23; 6:23; Isaiah 59:2).\n\n2. **Redemption through Christ**: The only way of salvation is through the **redemption in Christ Jesus** (Romans 5:8\u201311; 1 Timothy 1:15). The Scriptures proclaim the **gospel of Jesus Christ**, His life, death, resurrection, and the grace of God in Him (1 Corinthians 15:3\u20134; 2 Timothy 1:10).\n\n3. **God\u2019s Sovereignty and Grace**: The Scriptures emphasize God\u2019s **sovereign grace**, the **election of His people**, and the **fulness of redemption** through Christ (Ephesians 1:4\u20135; Titus 2:11\u201312).\n\n4. **The Call to Obedience and Holiness**: The Scriptures also teach the **obligation of all people to repent and believe**, and the **need for holy living** in response to God\u2019s grace (Matthew 11:28\u201330; 1 Peter 1:13\u201316).\n\n5. **The Final Judgment and Eternal Life**: The Scriptures proclaim the **final judgment** and the **eternal destiny** of the righteous and the wicked (John 5:28\u201329; Revelation 20:11\u201315).\n\nThis teaching is summarized in **2 Timothy 3:16\u201317**, which affirms that Scripture is **profitable for teaching, rebuking, correcting, and training in righteousness**, equipping believers for every good work. The ultimate purpose of Scripture is to **lead people to salvation** through faith in Christ (Romans 1:16; 1 Corinthians 15:1\u20134). \n\nThis answer reflects the **Reformed tradition**, particularly the **Westminster Shorter Catechism**, which states:  \n*\"What do the Scriptures principally teach? That man, by the fall of Adam, hath lost communion with God, and is under His wrath and curse, and so cannot have life, nor salvation;"
+    },
+    {
+      "id": "wsc-004",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q4",
+      "question": "What is God?",
+      "reference_answer": "God is a Spirit, infinite, eternal, and unchangeable in his being, wisdom, power, holiness, justice, goodness, and truth.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "and unchangeable in his being"
+        ],
+        "key_concepts": [
+          "God is a Spirit",
+          "and unchangeable in his being"
+        ]
+      },
+      "response": "The question of \"What is God?\" is one of the most profound and complex inquiries humanity has ever posed. It touches on philosophy, theology, science, culture, and personal experience. Here's a structured exploration of the topic:\n\n---\n\n### **1. Religious Perspectives**\nIn most major world religions, **God** is understood as the supreme being, creator, and ultimate reality. However, definitions vary widely:\n- **Abrahamic Religions (Judaism, Christianity, Islam):** God is often described as omnipotent (all-powerful), omniscient (all-knowing), and omnibenevolent (all-good). In Christianity, God is a Trinity (Father, Son, Holy Spirit); in Islam, God (Allah) is strictly monotheistic and transcendent.\n- **Hinduism:** God is seen as both immanent (present in the universe) and transcendent (beyond it). Deities like Brahman, Vishnu, and Shiva represent different aspects of the divine.\n- **Buddhism:** While not strictly theistic, some traditions (e.g., Mahayana) acknowledge a cosmic deity or ultimate reality (e.g., Dharmakaya). Others focus on enlightenment (nirvana) as the goal, not a personal God.\n- **Other Traditions:** Indigenous, animist, and polytheistic beliefs often view God as nature, ancestors, or interconnected forces (e.g., the \"Great Spirit\" in Native American traditions).\n\n---\n\n### **2. Philosophical Perspectives**\nPhilosophers have debated the nature of God for millennia:\n- **Theism:** God exists as a personal, conscious being who interacts with the world (e.g., Aristotle\u2019s \"unmoved mover,\" Thomas Aquinas\u2019s five proofs for God\u2019s existence).\n- **Deism:** God created the universe but does not intervene in its workings (popular in Enlightenment-era thought).\n- **Pantheism/Panentheism:** God is identical to or encompasses the universe (e.g., Spinoza\u2019s pantheism).\n- **Agnosticism/Atheism:** Some argue God\u2019s existence is unknowable (agnosticism) or impossible to prove (atheism). Others reject the concept entirely as a human construct.\n\n---\n\n### **3. Scientific Perspectives**\nScience does not address the existence of God directly, but it raises questions about the universe\u2019s origins and nature:\n- **Cosmology:** The Big Bang theory describes the universe\u2019s origin, but it does"
+    },
+    {
+      "id": "wsc-005",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q5",
+      "question": "Are there more Gods than one?",
+      "reference_answer": "There is but one only, the living and true God.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "There is but one only",
+          "the living and true God"
+        ],
+        "key_concepts": [
+          "There is but one only",
+          "the living and true God"
+        ]
+      },
+      "response": "The question of whether there are more than one God is deeply rooted in theology, philosophy, and cultural traditions. The answer depends on the framework one adopts, as different belief systems and worldviews offer diverse perspectives. Here's a structured overview:\n\n### 1. **Monotheism**  \n   - **Belief in One God**: Major world religions like **Christianity, Islam, and Judaism** are monotheistic, asserting the existence of a single, all-powerful, and transcendent God.  \n     - **Christianity**: Emphasizes the Trinity (one God in three persons: Father, Son, and Holy Spirit).  \n     - **Islam**: Views Allah as the sole deity, with no partners or equals.  \n     - **Judaism**: Focuses on a singular, omnipotent God who is the creator and sustainer of the universe.  \n   - **Philosophical Context**: Some philosophers (e.g., Aristotle) argue for a single \"First Cause\" or \"Unmoved Mover\" as the ultimate reality.\n\n### 2. **Polytheism**  \n   - **Multiple Deities**: Religions like **Hinduism, Ancient Greek Religion, and Norse Mythology** feature multiple gods and goddesses, each with distinct roles and domains.  \n     - **Hinduism**: While it has a vast pantheon (e.g., Brahma, Vishnu, Shiva), some traditions (e.g., Advaita Vedanta) emphasize a singular ultimate reality (Brahman) that underlies all deities.  \n     - **Ancient Religions**: Polytheistic systems often reflect cultural narratives, natural phenomena, or human needs (e.g., gods of war, fertility, or the sea).  \n\n### 3. **Pantheism and Panentheism**  \n   - **Pantheism**: Views God as identical to the universe itself (e.g., \"All is God\").  \n   - **Panentheism**: Suggests God is both immanent in the universe and transcendent beyond it.  \n\n### 4. **Non-Theistic Perspectives**  \n   - **Atheism**: Rejects the existence of any gods.  \n   - **Agnosticism**: Holds that the existence of gods is unknown or unknowable.  \n   - **Secular Humanism**: Focuses on human reason and ethics without reference to deities.  \n\n### 5. **Philosophical and Metaphysical Debates**"
+    },
+    {
+      "id": "wsc-006",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q6",
+      "question": "How many persons are there in the Godhead?",
+      "reference_answer": "There are three persons in the Godhead; the Father, the Son, and the Holy Ghost; and these three are one God, the same in substance, equal in power and glory.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "There are three persons in the Godhead",
+          "and the Holy Ghost",
+          "and these three are one God",
+          "the same in substance"
+        ],
+        "key_concepts": [
+          "There are three persons in the Godhead",
+          "and the Holy Ghost",
+          "and these three are one God",
+          "the same in substance"
+        ]
+      },
+      "response": "The concept of the **Godhead** is central to **Trinitarian Christianity**, which teaches that God exists as **three distinct persons** in one divine essence. These three persons are:\n\n1. **The Father**  \n2. **The Son (Jesus Christ)**  \n3. **The Holy Spirit**  \n\nThis doctrine is rooted in the **Bible** and is a foundational belief in **Christianity**. Each person of the Trinity is co-eternal, co-equal, and consubstantial (of the same divine nature), yet they are distinct in their roles and relationships. For example:  \n- The **Father** is the source of the Godhead.  \n- The **Son** (Jesus) is the incarnate Word of God, who became human.  \n- The **Holy Spirit** is the active presence of God in the world, guiding and empowering believers.  \n\n### Key Points:\n- **Trinitarianism** is the orthodox Christian view, affirmed in creeds like the **Nicene Creed**.  \n- Other religions (e.g., **Hinduism**, **Judaism**, **Islam**) may have different understandings of the divine, but the term \"Godhead\" is most commonly associated with the **Christian Trinity**.  \n- The number **three** is emphasized in Scripture (e.g., \"the Father, the Son, and the Holy Spirit\" in **Matthew 28:19**).  \n\nThus, in the context of **Christian theology**, the Godhead consists of **three persons**."
+    },
+    {
+      "id": "wsc-007",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q7",
+      "question": "What are the decrees of God?",
+      "reference_answer": "The decrees of God are, his eternal purpose, according to the counsel of his will, whereby, for his own glory, he hath foreordained whatsoever comes to pass.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "The decrees of God are",
+          "his eternal purpose",
+          "according to the counsel of his will",
+          "for his own glory"
+        ],
+        "key_concepts": [
+          "The decrees of God are",
+          "his eternal purpose",
+          "according to the counsel of his will",
+          "for his own glory"
+        ]
+      },
+      "response": "The **decrees of God** are a central concept in Christian theology, particularly within Reformed and Calvinist traditions. They refer to God\u2019s **eternal, sovereign, and unchanging plans and purposes** for all things, both good and evil, which He has decreed from all eternity to bring about His glory and the fulfillment of His will. Here's a structured explanation:\n\n---\n\n### **1. Definition of God\u2019s Decrees**\nGod\u2019s decrees are His **eternal, sovereign, and comprehensive plans** for creation, redemption, and the governance of the universe. They are not arbitrary but rooted in His wisdom, love, and holiness. As the Westminster Catechism states:  \n> *\"What are God's decrees? His eternal purpose, according to the counsel of His will, whereby, for His own glory, He hath foreordained whatsoever comes to pass.\"*\n\nThis means God has **foreordained all things**\u2014past, present, and future\u2014according to His eternal purpose.\n\n---\n\n### **2. Key Characteristics of God\u2019s Decrees**\n- **Eternal and Sovereign**: God\u2019s decrees are not contingent on time or human action. They are **eternal** (existing from all eternity) and **sovereign** (He alone determines them).\n- **Comprehensive**: They encompass **all things**, including creation, the fall of man, the redemption through Christ, and every event in history.\n- **Purpose-Driven**: All decrees are **for God\u2019s glory** and the fulfillment of His redemptive plan.\n- **Inclusive of Good and Evil**: God decrees both **good and evil** (e.g., the fall of man, natural disasters, human sin), but **evil is not the end goal**. It is permitted for a greater good (e.g., to bring about Christ\u2019s atonement).\n\n---\n\n### **3. Types of God\u2019s Decrees**\n- **General Decrees**: These pertain to **creation and the ordering of the cosmos** (e.g., the creation of the world, the laws of nature).\n- **Particular Decrees**: These focus on **specific events and individuals** (e.g., the fall of Adam, the birth of Christ, the salvation of individuals).\n\nThese categories are sometimes distinguished from **providence**, which refers to God\u2019s **ongoing care and governance** of the world (e.g., sustaining creation, guiding history).\n\n---\n\n### **4. Theological Implications**"
+    },
+    {
+      "id": "wsc-008",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q8",
+      "question": "How doth God execute his decrees?",
+      "reference_answer": "God executeth his decrees in the works of creation and providence.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "God executeth his decrees in the works of creation and providence"
+        ],
+        "key_concepts": [
+          "God executeth his decrees in the works of creation and providence"
+        ]
+      },
+      "response": "The question of how God executes His decrees is a profound theological inquiry that touches on the nature of divine sovereignty, human responsibility, and the unfolding of God's eternal plan. Here's a structured and comprehensive answer:\n\n### 1. **God's Omnipotence and Omniscience**  \n   God's decrees are executed through His **omnipotence** (infinite power) and **omniscience** (infinite knowledge). These attributes enable Him to carry out His eternal plans with certainty and precision. As the Creator and Sustainer of all things, God has the authority and ability to bring His decrees to fruition.\n\n### 2. **Creation and Providence**  \n   - **Creation**: God's decrees are first executed in the act of **creation** (Genesis 1\u20132). Through His word, He brought the universe into existence, establishing the natural order and the foundation for all subsequent events.  \n   - **Providence**: God continues to execute His decrees through **providence**, His ongoing care and governance of the world. This includes sustaining creation, directing history, and ensuring that all things work together for His purposes (Romans 8:28\u201330; 1 Peter 1:15\u201316). Providence encompasses both the **natural order** (e.g., the laws of nature) and the **moral order** (e.g., human actions and choices).\n\n### 3. **The Role of the Trinity**  \n   - **The Father**: The Father's decrees are executed through the **Son** (Jesus Christ) and the **Holy Spirit**.  \n     - **The Son**: Jesus, as the incarnate Word, fulfills God's decree of salvation through His life, death, and resurrection (John 1:1\u20133; Hebrews 1:1\u20133).  \n     - **The Holy Spirit**: The Holy Spirit applies God's saving grace, guides individuals and communities, and empowers believers to live out God's will (John 14:16\u201317; Acts 2:32\u201333).\n\n### 4. **Means of Execution**  \n   God uses **means** to execute His decrees, including:  \n   - **The Word of God**: Scripture is a primary instrument through which God reveals His will and calls people to faith (2 Timothy 3:16\u201317).  \n   - **The Church**: The Church, as the body of Christ"
+    },
+    {
+      "id": "wsc-009",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q9",
+      "question": "What is the work of creation?",
+      "reference_answer": "The work of creation is, God's making all things of nothing, by the word of his power, in the space of six days, and all very good.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "The work of creation is",
+          "God's making all things of nothing",
+          "by the word of his power",
+          "in the space of six days"
+        ],
+        "key_concepts": [
+          "The work of creation is",
+          "God's making all things of nothing",
+          "by the word of his power",
+          "in the space of six days"
+        ]
+      },
+      "response": "The \"work of creation\" is a concept that spans multiple domains\u2014religious, philosophical, scientific, and artistic\u2014each offering distinct interpretations. Here's a structured exploration of its meaning across these contexts:\n\n---\n\n### **1. Religious and Theistic Perspectives**\nIn many world religions, the \"work of creation\" refers to the act of divine creation, often seen as the origin of the universe, life, and existence. Key examples include:\n- **Abrahamic Religions**: In **Judaism, Christianity, and Islam**, creation is attributed to a divine being (e.g., God in Genesis). The **Book of Genesis** describes God creating the cosmos, humanity, and all life through spoken commands, emphasizing order, purpose, and divine will.\n- **Hinduism**: The universe is cyclically created and destroyed by deities like **Brahma** (the creator), **Vishnu** (the preserver), and **Shiva** (the destroyer), reflecting an eternal cycle of creation, preservation, and dissolution.\n- **Buddhism**: While not centered on a creator deity, some traditions (e.g., **Mahayana**) discuss the \"Great Void\" or **Sunyata** as the source of all phenomena, emphasizing interdependence and impermanence rather than a singular act of creation.\n\n**Key Themes**: Divine intention, cosmic order, and the relationship between the creator and creation.\n\n---\n\n### **2. Human Creative Processes**\nIn secular contexts, the \"work of creation\" often refers to human innovation and artistic expression:\n- **Art and Literature**: Artists, writers, and musicians create works that reflect human experience, emotions, and ideas. For example, a painter\u2019s brushstrokes or a poet\u2019s words are seen as acts of creation.\n- **Science and Technology**: Scientific discovery (e.g., the development of the atomic bomb, space exploration) and technological innovation (e.g., the internet, AI) are viewed as human-driven creations that reshape the world.\n- **Philosophy and Ethics**: Philosophers like **Aristotle** and **Kant** explored creation as a process of bringing order to chaos or realizing potential. Modern thinkers like **Marx** saw creation as a social and material process tied to labor and human needs.\n\n**Key Themes**: Human agency, innovation, and the interplay between imagination and reality.\n\n---\n\n### **3. Philosophical and Existential Interpretations**\nPhilosophers often examine creation as a metaphor for existence and meaning:"
+    },
+    {
+      "id": "wsc-010",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q10",
+      "question": "How did God create man?",
+      "reference_answer": "God created man male and female, after his own image, in knowledge, righteousness, and holiness, with dominion over the creatures.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "God created man male and female",
+          "after his own image",
+          "with dominion over the creatures"
+        ],
+        "key_concepts": [
+          "God created man male and female",
+          "after his own image",
+          "in knowledge",
+          "righteousness"
+        ]
+      },
+      "response": "The creation of man, as described in the biblical account, is a central theme in the Book of Genesis. Here's a summary of the key elements from the Hebrew Bible (Old Testament), which is foundational to Christianity, Judaism, and Islam:\n\n### 1. **The First Creation Account (Genesis 1:26-31)**  \n   - **God creates humans on the sixth day** after creating the heavens, earth, and all living creatures.  \n   - **Humans are made in the \"image of God\"** (Genesis 1:27), which signifies their unique relationship with the divine\u2014distinct from other creatures.  \n   - **God gives humans dominion over the Earth** (Genesis 1:28), entrusting them with stewardship of creation.  \n   - **The creation of woman** is not explicitly detailed here, but it is implied that God created both man and woman as complementary beings (Genesis 1:27).\n\n### 2. **The Second Creation Account (Genesis 2:4-25)**  \n   - **God forms man from the dust of the ground** (Genesis 2:7) and breathes the \"breath of life\" into him, making him a living being.  \n   - **God creates woman from Adam\u2019s rib** (Genesis 2:21-22), establishing the first human relationship and emphasizing the unity and partnership between man and woman.  \n   - This account provides a more detailed, narrative-driven description of the creation process, focusing on the intimacy and purpose of human existence.\n\n### 3. **Theological Significance**  \n   - **Divine Image**: Humans are uniquely made in God\u2019s image, reflecting His attributes such as creativity, morality, and relationality.  \n   - **Stewardship**: Humans are entrusted with caring for creation, a responsibility tied to their special status.  \n   - **Intimacy and Purpose**: The creation of man and woman as a couple underscores the importance of love, companionship, and shared purpose.  \n\n### 4. **Interpretations and Context**  \n   - **Literal vs. Symbolic**: Some interpret the creation stories as literal historical accounts, while others view them as symbolic or allegorical, emphasizing spiritual truths over scientific details.  \n   - **Theistic Evolution**: Some religious traditions reconcile the biblical account with scientific theories of evolution, seeing God as the ultimate creator who works through natural processes.  \n   - **Cultural and Religious Variations"
+    },
+    {
+      "id": "wsc-011",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q11",
+      "question": "What are God's works of providence?",
+      "reference_answer": "God's works of providence are, his most holy, wise, and powerful preserving and governing all his creatures, and all their actions.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "God's works of providence are",
+          "and powerful preserving and governing all his creatures",
+          "and all their actions"
+        ],
+        "key_concepts": [
+          "God's works of providence are",
+          "his most holy",
+          "and powerful preserving and governing all his creatures",
+          "and all their actions"
+        ]
+      },
+      "response": "God's works of providence are central to understanding His active role in sustaining and guiding the universe. In Christian theology, providence refers to God's ongoing care and management of creation, encompassing both the natural order and human affairs. Here's a structured overview:\n\n### 1. **Definition and Core Concepts**\n   - **Providence** is the divine care and governance of the world, reflecting God's sovereignty, wisdom, and love. It involves His active involvement in maintaining creation and directing events according to His eternal plan.\n   - **General Providence**: The continuous sustenance of the natural world (e.g., laws of nature, growth of plants, celestial movements) and the orderly functioning of the cosmos.\n   - **Special Providence**: Direct interventions in human lives, such as guidance, protection, or specific events that align with God's purposes.\n\n### 2. **Key Aspects of God's Providence**\n   - **Creation and Sustenance**: God not only created the universe but also upholds it moment by moment. This includes maintaining natural laws and the balance of ecosystems.\n   - **Guidance of Human Affairs**: God directs events in history and individual lives, even when His purposes are not immediately apparent. This includes both blessings and challenges, all working toward His redemptive plan.\n   - **Care for Humanity**: God provides for human needs (e.g., sustenance, protection) and guides individuals through trials, reflecting His love and wisdom.\n   - **Redemption and Purpose**: Providence encompasses God's plan for salvation, including the work of Jesus Christ and the ultimate restoration of all things.\n\n### 3. **Theological Perspectives**\n   - **Calvinist View**: Emphasizes God's exhaustive sovereignty, where all events (including evil) are part of His providential plan. Evil arises from human free will and the fallen state of the world, yet God uses it for good.\n   - **Arminian View**: Acknowledges God's providence while emphasizing human free will. God's guidance is seen as a partnership with humanity, though He remains sovereign.\n   - **Biblical Foundations**: Passages like Psalm 104 (creation's sustenance), Job 38-41 (God's control over nature), and Romans 8:28 (all things working together for good) illustrate providence.\n\n### 4. **Examples of Providence**\n   - **Natural Phenomena**: Seasons, weather, and ecological balance.\n   - **Personal Provision**: Meeting needs"
+    },
+    {
+      "id": "wsc-012",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q12",
+      "question": "What special act of providence did God exercise toward man in the estate wherein he was created?",
+      "reference_answer": "When God had created man, he entered into a covenant of life with him, upon condition of perfect obedience; forbidding him to eat of the tree of the knowledge of good and evil, upon pain of death.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "When God had created man",
+          "he entered into a covenant of life with him",
+          "upon condition of perfect obedience",
+          "forbidding him to eat of the tree of the knowledge of good and evil"
+        ],
+        "key_concepts": [
+          "When God had created man",
+          "he entered into a covenant of life with him",
+          "upon condition of perfect obedience",
+          "forbidding him to eat of the tree of the knowledge of good and evil"
+        ]
+      },
+      "response": "The special act of providence that God exercised toward man in the estate wherein he was created is **the covenant of works**. This covenant was established by God with Adam in the Garden of Eden, wherein He promised eternal life and fellowship if Adam and Eve obeyed His commandments, and death and separation from Him if they disobeyed. This act of providence is foundational to understanding God's relationship with humanity in their original, sinless state.\n\n### Key Elements of the Covenant of Works:\n1. **Direct Relationship**: God entered into a personal, covenantal relationship with Adam and Eve, establishing a direct bond of trust and obedience.\n2. **Command and Promise**: God gave Adam the command to \"be fruitful and multiply\" and to \"not eat from the tree of the knowledge of good and evil\" (Genesis 2:16\u201317). In exchange, He promised eternal life and communion with Him.\n3. **Test of Obedience**: The covenant served as a test of Adam and Eve's faithfulness, revealing their dependence on God's grace and their capacity for moral choice.\n4. **Provision and Presence**: God provided for their needs (e.g., the Garden of Eden, the Tree of Life) and walked with them, demonstrating His care and presence.\n5. **Consequence of Disobedience**: The covenant also included the threat of death, which was the result of their disobedience, leading to the fall into sin and the introduction of spiritual and physical death into creation.\n\n### Theological Significance:\n- This covenant is distinct from the **covenant of grace** (established after the fall), which is based on God's mercy and the redemption offered through Jesus Christ.\n- The covenant of works underscores God's holiness, justice, and the necessity of obedience in the original state, while also highlighting the depth of human responsibility and the consequences of sin.\n\nIn summary, the special act of providence in the estate of creation was the covenant of works, which established the terms of God's relationship with humanity and set the stage for the redemptive work of Christ."
+    },
+    {
+      "id": "wsc-013",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q13",
+      "question": "Did our first parents continue in the estate wherein they were created?",
+      "reference_answer": "Our first parents, being left to the freedom of their own will, fell from the estate wherein they were created, by sinning against God.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "Our first parents",
+          "being left to the freedom of their own will",
+          "fell from the estate wherein they were created",
+          "by sinning against God"
+        ],
+        "key_concepts": [
+          "Our first parents",
+          "being left to the freedom of their own will",
+          "fell from the estate wherein they were created",
+          "by sinning against God"
+        ]
+      },
+      "response": "The question of whether our first parents (Adam and Eve) continued in the estate wherein they were created is central to Christian theology, particularly in discussions of the Fall and Original Sin. Here's a structured answer:\n\n### 1. **Original Estate of Creation**  \n   - Adam and Eve were created in a state of **grace, innocence, and perfect communion with God**. They were free from sin, death, and the corruption of nature, living in harmony with God and the world (Genesis 1\u20132). This state is often referred to as the **\"state of innocence\"** or **\"original holiness.\"**\n\n### 2. **The Fall and Loss of the Original Estate**  \n   - Through disobedience to God's command (Genesis 3), Adam and Eve **fell from this state**. Their act of eating from the Tree of the Knowledge of Good and Evil introduced **sin, death, and spiritual alienation** into the world. This event is known as the **Fall of Man**.\n   - The consequences of the Fall included:  \n     - **Spiritual death** (separation from God).  \n     - **Physical death** (the curse of mortality).  \n     - **Corruption of nature** (the world became subject to decay).  \n     - **Original Sin**, which is inherited by all humanity as a result of Adam and Eve's disobedience (Romans 5:12).\n\n### 3. **Theological Implications**  \n   - **Original Sin**: The loss of the original estate is the foundation of the doctrine of Original Sin. All humans are born with a fallen nature, marked by inclination toward sin and the consequences of the Fall.  \n   - **Redemption**: While the original estate was lost, Christian theology emphasizes that **God's grace through Jesus Christ offers redemption** (Romans 5:18\u201319). Christ's sacrifice restores the possibility of reconciliation with God and the renewal of creation.  \n   - **Hope of Restoration**: Some theological traditions (e.g., Catholic and Protestant) affirm that the **final restoration of creation** (the \"new heavens and new earth\") will culminate in a renewed state of grace, though this is distinct from the original estate of Eden.\n\n### 4. **Key Distinction**  \n   - The **original estate** (innocence, grace, and communion with God) was **lost** due to the Fall. However, **redemption** through Christ does not restore"
+    },
+    {
+      "id": "wsc-014",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q14",
+      "question": "What is sin?",
+      "reference_answer": "Sin is any want of conformity unto, or transgression of, the law of God.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "Sin is any want of conformity unto",
+          "or transgression of"
+        ],
+        "key_concepts": [
+          "Sin is any want of conformity unto",
+          "or transgression of",
+          "the law of God"
+        ]
+      },
+      "response": "The concept of \"sin\" is multifaceted and varies across cultures, religions, and philosophical traditions. Here's a structured overview of its meanings and interpretations:\n\n### 1. **Religious Perspectives**  \n   - **Christianity**:  \n     - **Definition**: Sin is an act of disobedience to God's laws, often seen as a transgression against divine will. It is contrasted with virtues and righteousness.  \n     - **Original Sin**: In many Christian traditions (e.g., Catholicism, Lutheranism), sin is linked to the fall of Adam and Eve, which introduced a \"sinful nature\" into humanity.  \n     - **Consequences**: Sin is associated with spiritual separation from God, moral corruption, and the possibility of eternal punishment (e.g., hell).  \n     - **Redemption**: Forgiveness and salvation are achieved through repentance, faith, and grace (e.g., Jesus Christ's sacrifice in some traditions).  \n\n   - **Other Religions**:  \n     - **Islam**: Sin (e.g., *kufr*) involves disbelief in Allah or disobedience to His commands. Repentance (*tawbah*) and good deeds are pathways to forgiveness.  \n     - **Judaism**: Sin (*chait*) is a violation of God's commandments (Torah). Atone through repentance, charity, and rituals like Yom Kippur.  \n     - **Hinduism/Buddhism**: Sin (e.g., *karma*) is often tied to actions (karma) that disrupt harmony, leading to suffering. Liberation (*moksha/nirvana*) requires ethical living and spiritual growth.  \n\n---\n\n### 2. **Philosophical Perspectives**  \n   - **Aristotle**:  \n     - Sin arises from excess or deficiency in virtues (e.g., courage vs. recklessness). Moral character (virtue ethics) is key to avoiding sin.  \n   - **Kant**:  \n     - Sin is a violation of the *categorical imperative*\u2014acting against universal moral laws. Duty and intention matter more than consequences.  \n   - **Existentialism**:  \n     - Sin may be seen as a failure to live authentically or to take responsibility for one's choices.  \n\n---\n\n### 3. **Psychological View**  \n   - **Freud**:  \n     - Sin is linked to the conflict between the id (desires) and the superego (moral standards). Guilt and shame arise"
+    },
+    {
+      "id": "wsc-015",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q15",
+      "question": "What was the sin whereby our first parents fell from the estate wherein they were created?",
+      "reference_answer": "The sin whereby our first parents fell from the estate wherein they were created, was their eating the forbidden fruit.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "The sin whereby our first parents fell from the estate wherein they were created",
+          "was their eating the forbidden fruit"
+        ],
+        "key_concepts": [
+          "The sin whereby our first parents fell from the estate wherein they were created",
+          "was their eating the forbidden fruit"
+        ]
+      },
+      "response": "The sin that caused our first parents, Adam and Eve, to fall from the state of grace in which they were created is commonly referred to as **\"the Fall\"** or **\"original sin.\"** This sin is rooted in **disobedience to God's command** and **rebellion against His authority**. Here's a structured explanation:\n\n### 1. **The Specific Act of Sin**  \n   - **Eating the Forbidden Fruit**: Adam and Eve were explicitly commanded by God not to eat from the Tree of the Knowledge of Good and Evil (Genesis 2:16\u201317). Their act of consuming the fruit was the immediate transgression.  \n   - **Temptation by the Serpent**: Satan, through the serpent, tempted Eve by questioning God's command and suggesting that eating the fruit would grant them divine knowledge and autonomy (Genesis 3:1\u20135). This temptation led to their decision to disobey.\n\n### 2. **The Nature of the Sin**  \n   - **Disobedience to God's Command**: The core of the sin was **rebellion against God's will**, which was expressed in the command not to eat from the tree. This act of defiance broke the covenant of trust between God and humanity.  \n   - **Pride and Self-Willed Autonomy**: The sin also involved a **desire to be like God**, seeking to determine good and evil for themselves rather than relying on God's wisdom (Genesis 3:5). This reflects a **spirit of pride** and a rejection of divine authority.  \n   - **Broken Relationship with God**: The sin severed their communion with God, leading to spiritual death and expulsion from Eden (Genesis 3:22\u201324).\n\n### 3. **Theological Significance**  \n   - **Original Sin**: This act introduced **original sin** into human nature, which is inherited by all descendants of Adam and Eve. It marks the beginning of humanity's separation from God and the need for redemption through Christ.  \n   - **Consequences**: The Fall brought **spiritual death**, **physical suffering**, and the **curse of labor** (Genesis 3:17\u201319), as well as the **loss of Edenic innocence**.\n\n### 4. **Key Theological Perspectives**  \n   - **Catholic and Protestant Views**: Both traditions emphasize the **disobedience** as the primary sin, though some theologians highlight the **internal sin of pride**"
+    },
+    {
+      "id": "wsc-016",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q16",
+      "question": "Did all mankind fall in Adam's first transgression?",
+      "reference_answer": "The covenant being made with Adam, not only for himself, but for his posterity; all mankind, descending from him by ordinary generation, sinned in him, and fell with him, in his first transgression.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "The covenant being made with Adam",
+          "not only for himself",
+          "but for his posterity",
+          "descending from him by ordinary generation"
+        ],
+        "key_concepts": [
+          "The covenant being made with Adam",
+          "not only for himself",
+          "but for his posterity",
+          "all mankind"
+        ]
+      },
+      "response": "The question of whether all mankind fell in Adam's first transgression is central to Christian theology, particularly in the doctrine of **original sin**. Here's a structured overview of the key points:\n\n### 1. **Theological Foundation (Original Sin)**  \n   - **Biblical Basis**: The doctrine is rooted in passages like **Romans 5:12**, which states:  \n     *\"Just as sin came into the world through one man, and death through sin, and so death spread to all men because all sinned.\"*  \n     This verse is interpreted to mean that Adam's sin introduced sin and death into the world, and all humanity became subject to its consequences.  \n   - **Genesis 3**: The story of Adam and Eve's disobedience in the Garden of Eden is seen as the origin of sin, leading to spiritual and physical death.\n\n### 2. **Key Doctrinal Positions**  \n   - **Roman Catholicism**:  \n     - Believes **original sin** is inherited from Adam, corrupting human nature and separating humanity from God.  \n     - Emphasizes that Adam's sin introduced a \"sinful nature\" into all humans, making them prone to sin.  \n   - **Protestant Views**:  \n     - **Calvinism**: Shares the belief in original sin, viewing it as a universal inheritance of Adam's guilt and corruption.  \n     - **Arminianism**: Focuses on the **fall** as a collective event but emphasizes individual responsibility for sin, distinguishing between inherited corruption and personal choice.  \n   - **Eastern Orthodoxy**:  \n     - Acknowledges the fall's impact on human nature but emphasizes **spiritual corruption** rather than inherited guilt.  \n     - Views original sin as a \"fall from grace\" that requires redemption through Christ.  \n\n### 3. **Interpretations of \"All Sinned\" (Romans 5:12)**  \n   - **Collective Sin**: Some theologians argue that the verse refers to the **collective sin of humanity** through Adam, not that every individual personally committed the same sin.  \n   - **Universal Consequence**: The fall's consequences (death, separation from God) are seen as affecting all humans, even if the original sin was committed by Adam and Eve.  \n\n### 4. **Key Theological Concepts**  \n   - **Imputation**: In some traditions, Adam's sin is **imputed** to all humanity, meaning the guilt and consequences of his"
+    },
+    {
+      "id": "wsc-017",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q17",
+      "question": "Into what estate did the fall bring mankind?",
+      "reference_answer": "The fall brought mankind into an estate of sin and misery.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "The fall brought mankind into an estate of sin and misery"
+        ],
+        "key_concepts": [
+          "The fall brought mankind into an estate of sin and misery"
+        ]
+      },
+      "response": "The fall, as described in the biblical narrative of Adam and Eve's disobedience in the Garden of Eden, brought mankind into a state of **sin and spiritual separation from God**, often referred to as the **\"fallen state\"** or **\"state of sin.\"** This state is central to Christian theology and has profound implications for human existence. Here's a structured breakdown:\n\n### 1. **Original State Before the Fall**  \n   - **Innocence and Communion with God**: Humanity existed in a state of perfect harmony with God, nature, and each other. Adam and Eve were created in God's image, endowed with **original righteousness** and **eternal life**.  \n   - **Freedom from Sin**: They were free from the inclination to sin (concupiscence) and lived in **spiritual and physical perfection**.  \n\n### 2. **The Fall and Its Consequences**  \n   - **Spiritual Death**: The fall introduced **spiritual death**, a separation from God's presence and grace. This is distinct from physical death, which became a consequence of sin.  \n   - **Loss of Original Righteousness**: Humanity lost the **image of God** (imago Dei), which included moral purity, wisdom, and communion with the divine.  \n   - **Concupiscence**: A **natural inclination to sin** emerged, making humans prone to disobedience and moral failure.  \n   - **Curse on Creation**: The world was subjected to **decay, suffering, and death** (Genesis 3:17\u201319). Nature became hostile, and labor became toilsome.  \n   - **Exile from Eden**: Adam and Eve were expelled from the Garden, symbolizing their estrangement from God's presence and the loss of paradise.  \n\n### 3. **The Fallen State**  \n   - **State of Sin**: Humanity now exists in a condition of **original sin**, inherited from Adam and Eve. This sin is not a personal transgression but a **universal condition** that affects all humans.  \n   - **Need for Redemption**: The fall necessitated **salvation through Jesus Christ**, as humanity is incapable of restoring its relationship with God on its own.  \n   - **Suffering and Mortality**: Physical death and suffering became part of the human experience, reflecting the brokenness of creation.  \n\n### 4. **Theological Implications**  \n   - **Redemption Through Christ**: The fall is the **starting"
+    },
+    {
+      "id": "wsc-018",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q18",
+      "question": "Wherein consists the sinfulness of that estate whereinto man fell?",
+      "reference_answer": "The sinfulness of that estate whereinto man fell, consists in the guilt of Adam's first sin, the want of original righteousness, and the corruption of his whole nature, which is commonly called original sin; together with all actual transgressions which proceed from it.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "The sinfulness of that estate whereinto man fell",
+          "consists in the guilt of Adam's first sin",
+          "the want of original righteousness",
+          "and the corruption of his whole nature"
+        ],
+        "key_concepts": [
+          "The sinfulness of that estate whereinto man fell",
+          "consists in the guilt of Adam's first sin",
+          "the want of original righteousness",
+          "and the corruption of his whole nature"
+        ]
+      },
+      "response": "The sinfulness of the estate into which man fell, as articulated in the Westminster Catechism (Question 12), consists of several key elements that define the consequences of the first sin (original sin) and the resulting state of humanity. These elements are:\n\n1. **The Guilt of Adam\u2019s Sin**:  \n   The sinfulness of the fallen estate includes the **guilt** of Adam\u2019s transgression, which is imputed to all humanity through the doctrine of **original sin**. This guilt is not merely a legal consequence but a moral and spiritual corruption that affects every person descended from Adam.\n\n2. **Loss of Communion with God**:  \n   The fall severed humanity\u2019s **original fellowship with God**, leading to **spiritual death** (separation from God\u2019s presence and grace). This loss of communion is a fundamental aspect of the fallen state, as it deprives humans of the divine life and relationship they were created to enjoy.\n\n3. **Corruption of Human Nature**:  \n   The fall introduced **moral and spiritual corruption** into human nature, rendering it inclined to sin (the **inclination to evil** or **concupiscence**). This corruption affects the mind, will, and affections, making humans prone to disobedience and rebellion against God.\n\n4. **Punishment of Death**:  \n   The fall brought **physical death** (the separation of the soul from the body) and **eternal death** (eternal separation from God). These punishments are both immediate (death) and eternal (condemnation), reflecting the severity of the first sin.\n\n5. **Inclination to Sin (Concupiscence)**:  \n   The fallen state includes an **inherent tendency to sin**, which manifests as a struggle between the will to do good and the power to act rightly. This inclination is a result of the corruption of human nature and is a constant challenge to living in accordance with God\u2019s will.\n\n6. **Under God\u2019s Wrath and Curse**:  \n   Humanity is now subject to **God\u2019s righteous wrath** and the **curse of the law**, which includes suffering, pain, and the consequences of sin. This state of being under divine judgment underscores the sinfulness of the fallen condition.\n\n### Summary:  \nThe sinfulness of the fallen estate lies in the **inherited guilt of Adam\u2019s sin**, the **loss of communion with God**, the **corruption of human nature**, the **punishment of death**, and the **inherent inclination"
+    },
+    {
+      "id": "wsc-019",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q19",
+      "question": "What is the misery of that estate whereinto man fell?",
+      "reference_answer": "All mankind by their fall lost communion with God, are under his wrath and curse, and so made liable to all miseries in this life, to death itself, and to the pains of hell for ever.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "All mankind by their fall lost communion with God",
+          "are under his wrath and curse",
+          "and so made liable to all miseries in this life",
+          "and to the pains of hell for ever"
+        ],
+        "key_concepts": [
+          "All mankind by their fall lost communion with God",
+          "are under his wrath and curse",
+          "and so made liable to all miseries in this life",
+          "to death itself"
+        ]
+      },
+      "response": "The misery of the estate into which humanity fell\u2014often referred to as the **Fall** in Christian theology\u2014is a central concept in understanding the human condition and the need for redemption. This event, rooted in the biblical account of Adam and Eve's disobedience in the Garden of Eden (Genesis 3), introduced sin and death into the world, fundamentally altering the relationship between humanity and God, as well as the natural order. The misery of this fallen state encompasses several key aspects:\n\n---\n\n### **1. Spiritual Separation from God**\n- **Loss of Fellowship**: Humanity was severed from a direct, intimate relationship with God, who had previously walked with Adam and Eve in the Garden (Genesis 3:8\u201310). This separation is described as a \"curse\" (Genesis 3:14\u201319) and is central to the concept of **original sin**.\n- **Alienation from God's Presence**: The Fall introduced a spiritual \"distance\" between God and humanity, leading to a broken relationship that cannot be restored without divine grace.\n\n---\n\n### **2. Physical and Natural Consequences**\n- **Curse on Creation**: The earth was cursed, with thorns and thistles introduced (Genesis 3:17\u201319), making labor arduous and life fraught with toil and suffering.\n- **Mortality**: Death entered the world as a consequence of sin, affecting both humans and all creation (Romans 5:12; 1 Corinthians 15:21\u201322). Humanity is now subject to physical decay and the inevitability of death.\n- **Pain in Childbirth**: Women were subjected to pain during childbirth as a direct result of the Fall (Genesis 3:16).\n\n---\n\n### **3. Moral and Psychological Corruption**\n- **Inherited Sinfulness**: All humans are born with a \"corrupt nature\" (Romans 5:12; 1 Corinthians 15:22), inherited from Adam. This is known as **original sin**, which predisposes individuals to sin and moral failure.\n- **Brokenness and Guilt**: The Fall introduced a sense of guilt, shame, and inner conflict, as humanity is now aware of its sinfulness and the consequences of rebellion against God.\n- **Loss of Innocence**: Humanity lost the purity and harmony that characterized the pre-Fall state, leading to a pervasive sense of brokenness and alienation.\n\n---\n\n### **4. Relational and Social Consequences**"
+    },
+    {
+      "id": "wsc-020",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q20",
+      "question": "Did God leave all mankind to perish in the estate of sin and misery?",
+      "reference_answer": "God having, out of his mere good pleasure, from all eternity, elected some to everlasting life did enter into a covenant of grace, to deliver them out of the estate of sin and misery, and to bring them into an estate of salvation by a Redeemer.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "out of his mere good pleasure",
+          "from all eternity",
+          "elected some to everlasting life did enter into a covenant of grace",
+          "to deliver them out of the estate of sin and misery"
+        ],
+        "key_concepts": [
+          "out of his mere good pleasure",
+          "from all eternity",
+          "elected some to everlasting life did enter into a covenant of grace",
+          "to deliver them out of the estate of sin and misery"
+        ]
+      },
+      "response": "The question of whether God left all mankind to perish in the estate of sin and misery is a profound theological inquiry, rooted in the Christian understanding of human nature, divine sovereignty, and redemption. Here's a structured response:\n\n### 1. **The Reality of Sin and Misery**  \n   - **Original Sin**: According to Christian doctrine, all humans are born into a state of sin and spiritual death due to the fall of Adam and Eve (Romans 5:12; 1 Corinthians 15:21-22). This sin separates humanity from God, leading to spiritual and eternal misery (Romans 3:23; Isaiah 59:2).  \n   - **Total Depravity**: In many Christian traditions (e.g., Calvinism), this sinfulness is described as \"total depravity,\" meaning humans are incapable of saving themselves through their own efforts (Ephesians 2:1-3).  \n\n### 2. **God\u2019s Sovereign Grace and Redemption**  \n   - **God\u2019s Love and Mercy**: Despite humanity\u2019s sinfulness, God did not abandon His creation. Instead, He chose to redeem it through Jesus Christ. The Bible affirms that God \u201cso loved the world that He gave His only Son, that whoever believes in Him should not perish but have eternal life\u201d (John 3:16).  \n   - **Redemption Through Christ**: Jesus\u2019 sacrifice on the cross provides salvation for all who believe (Romans 5:8; 1 Timothy 1:15). This is not a universal salvation (as some interpretations suggest), but a grace extended to those who accept it (John 1:12; Acts 16:31).  \n\n### 3. **The Balance of Sovereignty and Responsibility**  \n   - **God\u2019s Sovereignty**: God\u2019s plan of salvation is rooted in His sovereign will. He predestined those who would be saved (Ephesians 1:4-5), demonstrating His power over sin and death (1 Corinthians 15:57).  \n   - **Human Responsibility**: While God\u2019s grace is freely given, humans are still responsible for their response. Salvation requires faith in Christ (John 6:44; Romans 10:9-10). This underscores the tension between divine initiative and human choice.  \n\n### 4. **Theological Perspectives**  \n   - **Calvinist View**: Emphasizes God\u2019s absolute"
+    },
+    {
+      "id": "wsc-021",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q21",
+      "question": "Who is the Redeemer of God's elect?",
+      "reference_answer": "The only Redeemer of God's elect is the Lord Jesus Christ, who, being the eternal Son of God, became man and so was, and continueth to be, God and man in two distinct natures, and one person, forever.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "The only Redeemer of God's elect is the Lord Jesus Christ",
+          "being the eternal Son of God",
+          "became man and so was",
+          "and continueth to be"
+        ],
+        "key_concepts": [
+          "The only Redeemer of God's elect is the Lord Jesus Christ",
+          "being the eternal Son of God",
+          "became man and so was",
+          "and continueth to be"
+        ]
+      },
+      "response": "The Redeemer of God's elect is **Jesus Christ**, the Son of God, who through his sacrificial death and resurrection, accomplished the redemption of those chosen by God for salvation. This is a central tenet of Christian theology, rooted in the New Testament and emphasized in key doctrines of salvation.\n\n### Key Points:\n1. **Redemption through Christ**:  \n   Jesus is described as the \"Lamb of God who takes away the sin of the world\" (John 1:29) and the \"Savior of the world\" (John 4:42). His atoning sacrifice on the cross (Matthew 20:28; 1 Peter 2:24) provides the means for the redemption of humanity, including the elect.\n\n2. **The Elect**:  \n   The term \"elect\" refers to those chosen by God for salvation (Matthew 22:14; Romans 8:33). In Calvinist theology, this refers to a specific group predestined for eternal life, while in Arminian or broader Christian traditions, it encompasses all who respond to God's grace through faith in Christ.\n\n3. **Jesus as the Fulfillment of Prophecy**:  \n   The Old Testament foretold a suffering Servant (Isaiah 53) who would redeem Israel, a role fulfilled by Jesus (Matthew 8:17; Acts 3:14\u201315). His resurrection (Romans 1:4) confirms his victory over sin and death, securing eternal redemption for the elect.\n\n4. **Universal and Particular Redemption**:  \n   - **Universal Redemption**: Christ's sacrifice is seen as sufficient for all humanity (1 Timothy 4:10), though not all are saved.  \n   - **Particular Redemption**: In some traditions (e.g., Calvinism), Christ's atonement is specifically efficacious for the elect, ensuring their salvation (John 10:9; 1 Peter 1:2).\n\n5. **Theological Consensus**:  \n   Across most Christian denominations, Jesus is universally recognized as the Redeemer of God's elect. While interpretations of the elect's role and the extent of redemption may vary, the core belief in Christ's redemptive work remains unchallenged.\n\n### Conclusion:  \nThe Redeemer of God's elect is **Jesus Christ**, whose life, death, and resurrection secure the salvation of those chosen by God. This truth is foundational to the Christian"
+    },
+    {
+      "id": "wsc-022",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q22",
+      "question": "How did Christ, being the Son of God, become man?",
+      "reference_answer": "Christ, the Son of God, became man, by taking to himself a true body, and a reasonable soul, being conceived by the power of the Holy Ghost, in the womb of the virgin Mary, and born of her yet without sin.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "by taking to himself a true body",
+          "and a reasonable soul",
+          "being conceived by the power of the Holy Ghost",
+          "in the womb of the virgin Mary"
+        ],
+        "key_concepts": [
+          "the Son of God",
+          "by taking to himself a true body",
+          "and a reasonable soul",
+          "being conceived by the power of the Holy Ghost"
+        ]
+      },
+      "response": "The question of how Christ, as the Son of God, became man is central to Christian theology and is known as the **Incarnation**. This doctrine asserts that Jesus Christ is both fully divine (the eternal Son of God) and fully human (a real human being), united in one person. Here's a structured explanation:\n\n---\n\n### 1. **Theological Foundation: The Trinity and the Word**\n   - **God as Trinity**: The Christian God exists as three persons\u2014Father, Son (Jesus), and Holy Spirit\u2014yet is one divine essence. Jesus, as the **Son of God**, is eternally begotten of the Father, sharing the same divine nature.\n   - **The Word Became Flesh**: In John 1:14, it is written, *\"And the Word became flesh and dwelt among us, full of grace and truth.\"* This verse affirms that the divine Word (Logos), Jesus, took on human form. The \"Word\" refers to Jesus as the eternal, pre-existent Son of God.\n\n---\n\n### 2. **The Virgin Birth and Human Nature**\n   - **Conception by the Holy Spirit**: According to the Gospels (Matthew 1:18\u201325; Luke 1:26\u201338), Jesus was conceived by the Holy Spirit in the womb of the Virgin Mary. This miraculous act ensured that Jesus was born of a human mother (Mary) while retaining his divine origin.\n   - **Human Nature**: Jesus assumed a complete human nature\u2014body, soul, and rational mind\u2014identical to that of other humans. This included experiencing hunger, fatigue, and emotions, as well as the capacity for sin (though he remained sinless).\n\n---\n\n### 3. **Hypostatic Union: Divine and Human Natures United**\n   - **One Person, Two Natures**: The doctrine of **hypostatic union** (from the Greek *hypo* [under] and *stasis* [standing]) teaches that Jesus has two distinct natures\u2014divine and human\u2014united in one person without confusion, change, division, or separation.\n   - **Distinct Yet United**: The divine nature (eternal, omnipotent, unchanging) and the human nature (finite, created, subject to death) coexist in Jesus. This union was necessary for Jesus to:\n     - **Suffer and Die**: As a human, he could die on the cross, satisfying the demands of divine justice."
+    },
+    {
+      "id": "wsc-023",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q23",
+      "question": "What offices doth Christ execute as our Redeemer?",
+      "reference_answer": "Christ, as our Redeemer, executeth the offices of a prophet, of a priest, and of a king, both in his estate of humiliation and exaltation.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "executeth the offices of a prophet",
+          "both in his estate of humiliation and exaltation"
+        ],
+        "key_concepts": [
+          "as our Redeemer",
+          "executeth the offices of a prophet",
+          "of a priest",
+          "and of a king"
+        ]
+      },
+      "response": "Christ, as our Redeemer, executes three distinct offices: **Prophet, Priest, and King**. These offices are central to His redemptive work and are rooted in Scripture and Reformed theology. Here's an explanation of each:\n\n### 1. **Prophet**  \nAs the **Prophet**, Christ reveals God\u2019s will and truth to humanity. He is the ultimate teacher and messenger of God, speaking with divine authority.  \n- **Role**: He proclaims the Word of God (e.g., the Gospels, Sermon on the Mount), teaches the principles of the Kingdom of Heaven, and reveals the nature of God and the path to salvation.  \n- **Significance**: Through His teachings, Christ clarifies the covenant promises, the Law, and the way of salvation, guiding believers to know and obey God.  \n- **Scriptural Basis**: \"He has spoken to us by His Son, whom He appointed heir of all things\" (Hebrews 1:2).\n\n### 2. **Priest**  \nAs the **Priest**, Christ offers Himself as the perfect sacrifice for the sins of humanity. He mediates between God and humanity, reconciling us to God.  \n- **Role**: He atones for sin through His death on the cross (a once-for-all sacrifice), intercedes for believers in heaven, and provides the means of grace (e.g., sacraments, prayer).  \n- **Significance**: His sacrifice removes the barrier of sin, secures forgiveness, and restores fellowship with God.  \n- **Scriptural Basis**: \"He is the mediator of a new covenant\" (Hebrews 12:24).\n\n### 3. **King**  \nAs the **King**, Christ exercises sovereign authority over all creation and His Church. He rules with power and love, ensuring the victory over evil and the eternal destiny of His people.  \n- **Role**: He reigns as the ruler of the Kingdom of Heaven, protects His Church, and will ultimately judge the world. His kingship includes spiritual leadership, victory over death, and the fulfillment of God\u2019s promises.  \n- **Significance**: His kingship ensures the security of believers and the triumph of God\u2019s kingdom over sin and death.  \n- **Scriptural Basis**: \"He is the head of the body, the church\" (Colossians 1:18).\n\n### Unity of the Offices  \nThese three offices are not separate roles but **aspects of Christ\u2019s one medi"
+    },
+    {
+      "id": "wsc-024",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q24",
+      "question": "How doth Christ execute the office of a prophet?",
+      "reference_answer": "Christ executeth the office of a prophet, in revealing to us, by his Word and Spirit the will of God for our salvation.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "Christ executeth the office of a prophet",
+          "in revealing to us",
+          "by his Word and Spirit the will of God for our salvation"
+        ],
+        "key_concepts": [
+          "Christ executeth the office of a prophet",
+          "in revealing to us",
+          "by his Word and Spirit the will of God for our salvation"
+        ]
+      },
+      "response": "Christ executes the office of a prophet by fulfilling the role of the ultimate and complete messenger of God, surpassing the functions of the Old Testament prophets. This is rooted in the doctrine of the Trinity and the Incarnation, where Jesus, as the Son of God, reveals God's will, teaches divine truth, and fulfills the prophetic promises of the Old Testament. Here is a structured explanation:\n\n### 1. **Revelation of God\u2019s Will**  \n   - **The Word Made Flesh**: Christ is the \"Word of God made flesh\" (John 1:14), embodying and revealing the fullness of God\u2019s character, will, and plan. His teachings and actions are the ultimate revelation of God\u2019s truth.  \n   - **Fulfillment of Prophecies**: Jesus fulfills Old Testament prophecies about the Messiah (e.g., Isaiah 53, Micah 5:2), demonstrating that He is the long-awaited prophet who brings God\u2019s promises to completion.  \n\n### 2. **Teaching the Law and Gospel**  \n   - **Law and Gospel**: Christ teaches the Law (e.g., the Ten Commandments) and the Gospel (e.g., the Kingdom of God, salvation through grace). He clarifies the Law\u2019s purpose (to reveal sin) and introduces the Gospel as the means of redemption (Matthew 5:17\u201319).  \n   - **Authenticity of His Teaching**: His authority as the Son of God ensures His teachings are infallible and binding. He declares, \"He who hears you hears me, and he who rejects you rejects me\" (Luke 10:16), emphasizing His role as the final and definitive prophet.  \n\n### 3. **Prophetic Foretelling and Judgment**  \n   - **Foretelling the Future**: Christ speaks prophetically about future events, such as the resurrection (John 2:19), the end times (Matthew 24), and the final judgment (Matthew 25:31\u201346). These teachings guide believers in understanding God\u2019s eternal plan.  \n   - **Warning and Correction**: He warns of spiritual dangers (e.g., hypocrisy, false prophets) and calls for repentance, fulfilling the prophetic role of confronting sin and calling people to righteousness.  \n\n### 4. **Mediation Between God and Humanity**  \n   - **Ultimate Mediator**: As the incarnate Son of God, Christ bridges the gap between"
+    },
+    {
+      "id": "wsc-025",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q25",
+      "question": "How doth Christ execute the office of a priest?",
+      "reference_answer": "Christ executeth the office of a priest, in his once offering up of himself a sacrifice to satisfy divine justice, and reconcile us to God; and in making continual intercession for us.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "Christ executeth the office of a priest",
+          "in his once offering up of himself a sacrifice to satisfy divine justice",
+          "and reconcile us to God",
+          "and in making continual intercession for us"
+        ],
+        "key_concepts": [
+          "Christ executeth the office of a priest",
+          "in his once offering up of himself a sacrifice to satisfy divine justice",
+          "and reconcile us to God",
+          "and in making continual intercession for us"
+        ]
+      },
+      "response": "Christ executes the office of a priest in a manner that surpasses the Old Testament priesthood, as revealed in Scripture. His role is characterized by **eternal priesthood**, **perfect sacrifice**, **intercession**, and **mediation** between God and humanity. Here\u2019s a structured explanation:\n\n---\n\n### 1. **Eternal Priesthood in the Order of Melchizedek**  \n   - Unlike the Levitical priests (descendants of Aaron), Christ\u2019s priesthood is **eternal** and based on the **order of Melchizedek** (Hebrews 5:6, 7:11\u201317, 10:11\u201314).  \n   - This priesthood is **divinely appointed** (Hebrews 5:5\u201310) and not dependent on lineage or repeated rituals.  \n   - His priesthood is **unlimited in time** (Hebrews 7:24\u201325), ensuring continual access to God for His people.\n\n---\n\n### 2. **Perfect Sacrifice for Sin**  \n   - Christ offered Himself **once for all** as the **ultimate sacrifice** (Hebrews 7:27, 9:11\u201314, 10:10\u201312).  \n   - Unlike the Old Testament sacrifices (which required repetition), His sacrifice on the cross **fulfilled the Law** (Hebrews 9:15) and **secured eternal redemption** (Hebrews 9:12).  \n   - This sacrifice **removes sin** permanently, enabling direct access to God (Hebrews 10:19\u201322).\n\n---\n\n### 3. **Intercession on Behalf of Humanity**  \n   - Christ **continually intercedes** for believers at the right hand of God (Romans 8:34, Hebrews 7:25).  \n   - He advocates for His people, ensuring their **forgiveness**, **justification**, and **eternal salvation** (1 John 2:1\u20132).  \n   - His intercession is **personal and empathetic**, as He understands human weakness (Hebrews 4:15\u201316).\n\n---\n\n### 4. **Mediator Between God and Humanity**  \n   - Christ is the **only mediator** between God and humanity (1 Timothy 2:5).  \n   - He bridges the gap caused by sin, restoring communion between God and people ("
+    },
+    {
+      "id": "wsc-026",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q26",
+      "question": "How doth Christ execute the office of a king?",
+      "reference_answer": "Christ executeth the office of a king, in subduing us to himself, in ruling and defending us, and in restraining and conquering all his and our enemies.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "Christ executeth the office of a king",
+          "in subduing us to himself",
+          "in ruling and defending us",
+          "and in restraining and conquering all his and our enemies"
+        ],
+        "key_concepts": [
+          "Christ executeth the office of a king",
+          "in subduing us to himself",
+          "in ruling and defending us",
+          "and in restraining and conquering all his and our enemies"
+        ]
+      },
+      "response": "Christ executes the office of a king in several key ways, rooted in His divine nature and redemptive work. This role is central to His threefold office as Prophet, Priest, and King, with His kingship encompassing both spiritual and cosmic authority. Here\u2019s a structured explanation:\n\n### 1. **Sovereign Rule Over All Creation**  \n   - **Cosmic Authority**: Christ, as the eternal Son of God, holds supreme dominion over all things (Colossians 1:16\u201317). His resurrection and ascension (Acts 1:9\u201311) confirm His victory over sin, death, and the powers of darkness, establishing His authority over the universe.  \n   - **Governance of the World**: He rules with wisdom and justice, guiding creation toward its ultimate purpose (Romans 11:33\u201336). His kingship is not coercive but reflects His love and care for all of God\u2019s creation.\n\n### 2. **Reign Through the Holy Spirit**  \n   - **Spiritual Guidance**: Christ\u2019s kingship is exercised through the Holy Spirit, who indwells believers and empowers them to live in obedience to God (John 14:16\u201317; 1 Corinthians 12:13). The Spirit applies Christ\u2019s teachings and works of grace, uniting believers to Him as His body (Ephesians 1:22\u201323).  \n   - **Sanctification**: As King, Christ sanctifies His people, transforming their hearts and lives to reflect His character (Hebrews 12:2). This spiritual reign is the foundation of the Church\u2019s mission and witness.\n\n### 3. **Headship of the Church**  \n   - **Shepherd and Leader**: Christ is the head of the Church, guiding it through His Word and Spirit (Ephesians 4:15\u201316). He governs the Church with love, ensuring unity and growth in holiness.  \n   - **Covenantal Mediator**: As King, He mediates the new covenant, fulfilling the promises of God and binding His people to Himself through faith (Hebrews 8:6\u201313). His kingship is inseparable from His role as the Lamb who was slain (Revelation 1:5).\n\n### 4. **Victory Over Sin and Death**  \n   - **Resurrection and Authority**: Christ\u2019s resurrection (1"
+    },
+    {
+      "id": "wsc-027",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q27",
+      "question": "Wherein did Christ's humiliation consist?",
+      "reference_answer": "Christ's humiliation consisted in his being born, and that in a low condition, made under the law, undergoing the miseries of this life, the wrath of God, and the cursed death of the cross; in being buried, and continuing under the power of death for a time.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "Christ's humiliation consisted in his being born",
+          "and that in a low condition",
+          "made under the law",
+          "undergoing the miseries of this life"
+        ],
+        "key_concepts": [
+          "Christ's humiliation consisted in his being born",
+          "and that in a low condition",
+          "made under the law",
+          "undergoing the miseries of this life"
+        ]
+      },
+      "response": "Christ's humiliation, a central aspect of His redemptive work, consists of the profound suffering, degradation, and self-emptying He endured during His earthly ministry and crucifixion. This humiliation is rooted in the doctrine of the Incarnation, where the eternal Son of God became fully human, embracing the limitations and sufferings of humanity to atone for sin. Key elements of Christ's humiliation include:\n\n1. **Humble Birth and Poverty**:  \n   Jesus was born in a lowly stable in Bethlehem, not in royal splendor, and His early life was marked by poverty (e.g., Luke 2:7; Matthew 8:20). This contrasts with the divine majesty He possessed as God, emphasizing His identification with humanity's humble condition.\n\n2. **Submission to Human Limitations**:  \n   Christ emptied Himself of His divine privileges, taking on the form of a servant (Philippians 2:7). He lived as a human, subject to hunger, fatigue, and the frailties of flesh, demonstrating His complete solidarity with humanity.\n\n3. **Suffering and Persecution**:  \n   Jesus endured physical and spiritual anguish, including betrayal by His disciples (e.g., Judas Iscariot, Matthew 26:47\u201350), denial by Peter (Matthew 26:69\u201375), and mockery by religious and Roman authorities (Matthew 27:27\u201331). His suffering was not merely passive but active, as He bore the weight of humanity's sins (Isaiah 53:6).\n\n4. **Crucifixion and Death**:  \n   The ultimate humiliation was His crucifixion, where He was treated as a criminal, nailed to a cross, and subjected to the most brutal form of execution. This public shame and death (John 19:17\u201330) symbolized His rejection by both Jews and Gentiles, as well as His separation from God (Isaiah 53:4\u20136; Psalm 22:1).\n\n5. **Forsakenness and Spiritual Despair**:  \n   Jesus experienced the anguish of divine abandonment (Psalm 22:1; Matthew 27:46), a profound spiritual suffering that underscores the depth of His sacrifice. This was not a loss of His divine nature but a voluntary act of obedience to the Father's plan.\n\n6. **Burial in a Common Tomb**:  \n   After His death, Jesus"
+    },
+    {
+      "id": "wsc-028",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q28",
+      "question": "Wherein consisteth Christ's exaltation?",
+      "reference_answer": "Christ's exaltation consisteth in his rising again from the dead on the third day, in ascending up into heaven, in sitting at the right hand of God the Father, and in coming to judge the world at the last day.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "Christ's exaltation consisteth in his rising again from the dead on the third day",
+          "in ascending up into heaven",
+          "in sitting at the right hand of God the Father",
+          "and in coming to judge the world at the last day"
+        ],
+        "key_concepts": [
+          "Christ's exaltation consisteth in his rising again from the dead on the third day",
+          "in ascending up into heaven",
+          "in sitting at the right hand of God the Father",
+          "and in coming to judge the world at the last day"
+        ]
+      },
+      "response": "Christ's exaltation is a central doctrine in Christian theology, emphasizing His supreme honor, authority, and glory as the risen and ascended Savior. It encompasses several key aspects, all rooted in Scripture:\n\n1. **Resurrection from the Dead**  \n   Christ's resurrection is the foundation of His exaltation. By rising from the dead, He conquered sin and death, proving His divinity and securing salvation for humanity (Romans 14:9; 1 Corinthians 15:3-4). This event marked the beginning of His exalted status as the \"firstfruits of those who have fallen asleep\" (1 Corinthians 15:20).\n\n2. **Ascension to Heaven**  \n   After His resurrection, Christ ascended bodily into heaven, where He now sits at the right hand of God the Father (Acts 1:9-11; Philippians 2:9-11). This act signifies His triumph over all creation and His role as the sovereign ruler of the universe.\n\n3. **Sitting at the Right Hand of God**  \n   Christ's exaltation includes His sovereign authority and intimate relationship with the Father. Sitting at the right hand of God symbolizes His supreme power, honor, and role as the mediator between God and humanity (Hebrews 1:3; Ephesians 1:20-23).\n\n4. **Authority Over All Things**  \n   Christ now exercises universal authority, with all power in heaven and on earth entrusted to Him (Matthew 28:18; Colossians 1:16-17). This includes dominion over the cosmos, the Church, and the forces of evil.\n\n5. **Giving the Holy Spirit**  \n   As part of His exaltation, Christ sends the Holy Spirit to empower the Church, guide believers, and fulfill the Great Commission (Acts 2:33; John 16:7). The Spirit is the fruit of Christ's victory and the means by which His kingdom is advanced.\n\n6. **Worship and Honor**  \n   Christ is worshipped by angels, humans, and all creation. His exaltation is reflected in the universal acknowledgment of His lordship, as seen in the declaration: \"At the name of Jesus every knee should bow\" (Philippians 2:10-11).\n\n7. **Mediator of the New Covenant**  \n   Christ's exaltation includes His role as"
+    },
+    {
+      "id": "wsc-029",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q29",
+      "question": "How are we made partakers of the redemption purchased by Christ?",
+      "reference_answer": "We are made partakers of the redemption purchased by Christ, by the effectual application of it to us by his Holy Spirit.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "We are made partakers of the redemption purchased by Christ",
+          "by the effectual application of it to us by his Holy Spirit"
+        ],
+        "key_concepts": [
+          "We are made partakers of the redemption purchased by Christ",
+          "by the effectual application of it to us by his Holy Spirit"
+        ]
+      },
+      "response": "The question of how we are made partakers of the redemption purchased by Christ is central to Christian theology, particularly in Reformed and Calvinist traditions. The answer hinges on the work of God\u2019s grace through the Holy Spirit, the application of Christ\u2019s atonement, and the believer\u2019s union with Christ. Here\u2019s a structured explanation:\n\n---\n\n### **1. The Work of the Holy Spirit**\n- **Regeneration**: The Holy Spirit renews the heart of the elect, awakening them from spiritual death (Ezekiel 36:26\u201327). This regeneration is the beginning of the new life in Christ, enabling a response to the gospel.\n- **Effectual Calling**: The Holy Spirit calls individuals to faith in Christ, not through human effort but by God\u2019s sovereign grace. This call is **effectual**, meaning it inevitably leads to faith and repentance (Romans 8:30; 2 Timothy 1:9).\n\n---\n\n### **2. Justification by Faith**\n- **Declaration of Righteousness**: Through faith in Christ, believers are **justified**\u2014declared righteous by God\u2019s grace, not by works (Romans 3:24\u201325; 5:1). Christ\u2019s sacrifice on the cross is applied to the believer, satisfying God\u2019s justice and reconciling them to Him.\n\n---\n\n### **3. Adoption as Children of God**\n- **New Identity**: Believers are **adopted** into God\u2019s family, becoming His children and heirs of eternal life (Romans 8:15\u201317; Galatians 4:5\u20137). This adoption grants them a new relationship with God, rooted in love and fellowship.\n\n---\n\n### **4. Sanctification**\n- **Growth in Holiness**: The Holy Spirit works in believers to **sanctify** them, transforming their hearts and lives to reflect Christ\u2019s character (1 Thessalonians 4:3\u20137; 2 Corinthians 3:18). This is a progressive process of becoming more like Christ, though not yet fully realized in this life.\n\n---\n\n### **5. Assurance of Salvation**\n- **Confidence in Redemption**: Believers are assured of their salvation through the Holy Spirit\u2019s witness (Romans 8:16) and the promises of Scripture. This assurance is grounded in Christ\u2019s finished work and God\u2019s unchanging covenant faithfulness.\n\n---\n\n### **Summary**\nWe are made partakers of Christ\u2019s redemption **through"
+    },
+    {
+      "id": "wsc-030",
+      "category": "catechism_recall",
+      "source": "Westminster Shorter Catechism Q30",
+      "question": "How doth the Spirit apply to us the redemption purchased by Christ?",
+      "reference_answer": "The Spirit applieth to us the redemption purchased by Christ, by working faith in us, and thereby uniting us to Christ in our effectual calling.",
+      "scoring": {
+        "method": "semantic_similarity",
+        "required_phrases": [
+          "The Spirit applieth to us the redemption purchased by Christ",
+          "by working faith in us",
+          "and thereby uniting us to Christ in our effectual calling"
+        ],
+        "key_concepts": [
+          "The Spirit applieth to us the redemption purchased by Christ",
+          "by working faith in us",
+          "and thereby uniting us to Christ in our effectual calling"
+        ]
+      },
+      "response": "The application of the redemption purchased by Christ is a central aspect of Christian theology, emphasizing how the Holy Spirit makes the work of Christ effective in the lives of believers. This process is not merely a passive reception of grace but an active, transformative work of the Spirit. Here\u2019s a structured explanation of how the Spirit applies redemption:\n\n### 1. **Regeneration (New Birth)**  \n   - The Spirit gives spiritual life to the spiritually dead, enabling individuals to respond to the Gospel. This is the initial act of applying redemption, where the Spirit renews the heart, awakening faith and repentance.  \n   - **Scriptural Basis**: \"So God was pleased to reveal His Son in me, so that I might preach Him among the Gentiles... and that I might be a minister of Christ Jesus to the Gentiles, making the Gentiles holy and acceptable... by the grace of God\" (1 Corinthians 1:17-31).  \n\n### 2. **Justification (Declaration of Righteousness)**  \n   - The Spirit applies the righteousness of Christ to the believer, declaring them justified through faith. This is a legal act where God forgives sins and credits Christ\u2019s righteousness to the believer\u2019s account.  \n   - **Scriptural Basis**: \"But God, being rich in mercy, because of the great love with which He loved us, even when we were dead in our trespasses, made us alive together with Christ\u2014by grace you have been saved\" (Ephesians 2:4-5).  \n\n### 3. **Sanctification (Holiness and Growth)**  \n   - The Spirit works in the believer\u2019s life to progressively conform them to the image of Christ. This involves overcoming sin, cultivating holiness, and growing in obedience.  \n   - **Scriptural Basis**: \"But you are a chosen race, a royal priesthood, a holy nation, a people for His own possession, that you may proclaim the excellencies of Him who called you out of darkness into His marvelous light\" (1 Peter 2:9).  \n\n### 4. **Adoption as Children of God**  \n   - The Spirit testifies with the believer\u2019s spirit that they are children of God, granting them the right to call God \"Abba, Father\" and access to His promises.  \n   - **Scriptural Basis**: \"For you have been born again, not of perishable seed but of imperishable, through the living and abiding word of God\" (1"
+    }
+  ],
+  "results_path": "results/qwen_qwen3-8b_20260514_194007.json",
+  "status": "in_progress"
+}

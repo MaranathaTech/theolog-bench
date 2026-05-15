@@ -112,7 +112,19 @@ def parse_args():
         "--detailed", action="store_true",
         help="Generate a detailed narrative report (LLM-generated) after sweep/group",
     )
+    parser.add_argument(
+        "--local", action="store_true",
+        help="Override all presets to run locally via Ollama (http://localhost:11434/v1). "
+             "Requires models to be pulled in Ollama with matching names.",
+    )
     return parser
+
+
+def _apply_local_override(args):
+    """If --local flag is set, override to use Ollama."""
+    if getattr(args, "local", False):
+        args.backend = "api"
+        args.api_url = "http://localhost:11434/v1"
 
 
 def apply_preset(args, parser, config=None):
@@ -136,6 +148,7 @@ def apply_preset(args, parser, config=None):
         args.model_path = preset["model_path"]
     if "max_tokens" in preset:
         args.max_tokens = preset["max_tokens"]
+    _apply_local_override(args)
 
 
 def apply_preset_config(args, parser, preset_config):
@@ -150,6 +163,7 @@ def apply_preset_config(args, parser, preset_config):
         args.model_path = preset_config["model_path"]
     if "max_tokens" in preset_config:
         args.max_tokens = preset_config["max_tokens"]
+    _apply_local_override(args)
 
 
 def _save_checkpoint(results: dict, output_path: Path):

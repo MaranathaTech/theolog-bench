@@ -33,7 +33,7 @@ theolog-bench/
 - `lib/report.py` — Report formatting: `generate_report(results)` produces a text report with category breakdown, overall score, and flagged failures. `generate_comparison_report(results_list)` shows side-by-side category scores for 2+ runs. `generate_detailed_report(results_list, config, group_name, group_description)` generates a narrative markdown report using the judge LLM (styled after `results/reports/96gb-card-comparison.md`), falling back to leaderboard on failure. Helpers `_compute_report_data()` and `_build_report_prompt()` handle data computation and prompt construction.
 - `run.py` — Main benchmark runner CLI. Orchestrates: load questions → query model → automated scoring → optional LLM judge → save JSON results → print report. Supports `--backend local|api`, `--categories`, `--limit`, `--judge/--no-judge`, `--preset <name>`, `--sweep [presets...]`, `--list-presets`, `--smoke` (quick 3-per-category smoke test), `--group <name>` (run a named group of presets), `--list-groups`, `--resume <file>` (resume from partial results), `--detailed` (generate LLM narrative report after sweep/group). Saves atomic checkpoints every 10 questions/judge calls. Results include `"status"` field (`"in_progress"`, `"complete"`, or `"aborted: <reason>"`). Sweep mode isolates errors per preset so one failure doesn't crash the entire multi-model run.
 - `report.py` — Standalone tool to regenerate reports from saved result JSON files, compare multiple runs with `--compare`, or generate LLM narrative reports with `--detailed`. Supports `--group-name NAME` (label the report) and `--output FILE` (write to file).
-- `config.yaml` — Configuration for the LLM judge (defaults to Gemini 2.5 Flash on OpenRouter), scoring params, model presets for `--preset`/`--sweep` (each with optional `meta:` block for vendor/architecture/params/local_capable), named groups for `--group`, and `group_descriptions:` for detailed report generation.
+- `config.yaml` — Configuration for the LLM judge (defaults to Gemini 2.5 Flash on OpenRouter), scoring params (default max_tokens=2048, thinking models override to 4096), model presets for `--preset`/`--sweep` (each with optional `meta:` block for vendor/architecture/params/local_capable), named groups for `--group` (12gb, 24gb, 48gb, 96gb, budget, mid, frontier, cloud, all, local), and `group_descriptions:` for detailed report generation. All open-weight groups run via OpenRouter by default; use `--local` to override to Ollama.
 - `benchmark.json` — The generated question bank. Do not edit manually; regenerate via `build_benchmark.py`.
 
 ## Benchmark Categories
@@ -68,7 +68,14 @@ python3 run.py --sweep finetuned base-qwen3-1.7b gpt-5.5        # Run multiple p
 python3 run.py --sweep                                           # Run all presets
 python3 run.py --smoke                                           # Quick smoke test (3 q/cat, cheap model, no judge)
 python3 run.py --smoke --preset finetuned                        # Smoke test a specific model
-python3 run.py --group budget                                    # Run all presets in a named group
+python3 run.py --group 12gb                                      # Small models (12GB VRAM tier)
+python3 run.py --group 24gb                                      # Medium models (24GB VRAM tier)
+python3 run.py --group 48gb                                      # Large models (48GB VRAM tier)
+python3 run.py --group 96gb                                      # XL models (96GB VRAM tier)
+python3 run.py --group budget                                    # Cheapest cloud models
+python3 run.py --group mid                                       # Mid-tier cloud models
+python3 run.py --group frontier                                  # Top frontier models
+python3 run.py --group 24gb --local                              # Run 24GB tier via Ollama
 python3 run.py --smoke --group budget                            # Smoke test all budget models
 python3 run.py --list-groups                                     # List available groups
 python3 report.py results/raw/<file>.json                       # View a result

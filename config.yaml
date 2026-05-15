@@ -12,7 +12,7 @@ judge:
 # Scoring defaults
 scoring:
   temperature: 0.3
-  max_tokens: 512
+  max_tokens: 2048
   semantic_threshold: 0.6
 
 # Model presets for benchmarking
@@ -269,6 +269,17 @@ presets:
       params: "9B"
       local_capable: true
 
+  glm-4-32b:
+    backend: api
+    api_url: https://openrouter.ai/api/v1
+    model: z-ai/glm-4-32b
+    description: "GLM-4 32B dense — 18GB Q4 local (OpenRouter)"
+    meta:
+      vendor: "Zhipu AI"
+      architecture: "32B dense"
+      params: "32B"
+      local_capable: true
+
   # ============================================================
   # BUDGET CLOUD MODELS (OpenRouter, <$0.15/run)
   # ============================================================
@@ -304,6 +315,28 @@ presets:
       vendor: "Meta"
       architecture: "400B MoE, 17B active"
       params: "400B"
+      local_capable: false
+
+  glm-4.7:
+    backend: api
+    api_url: https://openrouter.ai/api/v1
+    model: z-ai/glm-4.7
+    description: "GLM-4.7 — 358B MoE, 32B active, ~$0.06/run (OpenRouter)"
+    meta:
+      vendor: "Zhipu AI"
+      architecture: "358B MoE, 32B active"
+      params: "358B"
+      local_capable: false
+
+  minimax-m2.7:
+    backend: api
+    api_url: https://openrouter.ai/api/v1
+    model: minimax/minimax-m2.7
+    description: "MiniMax M2.7 — 230B MoE, 10B active, ~$0.12/run (OpenRouter)"
+    meta:
+      vendor: "MiniMax"
+      architecture: "230B MoE, 10B active"
+      params: "230B"
       local_capable: false
 
   # ============================================================
@@ -365,6 +398,28 @@ presets:
       params: "unknown"
       local_capable: false
 
+  glm-5:
+    backend: api
+    api_url: https://openrouter.ai/api/v1
+    model: z-ai/glm-5
+    description: "GLM-5 — 744B MoE, 40B active, ~$0.25/run (OpenRouter)"
+    meta:
+      vendor: "Zhipu AI"
+      architecture: "744B MoE, 40B active"
+      params: "744B"
+      local_capable: false
+
+  kimi-k2.6:
+    backend: api
+    api_url: https://openrouter.ai/api/v1
+    model: moonshotai/kimi-k2.6
+    description: "Kimi K2.6 — 1T MoE, 32B active, ~$0.55/run (OpenRouter)"
+    meta:
+      vendor: "Moonshot AI"
+      architecture: "1T MoE, 32B active"
+      params: "1T"
+      local_capable: false
+
   # ============================================================
   # FRONTIER CLOUD MODELS (OpenRouter, >$1.50/run)
   # ============================================================
@@ -373,7 +428,6 @@ presets:
     backend: api
     api_url: https://openrouter.ai/api/v1
     model: google/gemini-3.1-pro-preview
-    max_tokens: 2048
     description: "Gemini 3.1 Pro — 1M context, ~$1.90/run (OpenRouter)"
     meta:
       vendor: "Google"
@@ -425,74 +479,174 @@ presets:
       params: "unknown"
       local_capable: false
 
+  glm-5.1:
+    backend: api
+    api_url: https://openrouter.ai/api/v1
+    model: z-ai/glm-5.1
+    description: "GLM-5.1 — flagship Zhipu model, ~$0.50/run (OpenRouter)"
+    meta:
+      vendor: "Zhipu AI"
+      architecture: "proprietary"
+      params: "unknown"
+      local_capable: false
+
+  mimo-v2.5-pro:
+    backend: api
+    api_url: https://openrouter.ai/api/v1
+    model: xiaomi/mimo-v2.5-pro
+    description: "MiMo-V2.5-Pro — 1T MoE, 42B active, ~$0.50/run (OpenRouter)"
+    meta:
+      vendor: "Xiaomi"
+      architecture: "1T MoE, 42B active"
+      params: "1T"
+      local_capable: false
+
 # Group descriptions for detailed reports
 group_descriptions:
-  frontier: "Frontier cloud models representing the highest-capability LLMs available via API. These are proprietary models with no local inference option, costing >$1.50 per benchmark run."
-  local-70b: "Open-weight models in the 70B+ parameter tier that fit on a single 96GB GPU (e.g., NVIDIA RTX PRO 6000 Blackwell) at Q4 quantization."
-  local-24gb: "Open-weight models that fit on a consumer GPU with 24GB VRAM (RTX 3090/4090/5090) at Q4 quantization."
-  budget: "The cheapest cloud API models, each costing less than $0.15 per benchmark run. Good for high-volume or cost-sensitive deployments."
-  mid: "Mid-tier cloud models balancing cost and capability, ranging from $0.08 to $0.50 per benchmark run."
+  12gb: "Open-weight models that fit on 12GB VRAM (RTX 3060/4060) at Q4 quantization — up to ~14B dense parameters. Run via OpenRouter, ~$0.10 total."
+  24gb: "Open-weight models that fit on 24GB VRAM (RTX 3090/4090/5090) at Q4 quantization — 24B-35B parameters. Run via OpenRouter, ~$0.50 total."
+  48gb: "Open-weight models that fit on 48GB VRAM (A6000/dual-GPU) at Q4 quantization — 70B dense parameters. Run via OpenRouter, ~$0.20 total."
+  96gb: "Open-weight models that fit on 96GB VRAM (RTX PRO 6000 Blackwell / A100 80GB) at Q4 quantization — 70B-128B parameters. Run via OpenRouter, ~$1.00 total."
+  frontier: "Frontier cloud models — the most capable (and expensive) LLMs available via API, costing >$0.50 per benchmark run. Run via OpenRouter, ~$17 total."
+  budget: "The cheapest cloud API models, each costing less than $0.15 per benchmark run. Run via OpenRouter, ~$0.40 total."
+  mid: "Mid-tier cloud models balancing cost and capability, ranging from $0.08 to $0.55 per benchmark run. Run via OpenRouter, ~$2.00 total."
   local: "Models runnable locally via Ollama or Unsloth with no API cost. Includes fine-tuned and base models for direct comparison."
-  cloud: "All cloud-hosted models across budget, mid-tier, and frontier tiers."
-  all: "Every model in the benchmark suite — local and cloud."
+  cloud: "All cloud-hosted models across budget, mid-tier, and frontier tiers. Run via OpenRouter."
+  all: "Every model in the benchmark suite — all tiers. Run via OpenRouter (except local-only Ollama presets)."
   finetune-compare: "Direct comparison of the fine-tuned Reformed Qwen3-1.7B against its base model."
   smoke: "Minimal smoke test set using the cheapest available model."
 
 # Named groups of presets for batch testing
 # Use with: python run.py --group <name>
 groups:
-  # Quick local test — just your models, no API needed
-  local:
-    - finetuned
-    - base-qwen3-1.7b
-    - qwen3-4b
-    - gemma4-e4b
-    - qwen3-8b-local
-    - gemma4-26b
-    - deepseek-r1-8b
+  # 12GB VRAM tier — RTX 3060/4060 (up to ~14B dense, via OpenRouter, ~$0.10)
+  12gb:
+    - qwen3.5-9b              # 9B dense, ~6GB Q4, ~$0.02/run
+    - phi-4                   # 14B dense, ~9GB Q4, ~$0.02/run
+    - gemma4-26b-a4b          # 26B MoE (4B active), ~15GB Q4 but fits 12GB in MoE mode via API, ~$0.01/run
 
-  # Cheapest cloud models — verify OpenRouter works, <$0.25 total
+  # 24GB VRAM tier — RTX 3090/4090/5090 (24B-35B, via OpenRouter, ~$0.50)
+  24gb:
+    - mistral-small-3.2       # 24B dense, ~14GB Q4, ~$0.02/run
+    - gemma3-27b              # 27B dense, ~16GB Q4, ~$0.01/run
+    - qwen3.6-27b             # 27B dense, ~16GB Q4, ~$0.10/run
+    - qwen3.5-27b             # 27B dense, ~16GB Q4, ~$0.06/run
+    - gemma4-31b              # 31B dense, ~18GB Q4, ~$0.03/run
+    - glm-4-32b               # 32B dense, ~18GB Q4, ~$0.01/run
+    - qwen3.6-35b             # 35B MoE (3B active), ~20GB Q4, ~$0.16/run
+
+  # 48GB VRAM tier — A6000 / dual-GPU (70B dense, via OpenRouter, ~$0.20)
+  48gb:
+    - llama-3.3-70b           # 70B dense, ~40GB Q4, ~$0.03/run
+    - deepseek-r1-70b         # 70B dense (R1 distill), ~40GB Q4, ~$0.10/run
+
+  # 96GB VRAM tier — RTX PRO 6000 / A100 (100B+, via OpenRouter, ~$1.00)
+  96gb:
+    - qwen3.5-122b            # 122B MoE (10B active), ~70GB Q4, ~$0.30/run
+    - mistral-medium-3.5      # 128B dense, ~70GB Q4, ~$0.60/run
+
+  # Budget cloud models (<$0.15/run each, via OpenRouter, ~$0.40 total)
   budget:
-    - llama-4-scout
-    - deepseek-v4-flash
-    - llama-4-maverick
-    - grok-4-fast
+    - llama-4-scout           # 17B MoE, ~$0.05/run
+    - deepseek-v4-flash       # MoE (13B active), ~$0.05/run
+    - glm-4.7                 # 358B MoE (32B active), ~$0.06/run
+    - llama-4-maverick         # 400B MoE (17B active), ~$0.10/run
+    - minimax-m2.7            # 230B MoE (10B active), ~$0.12/run
 
-  # Mid-tier — good balance of cost and capability, ~$1.50 total
+  # Mid-tier cloud models ($0.08-$0.55/run, via OpenRouter, ~$2.00 total)
   mid:
-    - deepseek-v4-pro
-    - qwen3.6-35b
-    - mistral-large-3
-    - gpt-4.1-mini
-    - gemini-2.5-flash
+    - grok-4-fast             # proprietary, ~$0.08/run
+    - deepseek-v4-pro         # 1.6T MoE (49B active), ~$0.14/run
+    - mistral-large-3         # 675B MoE (41B active), ~$0.24/run
+    - glm-5                   # 744B MoE (40B active), ~$0.25/run
+    - gpt-4.1-mini            # proprietary, ~$0.26/run
+    - gemini-2.5-flash        # proprietary, ~$0.40/run
+    - glm-5.1                 # proprietary (flagship Zhipu), ~$0.50/run
+    - mimo-v2.5-pro           # 1T MoE (42B active), ~$0.50/run
+    - kimi-k2.6               # 1T MoE (32B active), ~$0.55/run
 
-  # Frontier — the big guns, ~$15 total
+  # Frontier cloud models (>$1.50/run, via OpenRouter, ~$17 total)
   frontier:
-    - gemini-3.1-pro
-    - grok-4
-    - claude-sonnet-4.6
-    - claude-opus-4.7
-    - gpt-5.5
+    - gemini-3.1-pro          # proprietary, ~$1.90/run
+    - grok-4                  # proprietary (reasoning), ~$2.40/run
+    - claude-sonnet-4.6       # proprietary, ~$2.40/run
+    - claude-opus-4.7         # proprietary, ~$4.00/run
+    - gpt-5.5                 # proprietary, ~$4.80/run
 
-  # All cloud models (no local)
+  # All cloud models (no local Ollama presets)
   cloud:
+    - qwen3.5-9b
+    - phi-4
+    - gemma4-26b-a4b
+    - mistral-small-3.2
+    - gemma3-27b
+    - qwen3.6-27b
+    - qwen3.5-27b
+    - gemma4-31b
+    - glm-4-32b
+    - qwen3.6-35b
+    - llama-3.3-70b
+    - deepseek-r1-70b
+    - qwen3.5-122b
+    - mistral-medium-3.5
     - llama-4-scout
     - deepseek-v4-flash
+    - glm-4.7
     - llama-4-maverick
+    - minimax-m2.7
     - grok-4-fast
     - deepseek-v4-pro
-    - qwen3.6-35b
     - mistral-large-3
+    - glm-5
     - gpt-4.1-mini
     - gemini-2.5-flash
+    - glm-5.1
+    - mimo-v2.5-pro
+    - kimi-k2.6
     - gemini-3.1-pro
     - grok-4
     - claude-sonnet-4.6
     - claude-opus-4.7
     - gpt-5.5
 
-  # Everything — local + cloud
+  # Everything — all tiers
   all:
+    - qwen3.5-9b
+    - phi-4
+    - gemma4-26b-a4b
+    - mistral-small-3.2
+    - gemma3-27b
+    - qwen3.6-27b
+    - qwen3.5-27b
+    - gemma4-31b
+    - glm-4-32b
+    - qwen3.6-35b
+    - llama-3.3-70b
+    - deepseek-r1-70b
+    - qwen3.5-122b
+    - mistral-medium-3.5
+    - llama-4-scout
+    - deepseek-v4-flash
+    - glm-4.7
+    - llama-4-maverick
+    - minimax-m2.7
+    - grok-4-fast
+    - deepseek-v4-pro
+    - mistral-large-3
+    - glm-5
+    - gpt-4.1-mini
+    - gemini-2.5-flash
+    - glm-5.1
+    - mimo-v2.5-pro
+    - kimi-k2.6
+    - gemini-3.1-pro
+    - grok-4
+    - claude-sonnet-4.6
+    - claude-opus-4.7
+    - gpt-5.5
+
+  # Local Ollama models — for testing without API cost
+  local:
     - finetuned
     - base-qwen3-1.7b
     - qwen3-4b
@@ -501,41 +655,8 @@ groups:
     - qwen3-8b-local
     - gemma4-26b
     - deepseek-r1-8b
-    - llama-4-scout
-    - deepseek-v4-flash
-    - llama-4-maverick
-    - grok-4-fast
-    - deepseek-v4-pro
-    - qwen3.6-35b
-    - mistral-large-3
-    - gpt-4.1-mini
-    - gemini-2.5-flash
-    - gemini-3.1-pro
-    - grok-4
-    - claude-sonnet-4.6
-    - claude-opus-4.7
-    - gpt-5.5
 
-  # 70B-tier local models — fits on a single 96GB GPU
-  # 70B-tier open models — all fit on a single 96GB GPU
-  local-70b:
-    - llama-3.3-70b
-    - deepseek-r1-70b
-    - qwen3.5-122b
-
-  # 24GB-tier open models — fit on RTX 3090/4090/5090
-  local-24gb:
-    - gemma4-31b
-    - gemma4-26b-a4b
-    - gemma3-27b
-    - mistral-small-3.2
-    - qwen3.6-27b
-    - qwen3.5-27b
-    - qwen3.6-35b
-    - phi-4
-    - qwen3.5-9b
-
-  # Fine-tuned vs base comparison (the most common use case)
+  # Fine-tuned vs base comparison
   finetune-compare:
     - finetuned
     - base-qwen3-1.7b
