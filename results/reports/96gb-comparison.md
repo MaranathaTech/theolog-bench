@@ -13,77 +13,60 @@ confessional knowledge, error detection, and comparative theology.
 
 | # | Model | Architecture | Overall |
 |---|---|---|---|
-| 1 | **Qwen3.5 122B-A10B** | 122B MoE (10B active) | **77.3%** |
-| 2 | Mistral Medium 3.5 | 128B dense | 64.3% |
+| 1 | **mistralai/mistral-medium-3-5** | 128B dense | **78.1%** |
+| 2 | qwen/qwen3.5-122b-a10b | 122B MoE, 10B active | 77.3% |
 
 ---
 
 ## Category Breakdown
 
-| Category (weight) | Qwen3.5 122B-A10B | Mistral Med 3.5 |
+| Category (weight) | mistralai/mistral-medium-3-5 | qwen/qwen3.5-122b-a10b |
 |---|---|---|
-| Biblical Reference (15%) | **76.7** | 52.2 |
-| Catechism Recall (25%) | **67.2** | 49.5 |
-| Comparative Theology (10%) | **97.5** | 91.7 |
-| Confessional Knowledge (15%) | 86.9 | **87.8** |
-| Doctrinal Position (20%) | 55.9 | **61.1** |
-| Error Detection (15%) | **100.0** | 63.8 |
+| Biblical Reference (15%) | 74.7 | **76.7** |
+| Catechism Recall (25%) | 55.2 | **67.2** |
+| Comparative Theology (10%) | 96.7 | **97.5** |
+| Confessional Knowledge (15%) | **93.4** | 86.9 |
+| Doctrinal Position (20%) | **75.1** | 55.9 |
+| Error Detection (15%) | 96.2 | **100.0** |
 
 ---
 
 ## Detailed Analysis
 
-### 1. Qwen3.5 122B-A10B (122B MoE, 10B active) — 77.3%
+### 1. mistralai/mistral-medium-3-5 (128B dense) — 78.1%
 
-**The top performer in this tier.** Qwen3.5 122B-A10B demonstrates exceptional
-performance, leading in 5 out of 6 categories, including a perfect score in
-Error Detection. It has a low rate of severe failures (16 out of 270 questions)
-and few zeros (11).
+**Top performer overall.** This model demonstrates strong and consistent performance across the board, leading in two high-weight categories: Confessional Knowledge (15% weight) at 93.4% and Doctrinal Position (20% weight) at 75.1%. It exhibits a very low failure rate with only 6 severe failures (<20) out of 270 questions and no zero scores.
 
-- **Strengths**: Error Detection (100.0%), Comparative Theology (97.5%),
-  Biblical Reference (76.7%), and Catechism Recall (67.2%). Its ability to
-  identify errors and engage in comparative theology is particularly strong.
-- **Weakness**: Doctrinal Position (55.9%) is its lowest score, though still
-  competitive.
-- **Architecture note**: As an MoE model with 10B active parameters, it offers
-  efficient inference while leveraging a larger parameter count. The full 122B
-  parameters must reside in VRAM, but the active portion allows for faster
-  processing.
+- **Strengths**: Confessional Knowledge (93.4%), Doctrinal Position (75.1%), Comparative Theology (96.7%), and Error Detection (96.2%). Its high scores in these categories indicate strong theological reasoning and understanding.
+- **Weaknesses**: Catechism Recall (55.2%) and Biblical Reference (74.7%) are its lowest-scoring categories, though still respectable. Like many general-purpose models, it tends to paraphrase rather than quote verbatim for catechism.
+- **Architecture note**: As a dense 128B model, all parameters are active during inference, which can lead to predictable behavior. It fits within the 96GB VRAM limit, allowing for substantial context windows.
 
-### 2. Mistral Medium 3.5 (128B dense) — 64.3%
+### 2. qwen/qwen3.5-122b-a10b (122B MoE, 10B active) — 77.3%
 
-**A solid, consistent performer.** Mistral Medium 3.5 shows strong capabilities
-in nuanced theological reasoning, leading in Confessional Knowledge and Doctrinal
-Position. It exhibits a low number of severe failures (18 out of 270 questions)
-and very few zeros (7).
+**Strong contender, excelling in specific areas.** This model closely trails the top performer, leading in four categories, including the critical Catechism Recall (25% weight) at 67.2% and a perfect score in Error Detection (15% weight) at 100.0%. However, it shows a higher number of severe failures (16/270) and 11 zero scores, suggesting less consistency than the Mistral model.
 
-- **Strengths**: Confessional Knowledge (87.8%), Doctrinal Position (61.1%),
-  and Comparative Theology (91.7%). These categories require deep understanding
-  and nuanced expression of Reformed doctrine.
-- **Weakness**: Biblical Reference (52.2%) and Catechism Recall (49.5%) are its
-  lowest-scoring categories, suggesting it may paraphrase rather than quote
-  verbatim from confessional standards or biblical texts.
-- **Architecture note**: Being a dense 128B model means all parameters are
-  active during inference, which can lead to predictable behavior. It fits
-  comfortably within the 96GB VRAM limit.
+- **Strengths**: Error Detection (100.0%), Comparative Theology (97.5%), Catechism Recall (67.2%), and Biblical Reference (76.7%). Its perfect score in Error Detection is particularly noteworthy.
+- **Weaknesses**: Doctrinal Position (55.9%) is its weakest category, significantly lower than the Mistral model. Its higher number of severe failures and zeros indicates occasional complete misses.
+- **Architecture note**: This is a Mixture-of-Experts (MoE) model where only 10B parameters are active per token, despite the full 122B residing in VRAM. This architecture can offer faster inference speeds compared to dense models of similar quality, but the full model size still requires significant VRAM.
+
+---
+
+## Scoring Notes
+
+- **Doctrinal Position and Error Detection (35% combined)**: These categories rely on regex pattern matching that favors direct affirm/deny answers over balanced multi-perspective responses. Models that hedge or present comparative views may score lower than their understanding warrants.
+- **Catechism Recall (25%)**: This category rewards near-verbatim recall of catechism phrasing, giving a natural advantage to models trained on Reformed source texts.
 
 ---
 
 ## Recommendation
 
-**Qwen3.5 122B-A10B is the superior choice** for local theological reasoning
-on a 96GB card. Its overall score of 77.3% significantly surpasses Mistral
-Medium 3.5, and it leads in most categories, particularly excelling in critical
-areas like Error Detection and Comparative Theology.
+For local theological reasoning on a 96GB card, **mistralai/mistral-medium-3-5 is the slightly stronger choice overall**. It demonstrates greater consistency with fewer severe failures and no zero scores, and leads in key reasoning-heavy categories like Confessional Knowledge and Doctrinal Position.
 
-**Mistral Medium 3.5** remains a strong contender, especially if Confessional
-Knowledge and Doctrinal Position are paramount. Its consistency and low failure
-rate make it a reliable option, though it is outranked by Qwen3.5 in this
-particular benchmark.
+However, **qwen/qwen3.5-122b-a10b is a highly competitive alternative**, especially if Catechism Recall and Error Detection are paramount. Its perfect score in Error Detection and strong performance in Catechism Recall are significant. The trade-off is slightly less consistency and a lower score in Doctrinal Position.
 
 ---
 
 *Generated by theolog-bench. Scores use weighted category averages.*
 *Scorer: v2 (improved position detection for multi-view responses).*
 *Judge model: Gemini 2.5 Flash via OpenRouter.*
-*Run date: May 15, 2026.*
+*Run date: May 16, 2026.*

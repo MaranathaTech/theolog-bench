@@ -13,62 +13,71 @@ confessional knowledge, error detection, and comparative theology.
 
 | # | Model | Architecture | Overall |
 |---|---|---|---|
-| 1 | **Qwen3.5 9B** | 9B dense | **63.1%** |
-| 2 | Gemma 4 26B-A4B-IT | 26B MoE (4B active) | 62.6% |
-| 3 | Phi-4 | 14B dense | 54.5% |
+| 1 | **google/gemma-4-26b-a4b-it** | 26B MoE, 4B active | **67.5%** |
+| 2 | qwen/qwen3.5-9b | 9B dense | 63.1% |
+| 3 | microsoft/phi-4 | 14B dense | 55.6% |
 
 ---
 
 ## Category Breakdown
 
-| Category (weight) | Qwen3.5 9B | Gemma 4 26B-A4B-IT | Phi-4 |
+| Category (weight) | google/gemma-4-26b-a4b-it | qwen/qwen3.5-9b | microsoft/phi-4 |
 |---|---|---|---|
-| Biblical Reference (15%) | **69.3** | 54.8 | 53.5 |
-| Catechism Recall (25%) | **46.0** | 44.7 | 37.6 |
-| Comparative Theology (10%) | 89.9 | **92.2** | 85.0 |
-| Confessional Knowledge (15%) | 46.3 | **83.8** | 74.9 |
-| Doctrinal Position (20%) | **54.4** | 50.5 | 41.2 |
-| Error Detection (15%) | **95.7** | 75.5 | 61.0 |
+| Biblical Reference (15%) | 66.6 | **69.3** | 54.6 |
+| Catechism Recall (25%) | 45.6 | **46.0** | 37.3 |
+| Comparative Theology (10%) | **96.2** | 89.9 | 89.0 |
+| Confessional Knowledge (15%) | **84.0** | 46.3 | 75.0 |
+| Doctrinal Position (20%) | 52.9 | **54.4** | 36.5 |
+| Error Detection (15%) | 89.0 | **95.7** | 70.7 |
 
 ---
 
 ## Detailed Analysis
 
-### 1. Qwen3.5 9B (9B dense) — 63.1%
+### 1. google/gemma-4-26b-a4b-it (26B MoE, 4B active) — 67.5%
 
-**Top performer by a narrow margin.** This model demonstrates strong performance in several key areas, particularly in error detection, where it achieves an impressive 95.7%. It also leads in Biblical Reference and Doctrinal Position. However, it shows a notable weakness in Confessional Knowledge and Catechism Recall, which are heavily weighted categories. It has the highest number of severe failures (50/270) and zeros (46) among the models tested in this tier.
+**Best overall performer.** Leads in 3 of 6 categories, including the highly weighted Confessional Knowledge (15%) and Comparative Theology (10%). It exhibits the lowest failure rate among the models tested, with only 13 severe failures (<20) and 7 zeros out of 270 questions.
 
-- **Strengths**: Error Detection (95.7%), Biblical Reference (69.3%), and Doctrinal Position (54.4%). Its ability to identify theological errors is exceptional.
-- **Weakness**: Confessional Knowledge (46.3%) and Catechism Recall (46.0%). This suggests it struggles with the precise recall and application of confessional standards.
-- **Architecture note**: As a 9B dense model, it fits comfortably within the 12GB VRAM limit, offering a good balance of performance and memory footprint.
+- **Strengths**: Comparative Theology (96.2%), Error Detection (89.0%), and Confessional Knowledge (84.0%) — demonstrating strong nuanced theological reasoning and accurate identification of orthodox positions.
+- **Weakness**: Doctrinal Position (52.9%) and Catechism Recall (45.6%) — struggles somewhat with direct affirmation/denial of specific doctrinal stances and verbatim recall of confessional texts.
+- **Architecture note**: As a 26B MoE model with only 4B active parameters, it offers a good balance of performance and efficiency, fitting comfortably within the 12GB VRAM limit.
 
-### 2. Gemma 4 26B-A4B-IT (26B MoE, 4B active) — 62.6%
+### 2. qwen/qwen3.5-9b (9B dense) — 63.1%
 
-**Strong contender with excellent confessional knowledge.** This model is a close second, trailing Qwen3.5 9B by only 0.5 percentage points. It excels in Confessional Knowledge and Comparative Theology, outperforming all other models in these categories. Notably, it has the fewest severe failures (13/270) and zeros (6), indicating a higher degree of reliability and fewer complete misfires.
+**Strong contender with excellent error detection.** This model leads in 3 categories, notably Biblical Reference (69.3%), Catechism Recall (46.0%), and Error Detection (95.7%). Its high score in Error Detection suggests a robust ability to identify heterodox statements. However, it has a higher number of severe failures (50/270) and zeros (46) compared to Gemma.
 
-- **Strengths**: Comparative Theology (92.2%) and Confessional Knowledge (83.8%). Its ability to reason about different theological positions and accurately recall confessional details is a significant advantage.
-- **Weakness**: Doctrinal Position (50.5%) and Catechism Recall (44.7%). While strong in confessional knowledge, it still struggles with verbatim recall and nuanced doctrinal application.
-- **Architecture note**: As a 26B MoE with only 4B active parameters, it offers a good trade-off between model size and inference speed, making it efficient for local deployment on 12GB VRAM.
+- **Strengths**: Error Detection (95.7%), Comparative Theology (89.9%), and Biblical Reference (69.3%) — indicating strong capabilities in identifying theological errors and citing Scripture.
+- **Weakness**: Confessional Knowledge (46.3%) and Catechism Recall (46.0%) — its performance in these areas is significantly lower than its strengths, suggesting less familiarity with the specific phrasing of confessional standards.
+- **Architecture note**: As a 9B dense model, it is the most compact and memory-efficient option, leaving ample VRAM for context or other tasks.
 
-### 3. Phi-4 (14B dense) — 54.5%
+### 3. microsoft/phi-4 (14B dense) — 55.6%
 
-**Solid baseline performer.** Phi-4 provides a respectable performance, particularly in Comparative Theology and Confessional Knowledge. However, it generally lags behind the top two models across most categories. Its performance in Catechism Recall and Doctrinal Position is the weakest in this tier.
+**Solid foundational understanding but weaker recall.** While ranking third overall, Phi-4 demonstrates a respectable understanding in categories like Comparative Theology (89.0%) and Confessional Knowledge (75.0%). It has a moderate failure rate with 27 severe failures and 7 zeros.
 
-- **Strengths**: Comparative Theology (85.0%) and Confessional Knowledge (74.9%). It shows a decent grasp of broader theological concepts and confessional details.
-- **Weakness**: Catechism Recall (37.6%) and Doctrinal Position (41.2%). These areas indicate a struggle with precise memorization and the application of specific doctrinal stances.
-- **Architecture note**: A 14B dense model, it represents a larger parameter count than Qwen3.5 9B but still fits within the 12GB VRAM. Its performance suggests that raw parameter count doesn't always translate directly to superior theological understanding in this tier.
+- **Strengths**: Comparative Theology (89.0%), Confessional Knowledge (75.0%), and Error Detection (70.7%) — showing a decent grasp of theological concepts and the ability to differentiate between positions.
+- **Weakness**: Catechism Recall (37.3%) and Doctrinal Position (36.5%) — these are its lowest scores, indicating difficulty with verbatim recall and direct affirmation of specific doctrinal points, which are crucial for these categories.
+- **Architecture note**: A 14B dense model, it represents a larger footprint than Qwen3.5-9b but still fits within the 12GB VRAM, though with less headroom.
+
+---
+
+## Scoring Notes
+
+- **Doctrinal Position and Error Detection (35% combined)** use regex pattern matching that favors direct affirm/deny answers over balanced multi-perspective responses — models that hedge or present comparative views may score lower than their understanding warrants.
+- **Catechism Recall (25%)** rewards near-verbatim recall of catechism phrasing, giving a natural advantage to models trained on Reformed source texts.
 
 ---
 
 ## Recommendation
 
-**Qwen3.5 9B is the recommended choice** for local theological reasoning on a 12GB VRAM card. Despite a higher failure rate, its overall score and leading performance in critical categories like Error Detection and Doctrinal Position make it the most capable option in this tier.
+**google/gemma-4-26b-a4b-it is the clear choice** for local theological reasoning on a 12GB card. It offers the best overall performance, leads in key reasoning-heavy categories like Comparative Theology and Confessional Knowledge, and exhibits the lowest failure rate. Its MoE architecture provides a good balance of capability and VRAM efficiency.
 
-If consistency and a strong grasp of confessional knowledge are paramount, **Gemma 4 26B-A4B-IT** is an excellent alternative. Its low failure rate and top scores in Comparative Theology and Confessional Knowledge make it a very reliable model, sacrificing only a small fraction of overall score for greater stability.
+**qwen/qwen3.5-9b** is a strong alternative, especially if superior error detection and biblical referencing are priorities. Its compact 9B dense architecture makes it highly memory-efficient, though it shows a higher incidence of complete failures.
+
+**microsoft/phi-4** provides a foundational understanding but struggles with the specific recall and directness required by some categories, making it less suitable for tasks demanding precise confessional adherence.
 
 ---
 
 *Generated by theolog-bench. Scores use weighted category averages.*
 *Scorer: v2 (improved position detection for multi-view responses).*
 *Judge model: Gemini 2.5 Flash via OpenRouter.*
-*Run date: May 15, 2026.*
+*Run date: May 16, 2026.*

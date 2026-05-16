@@ -374,6 +374,13 @@ def _build_report_prompt(report_data: dict, example_report: str,
         "8. Output ONLY the markdown report, no preamble or commentary.\n"
         "9. Use the category weights when discussing which categories matter most.\n"
         "10. Cite specific numbers from the data — do not invent scores.\n"
+        "11. Before the footer, include a brief 'Scoring Notes' section with these "
+        "two caveats: (a) Doctrinal Position and Error Detection (35% combined) use "
+        "regex pattern matching that favors direct affirm/deny answers over balanced "
+        "multi-perspective responses — models that hedge or present comparative views "
+        "may score lower than their understanding warrants; (b) Catechism Recall (25%) "
+        "rewards near-verbatim recall of catechism phrasing, giving a natural advantage "
+        "to models trained on Reformed source texts.\n"
     )
 
     return prompt

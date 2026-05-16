@@ -1,6 +1,7 @@
 # theolog-bench: Mid-Tier Cloud Models
 
-Comparative evaluation of mid-tier cloud-hosted LLMs for Reformed theology.
+Comparative evaluation of leading cloud-based LLMs, focusing on their performance
+across various Reformed theological knowledge domains.
 
 Benchmark: 270 questions across 6 categories of Reformed theological knowledge.
 Scoring: automated pattern matching + LLM-as-judge (Gemini 2.5 Flash) for
@@ -12,118 +13,179 @@ confessional knowledge, error detection, and comparative theology.
 
 | # | Model | Architecture | Overall |
 |---|---|---|---|
-| 1 | **x-ai/grok-4-fast** | proprietary | **59.5%** |
-| 2 | openai/gpt-4.1-mini | proprietary | 58.0% |
-| 3 | deepseek/deepseek-v4-pro | 1.6T MoE, 49B active | 56.7% |
-| 4 | mistralai/mistral-large-2512 | 675B MoE, 41B active | 54.9% |
-| 5 | google/gemini-2.5-flash | proprietary | 52.6% |
-| 6 | xiaomi/mimo-v2.5-pro | 1T MoE, 42B active | 37.6% |
-| 7 | moonshotai/kimi-k2.6 | 1T MoE, 32B active | 20.0% |
-| 8 | z-ai/glm-5 | 744B MoE, 40B active | 13.7% |
-| 9 | z-ai/glm-5.1 | proprietary | 12.7% |
+| 1 | **mistralai/mistral-large-2512** | 675B MoE, 41B active | **75.8%** |
+| 2 | z-ai/glm-5 | 744B MoE, 40B active | 74.6% |
+| 3 | deepseek/deepseek-v4-pro | 1.6T MoE, 49B active | 73.0% |
+| 4 | z-ai/glm-5.1 | proprietary | 72.4% |
+| 5 | google/gemini-2.5-flash | proprietary | 72.3% |
+| 6 | xiaomi/mimo-v2.5-pro | 1T MoE, 42B active | 70.2% |
+| 7 | moonshotai/kimi-k2.6 | 1T MoE, 32B active | 69.2% |
+| 8 | openai/gpt-4.1-mini | proprietary | 67.4% |
 
 ---
 
 ## Category Breakdown
 
-| Category (weight) | x-ai/grok-4-fast | openai/gpt-4.1-mini | deepseek/deepseek-v4-pro | mistralai/mistral-large-2512 | google/gemini-2.5-flash | xiaomi/mimo-v2.5-pro | moonshotai/kimi-k2.6 | z-ai/glm-5 | z-ai/glm-5.1 |
-|---|---|---|---|---|---|---|---|---|---|
-| Biblical Reference (15%) | 48.7 | **63.9** | 49.6 | 49.5 | 43.7 | 32.1 | 12.8 | 2.7 | 5.3 |
-| Catechism Recall (25%) | 20.6 | 14.6 | 26.0 | 12.6 | 15.8 | **48.3** | 20.7 | 5.4 | 6.0 |
-| Comparative Theology (10%) | 92.2 | **93.8** | 89.8 | 93.5 | 85.8 | 70.4 | 50.0 | 48.8 | 59.0 |
-| Confessional Knowledge (15%) | 83.7 | 86.5 | 90.5 | **91.0** | 86.6 | 42.2 | 18.4 | 28.1 | 19.1 |
-| Doctrinal Position (20%) | **72.0** | 63.0 | 51.1 | 59.1 | 55.3 | 34.2 | 21.6 | 6.7 | 8.3 |
-| Error Detection (15%) | **72.5** | 65.5 | 66.8 | 63.2 | 63.0 | 3.3 | 5.7 | 10.0 | 0.0 |
+| Category (weight) | Mistral Large 2512 | GLM-5 | DeepSeek v4 Pro | GLM-5.1 | Gemini 2.5 Flash | MiMO v2.5 Pro | Kimi K2.6 | GPT-4.1 Mini |
+|---|---|---|---|---|---|---|---|---|
+| Biblical Reference (15%) | 70.4 | 60.8 | 67.0 | 59.4 | 70.7 | **72.5** | 71.4 | 59.7 |
+| Catechism Recall (25%) | 57.3 | **65.8** | 51.8 | 61.9 | 53.5 | 57.1 | 63.9 | 44.1 |
+| Comparative Theology (10%) | 96.6 | 92.2 | 96.8 | 95.5 | 91.7 | **97.0** | 91.7 | 95.3 |
+| Confessional Knowledge (15%) | 93.4 | 93.9 | **97.5** | 92.0 | 88.9 | 94.5 | 65.5 | 87.2 |
+| Doctrinal Position (20%) | **66.5** | 57.8 | 58.5 | 55.1 | 60.2 | 46.8 | 56.7 | 58.3 |
+| Error Detection (15%) | 92.8 | **94.2** | 93.5 | 91.2 | 91.8 | 78.8 | 81.5 | 87.5 |
 
 ---
 
 ## Detailed Analysis
 
-### 1. x-ai/grok-4-fast (proprietary) — 59.5%
+### 1. mistralai/mistral-large-2512 (675B MoE, 41B active) — 75.8%
 
-**Top performer overall.** Grok-4-fast demonstrates strong performance in several key reasoning categories, leading in Doctrinal Position (72.0%) and Error Detection (72.5%). It also scores very well in Comparative Theology (92.2%) and Confessional Knowledge (83.7%). Its failure rate is moderate with 92 severe failures and 85 zeros out of 270 questions.
+**Top performer overall.** Mistral Large 2512 demonstrates strong performance
+across the board, leading in the highly-weighted Doctrinal Position category (20%)
+with 66.5%. It exhibits a very low failure rate with only 3 severe failures and 2 zeros
+out of 270 questions, indicating high reliability.
 
-- **Strengths**: Doctrinal Position (20% weight), Error Detection (15% weight), and Comparative Theology (10% weight) — indicating robust theological reasoning.
-- **Weakness**: Catechism Recall (25% weight) at 20.6% is a significant weakness, suggesting it struggles with verbatim recall of confessional standards. Biblical Reference (15% weight) is also relatively low at 48.7%.
-- **Architecture note**: As a proprietary model, specific architectural details are not available.
+- **Strengths**: Excels in Doctrinal Position (66.5%), Comparative Theology (96.6%),
+  Confessional Knowledge (93.4%), and Error Detection (92.8%). Its ability to
+  articulate doctrinal stances and detect errors is particularly strong.
+- **Weakness**: Catechism Recall (57.3%) is its weakest category, though still
+  a respectable score for a general-purpose model.
+- **Architecture note**: A large MoE model with 675B parameters and 41B active,
+  it leverages a vast parameter space for nuanced understanding.
 
-### 2. openai/gpt-4.1-mini (proprietary) — 58.0%
+### 2. z-ai/glm-5 (744B MoE, 40B active) — 74.6%
 
-**Strong all-rounder with best Biblical Reference.** GPT-4.1-mini is a close second, excelling in Biblical Reference (63.9%) and leading all models in Comparative Theology (93.8%). Its performance in Confessional Knowledge (86.5%) and Error Detection (65.5%) is also very strong. It has a slightly higher failure rate than Grok-4-fast, with 99 severe failures and 93 zeros.
+**Strong contender with excellent error detection.** GLM-5 is a close second,
+distinguishing itself with the highest score in Error Detection (94.2%). It
+also performs exceptionally well in Catechism Recall (65.8%), leading all models
+in this critical category (25% weight).
 
-- **Strengths**: Biblical Reference (15% weight), Comparative Theology (10% weight), and Confessional Knowledge (15% weight).
-- **Weakness**: Catechism Recall (25% weight) is its lowest category at 14.6%, indicating a general struggle with verbatim recall, similar to other general-purpose models.
-- **Architecture note**: Proprietary, but noted as approximately 7B parameters.
+- **Strengths**: Leads in Catechism Recall (65.8%) and Error Detection (94.2%).
+  Also strong in Confessional Knowledge (93.9%) and Comparative Theology (92.2%).
+- **Weakness**: Its scores in Biblical Reference (60.8%) and Doctrinal Position (57.8%)
+  are comparatively lower than its other strong categories.
+- **Architecture note**: Similar to Mistral Large 2512, this 744B MoE model with
+  40B active parameters showcases the power of large-scale sparse architectures.
 
-### 3. deepseek/deepseek-v4-pro (1.6T MoE, 49B active) — 56.7%
+### 3. deepseek/deepseek-v4-pro (1.6T MoE, 49B active) — 73.0%
 
-**Excellent confessional knowledge.** DeepSeek-v4-pro stands out for its Confessional Knowledge (90.5%) and strong Comparative Theology (89.8%). It has the lowest number of severe failures (89) and zeros (80) among the top 5 models, suggesting good consistency.
+**Confessional knowledge powerhouse.** DeepSeek v4 Pro achieves the highest score
+in Confessional Knowledge (97.5%), a key category (15% weight), and also leads
+in Comparative Theology (96.8%). However, it has a higher number of severe failures
+(21) and zeros (15) compared to the top two models.
 
-- **Strengths**: Confessional Knowledge (15% weight) and Comparative Theology (10% weight). Error Detection (66.8%) is also solid.
-- **Weakness**: Doctrinal Position (20% weight) at 51.1% and Catechism Recall (25% weight) at 26.0% are areas for improvement.
-- **Architecture note**: A large Mixture-of-Experts (MoE) model with 1.6 trillion parameters, but only 49 billion active per token, balancing capability with inference efficiency.
+- **Strengths**: Dominates Confessional Knowledge (97.5%) and Comparative Theology (96.8%).
+  Also strong in Error Detection (93.5%).
+- **Weakness**: Catechism Recall (51.8%) is its lowest category, and it shows
+  a tendency for more complete failures (15 zeros).
+- **Architecture note**: The largest model by total parameters at 1.6T MoE with
+  49B active, suggesting a broad but potentially less consistent knowledge base.
 
-### 4. mistralai/mistral-large-2512 (675B MoE, 41B active) — 54.9%
+### 4. z-ai/glm-5.1 (proprietary) — 72.4%
 
-**Highest Confessional Knowledge.** Mistral-Large-2512 achieves the highest score in Confessional Knowledge (91.0%) and performs exceptionally well in Comparative Theology (93.5%). Its overall performance is solid, though it has a slightly higher number of severe failures (96) and zeros (88) than DeepSeek-v4-pro.
+**Consistent performer.** GLM-5.1, a proprietary model, demonstrates solid and
+consistent performance across most categories, with no major outliers in its
+strengths or weaknesses. Its failure rate is moderate with 14 severe failures
+and 9 zeros.
 
-- **Strengths**: Confessional Knowledge (15% weight) and Comparative Theology (10% weight).
-- **Weakness**: Catechism Recall (25% weight) is notably low at 12.6%, indicating a significant challenge in this area. Biblical Reference (15% weight) is also a weaker point at 49.5%.
-- **Architecture note**: Another MoE model with 675 billion parameters and 41 billion active, designed for high performance.
+- **Strengths**: Strong in Comparative Theology (95.5%), Confessional Knowledge (92.0%),
+  and Error Detection (91.2%).
+- **Weakness**: Biblical Reference (59.4%) and Doctrinal Position (55.1%) are
+  its lowest scoring categories.
+- **Architecture note**: As a proprietary model, specific architectural details
+  are not available, but its performance suggests a well-rounded design.
 
-### 5. google/gemini-2.5-flash (proprietary) — 52.6%
+### 5. google/gemini-2.5-flash (proprietary) — 72.3%
 
-**Consistent mid-tier performer.** Gemini-2.5-flash shows consistent performance across categories, with strong scores in Confessional Knowledge (86.6%) and Comparative Theology (85.8%). Its failure rate is comparable to other top models, with 98 severe failures and 90 zeros.
+**Reliable and balanced.** Gemini 2.5 Flash, also proprietary, delivers a balanced
+performance, particularly strong in its ability to detect errors and engage in
+comparative theology. It has a similar failure profile to GLM-5.1 with 15 severe
+failures and 10 zeros.
 
-- **Strengths**: Confessional Knowledge (15% weight) and Comparative Theology (10% weight).
-- **Weakness**: Biblical Reference (15% weight) at 43.7% and Catechism Recall (25% weight) at 15.8% are its primary areas for improvement.
-- **Architecture note**: Proprietary model from Google.
+- **Strengths**: Excellent in Error Detection (91.8%) and Comparative Theology (91.7%).
+  Also performs well in Biblical Reference (70.7%).
+- **Weakness**: Catechism Recall (53.5%) and Doctrinal Position (60.2%) are its
+  comparatively weaker areas.
+- **Architecture note**: Proprietary, but its "Flash" designation suggests an
+  emphasis on speed and efficiency, which doesn't seem to compromise its theological
+  understanding significantly.
 
-### 6. xiaomi/mimo-v2.5-pro (1T MoE, 42B active) — 37.6%
+### 6. xiaomi/mimo-v2.5-pro (1T MoE, 42B active) — 70.2%
 
-**Uniquely strong in Catechism Recall.** MiMo-v2.5-pro is an interesting case, leading all models in Catechism Recall (48.3%), a category where most other models struggle significantly. However, its overall score is dragged down by very poor performance in Error Detection (3.3%) and lower scores in other key categories. It has 101 severe failures and 76 zeros.
+**Biblical and comparative theology specialist.** MiMO v2.5 Pro stands out as
+the best performer in Biblical Reference (72.5%) and Comparative Theology (97.0%).
+However, it shows a notable drop in Doctrinal Position (46.8%) and Error Detection (78.8%).
 
-- **Strengths**: Catechism Recall (25% weight) is its standout feature. Comparative Theology (70.4%) is also decent.
-- **Weakness**: Error Detection (15% weight) is a critical failure point at 3.3%. Confessional Knowledge (42.2%) and Doctrinal Position (34.2%) are also weak.
-- **Architecture note**: A 1T MoE model with 42B active parameters.
+- **Strengths**: Leads in Biblical Reference (72.5%) and Comparative Theology (97.0%).
+  Also strong in Confessional Knowledge (94.5%).
+- **Weakness**: Significantly lower in Doctrinal Position (46.8%) and Error Detection (78.8%),
+  suggesting some difficulty with nuanced theological reasoning and critique.
+- **Architecture note**: A 1T MoE model with 42B active parameters, it demonstrates
+  that sheer size doesn't always translate to consistent performance across all tasks.
 
-### 7. moonshotai/kimi-k2.6 (1T MoE, 32B active) — 20.0%
+### 7. moonshotai/kimi-k2.6 (1T MoE, 32B active) — 69.2%
 
-**Struggles significantly with theological reasoning.** Kimi-k2.6 shows a marked drop in performance compared to the top 6, with 200 severe failures and 184 zeros. While it achieves 50.0% in Comparative Theology, its scores in other categories are very low.
+**Struggles with confessional knowledge.** Kimi K2.6 shows a significant weakness
+in Confessional Knowledge (65.5%), which is a weighted category (15%). It also
+has the highest number of severe failures (28) and zeros (26) among all models,
+indicating less reliability.
 
-- **Strengths**: Comparative Theology (10% weight) is its only category above 50%.
-- **Weakness**: Error Detection (5.7%), Biblical Reference (12.8%), and Confessional Knowledge (18.4%) are all very poor, indicating a general lack of theological understanding.
-- **Architecture note**: A 1T MoE model with 32B active parameters.
+- **Strengths**: Strong in Biblical Reference (71.4%) and Comparative Theology (91.7%).
+- **Weakness**: Confessional Knowledge (65.5%) is a major weakness. The high
+  number of zeros (26) suggests inconsistent performance.
+- **Architecture note**: A 1T MoE model with 32B active parameters, it seems to
+  struggle with the depth of confessional understanding compared to its peers.
 
-### 8. z-ai/glm-5 (744B MoE, 40B active) — 13.7%
+### 8. openai/gpt-4.1-mini (proprietary) — 67.4%
 
-**Near total failure.** GLM-5 performs very poorly, with 232 severe failures and 232 zeros, indicating it failed almost every question. Its highest score is 48.8% in Comparative Theology, but all other categories are in single or low double digits.
+**Smallest model, lowest recall.** GPT-4.1 Mini, likely the smallest model by
+parameter count (~7B), predictably scores lowest overall. Its Catechism Recall
+(44.1%) is the lowest among all models, highlighting the challenge for smaller
+models in verbatim recall.
 
-- **Strengths**: Comparative Theology (48.8%) is its only notable score.
-- **Weakness**: Catechism Recall (5.4%), Biblical Reference (2.7%), Doctrinal Position (6.7%), and Error Detection (10.0%) are all extremely low.
-- **Architecture note**: A 744B MoE model with 40B active parameters.
+- **Strengths**: Despite its size, it performs well in Comparative Theology (95.3%)
+  and Error Detection (87.5%), demonstrating strong reasoning capabilities.
+- **Weakness**: Catechism Recall (44.1%) is its most significant weakness, and
+  it also struggles with Biblical Reference (59.7%).
+- **Architecture note**: As a proprietary model, its exact architecture is unknown,
+  but its "Mini" designation and performance suggest a highly optimized, smaller
+  model that prioritizes reasoning over rote memorization.
 
-### 9. z-ai/glm-5.1 (proprietary) — 12.7%
+---
 
-**Worst performer.** GLM-5.1 is the lowest-scoring model, with 234 severe failures and 229 zeros. It scores 0.0% in Error Detection, indicating a complete inability to identify theological errors.
+## Scoring Notes
 
-- **Strengths**: Comparative Theology (59.0%) is surprisingly its highest score, but this is an outlier given its overall performance.
-- **Weakness**: Error Detection (0.0%), Biblical Reference (5.3%), Catechism Recall (6.0%), and Doctrinal Position (8.3%) are all extremely poor.
-- **Architecture note**: Proprietary model.
+(a) Doctrinal Position and Error Detection (35% combined) use regex pattern matching
+that favors direct affirm/deny answers over balanced multi-perspective responses —
+models that hedge or present comparative views may score lower than their
+understanding warrants; (b) Catechism Recall (25%) rewards near-verbatim recall
+of catechism phrasing, giving a natural advantage to models trained on Reformed
+source texts.
 
 ---
 
 ## Recommendation
 
-For general Reformed theological evaluation among mid-tier cloud models, **x-ai/grok-4-fast** is the top choice, closely followed by **openai/gpt-4.1-mini** and **deepseek/deepseek-v4-pro**. These models demonstrate strong reasoning capabilities in the more nuanced categories like Doctrinal Position, Error Detection, and Comparative Theology.
+**mistralai/mistral-large-2512 is the top recommendation** for general Reformed
+theology tasks among mid-tier cloud models. Its leading overall score (75.8%),
+strong performance in the high-weighted Doctrinal Position category (66.5%),
+and exceptionally low failure rate (3 severe failures) make it the most reliable
+and capable option.
 
-If verbatim Catechism Recall (25% weight) is a primary requirement, **xiaomi/mimo-v2.5-pro** is surprisingly the best performer in that specific category, though its overall score is significantly lower due to critical weaknesses in other areas, especially Error Detection.
+For tasks heavily reliant on **Catechism Recall**, **z-ai/glm-5** is a strong
+alternative, leading this category with 65.8%. If **Confessional Knowledge** is
+paramount, **deepseek/deepseek-v4-pro** excels with 97.5%.
 
-Models from Moonshot AI and Zhipu AI (Kimi-k2.6, GLM-5, GLM-5.1) are generally not suitable for theological tasks based on this benchmark, exhibiting high failure rates and very low scores across most categories.
+Models like **xiaomi/mimo-v2.5-pro** and **moonshotai/kimi-k2.6** show
+specialized strengths but suffer from more pronounced weaknesses in other
+critical areas, making them less suitable for broad theological applications.
+**openai/gpt-4.1-mini**, while impressive for its likely small size, is
+outperformed by its larger peers in this domain.
 
 ---
 
 *Generated by theolog-bench. Scores use weighted category averages.*
 *Scorer: v2 (improved position detection for multi-view responses).*
 *Judge model: Gemini 2.5 Flash via OpenRouter.*
-*Run date: May 15, 2026.*
+*Run date: May 16, 2026.*

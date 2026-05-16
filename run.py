@@ -178,8 +178,9 @@ def run_single_benchmark(args, config, questions, category_weights):
     """Run benchmark for a single model configuration. Returns the result file path."""
     from lib.backends import BenchmarkAPIError
 
-    # Initialize backend
-    max_tokens = getattr(args, "max_tokens", None) or 512
+    # Initialize backend — use preset max_tokens, else global scoring default, else 2048
+    global_default = config.get("scoring", {}).get("max_tokens", 2048)
+    max_tokens = getattr(args, "max_tokens", None) or global_default
     if args.backend == "local":
         from lib.backends import UnslothBackend
         backend = UnslothBackend(model_path=args.model_path)

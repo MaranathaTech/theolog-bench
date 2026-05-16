@@ -13,72 +13,89 @@ confessional knowledge, error detection, and comparative theology.
 
 | # | Model | Architecture | Overall |
 |---|---|---|---|
-| 1 | **DeepSeek R1 Distill 70B** | 70B dense (R1 distill) | **59.7%** |
-| 2 | Llama 3.3 70B Instruct | 70B dense | 59.0% |
+| 1 | **Llama 3.3 70B Instruct** | 70B dense | **66.5%** |
+| 2 | DeepSeek R1 70B Distill | 70B dense (R1 distill) | 59.7% |
 
 ---
 
 ## Category Breakdown
 
-| Category (weight) | DeepSeek R1 Distill 70B | Llama 3.3 70B Instruct |
+| Category (weight) | Llama 3.3 70B Instruct | DeepSeek R1 70B Distill |
 |---|---|---|
-| Biblical Reference (15%) | **67.8** | 67.3 |
-| Catechism Recall (25%) | 33.6 | **45.7** |
-| Comparative Theology (10%) | **88.8** | 83.2 |
-| Confessional Knowledge (15%) | **83.0** | 81.0 |
-| Doctrinal Position (20%) | 39.9 | **55.4** |
-| Error Detection (15%) | **79.0** | 39.8 |
+| Biblical Reference (15%) | **71.3%** | 67.8% |
+| Catechism Recall (25%) | **46.6%** | 33.6% |
+| Comparative Theology (10%) | **90.4%** | 88.8% |
+| Confessional Knowledge (15%) | **83.5%** | 83.0% |
+| Doctrinal Position (20%) | **60.8%** | 39.9% |
+| Error Detection (15%) | 69.5% | **79.0%** |
 
 ---
 
 ## Detailed Analysis
 
-### 1. DeepSeek R1 Distill 70B (70B dense) — 59.7%
+### 1. Llama 3.3 70B Instruct (70B dense) — 66.5%
 
-**Narrowly the top performer.** This model demonstrates strong performance in
-critical reasoning categories, leading in 4 of 6 categories. It exhibits a
-lower number of zero scores (9) compared to its competitor, suggesting more
-consistent, albeit sometimes partial, responses.
+**Strong overall performer.** Leads in 5 of 6 categories, demonstrating broad
+competence across Reformed theological knowledge. It exhibits a low failure rate
+with only 16 severe failures (<20%) and 5 zeros out of 270 questions.
 
-- **Strengths**: Comparative theology (88.8%), confessional knowledge (83.0%),
-  and error detection (79.0%) — all requiring nuanced theological reasoning. It
-  also shows a slight edge in biblical reference (67.8%).
-- **Weaknesses**: Catechism recall (33.6%) and doctrinal position (39.9%). Its
-  performance in catechism recall is notably lower than Llama 3.3, indicating
-  difficulty with verbatim recall of confessional standards.
-- **Architecture note**: As a 70B dense model, it fits comfortably within the
-  48GB VRAM limit. The "R1 distill" suggests a focus on reasoning capabilities,
-  which aligns with its strong performance in categories requiring deeper analysis.
+- **Strengths**: Comparative Theology (90.4%), Confessional Knowledge (83.5%),
+  and Biblical Reference (71.3%) — indicating strong reasoning and recall of
+  scriptural context.
+- **Weaknesses**: Doctrinal Position (60.8%) and Catechism Recall (46.6%) are
+  its lowest scores, though still leading in this tier. Like many general-purpose
+  models, it tends to paraphrase rather than quote verbatim from confessional
+  standards.
+- **Architecture note**: As a 70B dense model, it utilizes all parameters for
+  each token, providing consistent performance. It fits comfortably within the
+  48GB VRAM limit at Q4 quantization.
 
-### 2. Llama 3.3 70B Instruct (70B dense) — 59.0%
+### 2. DeepSeek R1 70B Distill (70B dense, R1 distill) — 59.7%
 
-**Strong contender with specific strengths.** While slightly behind overall,
-Llama 3.3 70B Instruct excels in areas requiring direct knowledge recall and
-positioning. It has a higher number of zero scores (20) but fewer severe
-failures overall (33 vs 39).
+**Specialized strength in error detection.** While trailing overall, this model
+shows a notable strength in Error Detection (79.0%), outperforming Llama 3.3 70B
+Instruct in this critical category. However, it has a higher failure rate with
+39 severe failures and 9 zeros.
 
-- **Strengths**: Catechism recall (45.7%) and doctrinal position (55.4%). Its
-  ability to recall catechism content is significantly better than DeepSeek R1
-  Distill. It also performs very well in biblical reference (67.3%) and
-  confessional knowledge (81.0%).
-- **Weaknesses**: Error detection (39.8%) is a significant weak point,
-  performing considerably worse than DeepSeek R1 Distill. This suggests it
-  struggles to reliably identify heterodox statements.
-- **Architecture note**: A standard 70B dense model, it is a memory-efficient
-  option for the 48GB VRAM tier, leaving ample room for context and other
-  operations.
+- **Strengths**: Error Detection (79.0%), Comparative Theology (88.8%), and
+  Confessional Knowledge (83.0%) are its strongest areas, suggesting good
+  ability to identify and compare theological concepts.
+- **Weaknesses**: Doctrinal Position (39.9%) and Catechism Recall (33.6%) are
+  significantly lower than its competitor, indicating a struggle with precise
+  affirmation of specific doctrines and verbatim recall.
+- **Architecture note**: This is a distilled version of the DeepSeek R1 model,
+  which is known for its chain-of-thought reasoning. While its outputs were
+  compatible with the scorer in this run, its lower scores in direct recall
+  categories suggest a different internal processing or training emphasis.
+
+---
+
+## Scoring Notes
+
+- Doctrinal Position and Error Detection (35% combined) use regex pattern
+  matching that favors direct affirm/deny answers over balanced multi-perspective
+  responses — models that hedge or present comparative views may score lower
+  than their understanding warrants.
+- Catechism Recall (25%) rewards near-verbatim recall of catechism phrasing,
+  giving a natural advantage to models trained on Reformed source texts.
 
 ---
 
 ## Recommendation
 
-For general theological reasoning and error detection, **DeepSeek R1 Distill 70B is the preferred choice** in the 48GB VRAM tier. Its superior performance in categories requiring nuanced analysis, such as comparative theology, confessional knowledge, and especially error detection, makes it a more robust option for identifying theological inaccuracies.
+**Llama 3.3 70B Instruct is the recommended choice** for local theological
+reasoning on a 48GB card. It demonstrates superior overall performance, leads
+in most categories, and exhibits a lower failure rate. Its balanced strengths
+across confessional knowledge, biblical reference, and comparative theology make
+it a robust option.
 
-However, if verbatim recall of confessional standards (catechism recall) and clear articulation of doctrinal positions are paramount, **Llama 3.3 70B Instruct** offers a compelling alternative. Its strong performance in these areas, coupled with excellent biblical reference capabilities, makes it suitable for tasks where direct knowledge retrieval is key, provided its weakness in error detection is mitigated.
+DeepSeek R1 70B Distill, while strong in error detection, falls short in other
+key areas, particularly in doctrinal position and catechism recall, making it
+less suitable as a general-purpose theological assistant in this tier.
 
 ---
 
 *Generated by theolog-bench. Scores use weighted category averages.*
 *Scorer: v2 (improved position detection for multi-view responses).*
 *Judge model: Gemini 2.5 Flash via OpenRouter.*
-*Run date: May 15, 2026.*
+*Run date: May 16, 2026.*
