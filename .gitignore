@@ -10,3 +10,6 @@ _unsloth_sentencepiece_temp/
 
 # Legacy result JSONs in root results/ (use results/raw/ instead)
 results/*.json
+
+# Smoke test results (ephemeral, not worth tracking)
+results/raw/*_smoke_*.json
