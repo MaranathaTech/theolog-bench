@@ -135,11 +135,12 @@ class TestPositionDetectionDeny:
         assert result["score"] == 0
 
     def test_heterodox_flags_catch_wrong_position(self, position_question_deny):
-        """Response endorsing heterodox flags with wrong position should score 0."""
+        """Response clearly endorsing heterodox flags should score 0."""
         result = score_position_detection(
             position_question_deny,
-            "Yes, believers can lose salvation. Conditional security is the biblical teaching "
-            "and those who fall away prove they never had saving faith to begin with is incorrect.",
+            "Yes, absolutely. Believers can lose salvation through persistent, unrepentant sin. "
+            "Conditional security is the biblical teaching. Those who fall away demonstrate that "
+            "salvation is not guaranteed.",
         )
         assert result["score"] == 0
 

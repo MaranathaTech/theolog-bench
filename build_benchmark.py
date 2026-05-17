@@ -624,16 +624,27 @@ def build_doctrinal_position() -> list[dict]:
     additional = [
         {
             "id": "doc-add-01",
-            "question": "Is infant baptism a valid Christian practice according to Reformed theology?",
-            "expected_position": "affirm",
+            "question": "What is the Reformed view of infant baptism?",
+            "scoring_override": {
+                "method": "llm_judge",
+                "rubric": (
+                    "The model should demonstrate awareness that Reformed theology has an internal "
+                    "debate on this topic. The mainstream Reformed (WCF/Westminster) position affirms "
+                    "infant baptism as a covenant sign replacing circumcision (Gen 17:7, Acts 2:39, "
+                    "Col 2:11-12). Reformed Baptists (1689 LBCF) hold that only believer's baptism "
+                    "is valid. A strong answer presents the paedobaptist position and its covenantal "
+                    "reasoning, and may also acknowledge the Reformed Baptist dissent. Penalize only "
+                    "if the answer is theologically inaccurate or dismisses infant baptism as having "
+                    "no basis in Reformed thought."
+                ),
+            },
             "required_points": [
                 "Reformed paedobaptists affirm infant baptism as a sign of the covenant",
-                "Children of believers are included in the covenant community",
-                "Baptism replaces circumcision as the sign of the covenant",
+                "Covenantal reasoning connects baptism to circumcision",
+                "Reformed Baptists hold a different position within the Reformed tradition",
             ],
             "key_references": ["Gen 17:7", "Acts 2:39", "Col 2:11-12"],
-            "heterodox_flags": ["baptism is merely symbolic", "only believer's baptism is valid"],
-            "note": "Note: Reformed Baptists (1689) deny infant baptism. The mainstream Reformed (WCF) position affirms it.",
+            "heterodox_flags": [],
         },
         {
             "id": "doc-add-02",
@@ -686,19 +697,24 @@ def build_doctrinal_position() -> list[dict]:
     ]
 
     for a in additional:
+        # Allow individual items to override the default position_detection scoring
+        if "scoring_override" in a:
+            scoring = a["scoring_override"]
+        else:
+            scoring = {
+                "method": "position_detection",
+                "expected_position": a["expected_position"],
+                "required_points": a["required_points"],
+                "key_references": a["key_references"],
+                "heterodox_flags": a["heterodox_flags"],
+            }
         entry = {
             "id": a["id"],
             "category": "doctrinal_position",
             "source": "Reformed Doctrinal Distinctives",
             "question": a["question"],
             "reference_answer": " ".join(a["required_points"]),
-            "scoring": {
-                "method": "position_detection",
-                "expected_position": a["expected_position"],
-                "required_points": a["required_points"],
-                "key_references": a["key_references"],
-                "heterodox_flags": a["heterodox_flags"],
-            },
+            "scoring": scoring,
         }
         questions.append(entry)
 

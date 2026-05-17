@@ -6,18 +6,18 @@ Evaluates LLM theological accuracy against Reformed confessional standards — t
 
 | # | Model | Overall |
 |:--:|:--|--:|
-| 1 | openai/gpt-5.5 | **90.6%** |
-| 2 | anthropic/claude-opus-4.7 | **85.1%** |
-| 3 | x-ai/grok-4.3 | **85.0%** |
+| 1 | openai/gpt-5.5 | **90.5%** |
+| 2 | anthropic/claude-opus-4.7 | **85.2%** |
+| 3 | x-ai/grok-4.3 | **84.9%** |
 | 4 | google/gemini-3.1-pro-preview | **84.2%** |
-| 5 | mistralai/mistral-medium-3-5 | **83.0%** |
+| 5 | mistralai/mistral-medium-3-5 | **82.9%** |
 | 6 | z-ai/glm-4.7 | **82.5%** |
-| 7 | qwen/qwen3.5-122b-a10b | **81.9%** |
-| 8 | qwen/qwen3.5-27b | **81.9%** |
-| 9 | qwen/qwen3.6-35b-a3b | **81.4%** |
-| 10 | mistralai/mistral-large-2512 | **81.3%** |
+| 7 | qwen/qwen3.5-122b-a10b | **82.0%** |
+| 8 | qwen/qwen3.5-27b | **82.0%** |
+| 9 | qwen/qwen3.6-35b-a3b | **81.7%** |
+| 10 | mistralai/mistral-large-2512 | **81.4%** |
 
-[Full leaderboard (33 models)](results/reports/leaderboard.md) | [Frontier](results/reports/frontier-comparison.md) | [Mid-tier](results/reports/mid-comparison.md) | [Budget](results/reports/budget-comparison.md) | [12GB](results/reports/12gb-comparison.md) | [24GB](results/reports/24gb-comparison.md) | [48GB](results/reports/48gb-comparison.md) | [96GB](results/reports/96gb-comparison.md)
+[Full leaderboard (37 models)](results/reports/leaderboard.md) | [Frontier](results/reports/frontier-comparison.md) | [Mid-tier](results/reports/mid-comparison.md) | [Budget](results/reports/budget-comparison.md) | [12GB](results/reports/12gb-comparison.md) | [24GB](results/reports/24gb-comparison.md) | [48GB](results/reports/48gb-comparison.md) | [96GB](results/reports/96gb-comparison.md)
 
 ## Categories
 
@@ -173,12 +173,12 @@ All groups run via OpenRouter by default. Add `--local` to run open-weight model
 
 | Tier | Score Range | Top Model | Notes |
 |------|------------|-----------|-------|
-| Frontier cloud | 80-91% | GPT-5.5 (90.6%) | Strong across all categories |
-| 96GB open-weight | 82-83% | Mistral Medium 3-5 (83.0%) | Competitive with frontier |
-| Mid-tier cloud | 75-81% | Mistral Large 2512 (81.3%) | Good value for cost |
-| 24GB open-weight | 66-82% | Qwen3.5 27B (81.9%) | Best bang-for-buck tier |
+| Frontier cloud | 80-91% | GPT-5.5 (90.5%) | Strong across all categories |
+| 96GB open-weight | 82-83% | Mistral Medium 3-5 (82.9%) | Competitive with frontier |
+| Mid-tier cloud | 75-81% | Mistral Large 2512 (81.4%) | Good value for cost |
+| 24GB open-weight | 66-82% | Qwen3.5 27B (82.0%) | Best bang-for-buck tier |
 | Budget cloud | 68-83% | GLM-4.7 (82.5%) | Wide variance |
-| 48GB open-weight | 68-74% | Llama 3.3 70B (73.5%) | Solid but not standout |
+| 48GB open-weight | 67-73% | Llama 3.3 70B (73.3%) | Solid but not standout |
 | 12GB open-weight | 58-76% | Gemma 4 26B MoE (75.8%) | Viable for local use |
 
 ### Cost Summary

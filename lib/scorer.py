@@ -343,6 +343,28 @@ def _heterodox_flag_endorsed(flag: str, response: str) -> bool:
     return True  # Flag appears to be endorsed
 
 
+def _count_position_signals(text: str, expected: str) -> tuple[float, float]:
+    """Count weighted affirm/deny pattern matches in a text segment.
+
+    Returns (affirm_weight, deny_weight).  Each matched pattern contributes 1.0.
+    """
+    affirm = 0.0
+    for pat in AFFIRM_PATTERNS:
+        if re.search(pat, text, re.MULTILINE | re.DOTALL):
+            if expected in ("deny", "reject") and pat in EXPLANATORY_AFFIRM_PATTERNS:
+                continue
+            affirm += 1.0
+    deny = 0.0
+    for pat in DENY_PATTERNS:
+        if re.search(pat, text, re.MULTILINE | re.DOTALL):
+            deny += 1.0
+    if expected in ("deny", "reject"):
+        for pat in INABILITY_PATTERNS:
+            if re.search(pat, text, re.MULTILINE | re.DOTALL):
+                deny += 1.0
+    return affirm, deny
+
+
 def score_position_detection(question: dict, response: str) -> dict:
     scoring = question["scoring"]
     # Handle both field names used in benchmark.json
@@ -353,30 +375,24 @@ def score_position_detection(question: dict, response: str) -> dict:
     resp_clean = re.sub(r'\*+', '', response)
     resp_lower = resp_clean.lower()
 
-    affirm_matches = []
-    for pat in AFFIRM_PATTERNS:
-        if re.search(pat, resp_lower, re.MULTILINE | re.DOTALL):
-            # When expected is deny/reject, skip explanatory affirm patterns
-            # (e.g., "Reformed theology affirms X" used to explain a rejection)
-            if expected in ("deny", "reject") and pat in EXPLANATORY_AFFIRM_PATTERNS:
-                continue
-            affirm_matches.append(pat)
+    # Split response into body and conclusion.  Well-written responses often
+    # discuss multiple perspectives before stating a conclusion in the final
+    # portion.  Weight the conclusion more heavily so that a clear final
+    # position isn't drowned out by explanatory mentions of the opposing view.
+    conclusion_start = max(0, len(resp_lower) - len(resp_lower) // 4)
+    body = resp_lower[:conclusion_start]
+    conclusion = resp_lower[conclusion_start:]
 
-    deny_matches = []
-    for pat in DENY_PATTERNS:
-        if re.search(pat, resp_lower, re.MULTILINE | re.DOTALL):
-            deny_matches.append(pat)
+    body_affirm, body_deny = _count_position_signals(body, expected)
+    conc_affirm, conc_deny = _count_position_signals(conclusion, expected)
 
-    # Inability/depravity content patterns only count as deny evidence when the
-    # question expects a deny/reject answer (e.g., "Can man save himself?" -> deny)
-    if expected in ("deny", "reject"):
-        for pat in INABILITY_PATTERNS:
-            if re.search(pat, resp_lower, re.MULTILINE | re.DOTALL):
-                deny_matches.append(pat)
+    # Conclusion signals count double
+    affirm_weight = body_affirm + conc_affirm * 2
+    deny_weight = body_deny + conc_deny * 2
 
-    if len(affirm_matches) > len(deny_matches):
+    if affirm_weight > deny_weight:
         detected_position = "affirm"
-    elif len(deny_matches) > len(affirm_matches):
+    elif deny_weight > affirm_weight:
         detected_position = "deny"
     else:
         detected_position = "unclear"
@@ -399,9 +415,10 @@ def score_position_detection(question: dict, response: str) -> dict:
     score = 0
 
     if expected in ("deny", "reject"):
-        if heterodox_flags_found and detected_position not in ("deny", "reject"):
-            # If the model covered required points despite heterodox flags, give
-            # partial credit — the flags likely come from a comparative section
+        # Heterodox flags endorsed → the response is wrong regardless of what
+        # deny/affirm patterns were detected (the model may use denial language
+        # to reject the *Reformed* position rather than the heterodox claim).
+        if heterodox_flags_found:
             if required_points_found:
                 coverage = len(required_points_found) / max(1, len(required_points))
                 score = int(round(40 * coverage))
@@ -420,7 +437,14 @@ def score_position_detection(question: dict, response: str) -> dict:
         else:
             score = 0
     elif expected == "affirm":
-        if detected_position == "affirm":
+        # Heterodox flags endorsed → cap at partial credit
+        if heterodox_flags_found:
+            if required_points_found:
+                coverage = len(required_points_found) / max(1, len(required_points))
+                score = int(round(40 * coverage))
+            else:
+                score = 0
+        elif detected_position == "affirm":
             score = 70
             if required_points:
                 bonus = (len(required_points_found) / len(required_points)) * 30
@@ -428,14 +452,6 @@ def score_position_detection(question: dict, response: str) -> dict:
         elif detected_position == "unclear" and required_points_found:
             coverage = len(required_points_found) / max(1, len(required_points))
             score = int(round(50 * coverage))
-        elif heterodox_flags_found and detected_position != "deny":
-            # For affirm questions with heterodox flags but required points covered,
-            # give partial credit (multi-view response pattern)
-            if required_points_found:
-                coverage = len(required_points_found) / max(1, len(required_points))
-                score = int(round(40 * coverage))
-            else:
-                score = 0
         else:
             score = 0
 
@@ -447,8 +463,8 @@ def score_position_detection(question: dict, response: str) -> dict:
         "details": {
             "expected_position": expected,
             "detected_position": detected_position,
-            "affirm_pattern_matches": len(affirm_matches),
-            "deny_pattern_matches": len(deny_matches),
+            "affirm_signal_weight": affirm_weight,
+            "deny_signal_weight": deny_weight,
             "heterodox_flags_found": heterodox_flags_found,
             "required_points_found": required_points_found,
             "required_points_missing": [

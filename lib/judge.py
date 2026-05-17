@@ -162,10 +162,10 @@ class JudgeScorer:
         """Parse the judge's JSON output."""
         # Try to extract JSON from the response.
         # The judge might wrap it in markdown code blocks or add extra text.
-        json_match = re.search(r'\{[^}]*"score"[^}]*\}', raw_output)
-        if json_match:
+        # Use brace-balanced extraction to handle nested braces in justification text.
+        result = self._extract_json_with_score(raw_output)
+        if result is not None:
             try:
-                result = json.loads(json_match.group())
                 score = max(0, min(100, int(result.get("score", 0))))
                 justification = result.get("justification", "")
                 return {
@@ -176,19 +176,19 @@ class JudgeScorer:
                         "raw_output": raw_output,
                     },
                 }
-            except (json.JSONDecodeError, ValueError):
+            except (ValueError, TypeError):
                 pass
 
-        # Fallback: try to find a number in the response
-        numbers = re.findall(r"\b(\d{1,3})\b", raw_output)
-        for n in numbers:
-            n_int = int(n)
+        # Fallback: look for "score": N pattern directly
+        score_match = re.search(r'"score"\s*:\s*(\d{1,3})', raw_output)
+        if score_match:
+            n_int = int(score_match.group(1))
             if 0 <= n_int <= 100:
                 return {
                     "score": n_int,
                     "method": "llm_judge",
                     "details": {
-                        "justification": "Score extracted from unstructured output",
+                        "justification": "Score extracted from partial JSON",
                         "raw_output": raw_output,
                     },
                 }
@@ -202,6 +202,31 @@ class JudgeScorer:
                 "raw_output": raw_output,
             },
         }
+
+    @staticmethod
+    def _extract_json_with_score(text: str) -> dict | None:
+        """Extract a JSON object containing a 'score' key, handling nested braces."""
+        # Find each '{' and try json.loads from that position
+        for i, ch in enumerate(text):
+            if ch != '{':
+                continue
+            # Find the balancing closing brace
+            depth = 0
+            for j in range(i, len(text)):
+                if text[j] == '{':
+                    depth += 1
+                elif text[j] == '}':
+                    depth -= 1
+                    if depth == 0:
+                        candidate = text[i:j + 1]
+                        try:
+                            obj = json.loads(candidate)
+                            if isinstance(obj, dict) and "score" in obj:
+                                return obj
+                        except json.JSONDecodeError:
+                            pass
+                        break
+        return None
 
 
 def score_with_judge(question: dict, response: str, judge: JudgeScorer = None) -> dict:

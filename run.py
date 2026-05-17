@@ -48,8 +48,9 @@ def parse_args():
         help="API key (optional, for cloud APIs)",
     )
     parser.add_argument(
-        "--benchmark", default="benchmark.json",
-        help="Path to benchmark.json (default: benchmark.json)",
+        "--benchmark",
+        default=str(Path(__file__).parent / "benchmark.json"),
+        help="Path to benchmark.json (default: <script_dir>/benchmark.json)",
     )
     parser.add_argument(
         "--judge", action="store_true", default=True, dest="judge",

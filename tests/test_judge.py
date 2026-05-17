@@ -35,11 +35,22 @@ class TestJudgeScorerParsing:
         result = judge.score(judge_question, "Some response")
         assert result["score"] == 72
 
-    def test_judge_handles_malformed_output(self, judge_question):
-        """Judge handles unstructured output by extracting a number."""
+    def test_judge_parses_json_with_nested_braces(self, judge_question):
+        """Judge handles JSON where justification contains curly braces."""
         mock_backend = MagicMock()
         mock_backend.generate.return_value = (
-            "I think this deserves about a 65 out of 100 because it covers the main points."
+            '{"score": 85, "justification": "The model correctly identifies {X} as heretical and contrasts it with {Y}."}'
+        )
+        judge = JudgeScorer(backend=mock_backend)
+        result = judge.score(judge_question, "Some response")
+        assert result["score"] == 85
+        assert "{X}" in result["details"]["justification"]
+
+    def test_judge_handles_malformed_output(self, judge_question):
+        """Judge handles output with 'score' key pattern but no valid JSON."""
+        mock_backend = MagicMock()
+        mock_backend.generate.return_value = (
+            'The response is decent. "score": 65, "justification": partial coverage.'
         )
         judge = JudgeScorer(backend=mock_backend)
         result = judge.score(judge_question, "Some response")
