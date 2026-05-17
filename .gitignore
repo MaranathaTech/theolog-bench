@@ -8,6 +8,5 @@ todo.md
 unsloth_compiled_cache/
 _unsloth_sentencepiece_temp/
 
-# Raw result JSONs (too large for git, ~1MB each)
-results/raw/
+# Legacy result JSONs in root results/ (use results/raw/ instead)
 results/*.json

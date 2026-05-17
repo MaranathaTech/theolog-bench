@@ -6,7 +6,7 @@ set -e
 cd "$(dirname "$0")"
 
 REPORTS=results/reports
-EXCLUDE="reformed qwen3-1.7b"
+EXCLUDE="reformed qwen3-1.7b qwen3-14b qwen3-30b qwen3-32b"
 
 echo "Generating leaderboard..."
 python3 report.py --all --exclude $EXCLUDE \

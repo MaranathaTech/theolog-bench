@@ -1,0 +1,15 @@
+{
+  "model_name": "mistralai/mistral-small-3.2-24b-instruct",
+  "timestamp": "2026-05-16T00:42:56.486110",
+  "category_weights": {
+    "catechism_recall": 0.25,
+    "confessional_knowledge": 0.15,
+    "doctrinal_position": 0.2,
+    "biblical_reference": 0.15,
+    "error_detection": 0.15,
+    "comparative_theology": 0.1
+  },
+  "questions": [],
+  "results_path": "results/raw/mistralai_mistral-small-3.2-24b-instruct_20260516_004256.json",
+  "status": "aborted: API error (403): Error code: 403 - {'error': {'message': 'Key limit exceeded (monthly limit). Manage it using https://openrouter.ai/settings/keys', 'code': 403}}"
+}
