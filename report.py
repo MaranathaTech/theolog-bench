@@ -50,6 +50,12 @@ def main():
         help="Model name substrings to exclude (e.g. 'reformed' 'qwen3-1.7b')",
     )
     parser.add_argument(
+        "--group",
+        type=str,
+        default=None,
+        help="Filter results to only models in this config group (e.g. 'frontier', '24gb')",
+    )
+    parser.add_argument(
         "--rescore",
         action="store_true",
         help="Re-run automated scorer on all questions (keeps judge scores)",
@@ -64,6 +70,12 @@ def main():
         type=str,
         default=None,
         help="Label for the report (e.g. 'Frontier Cloud Models')",
+    )
+    parser.add_argument(
+        "--title",
+        type=str,
+        default=None,
+        help="Custom title for comparison reports (default: 'theolog-bench Comparison Report')",
     )
     parser.add_argument(
         "--output",
@@ -92,6 +104,26 @@ def main():
             if prev is None or ts > prev.get("timestamp", ""):
                 by_model[name] = data
         results_list = list(by_model.values())
+        if args.group:
+            # Filter to only models belonging to the specified config group
+            config_path = Path(__file__).parent / "config.yaml"
+            with open(config_path) as f:
+                cfg = yaml.safe_load(f)
+            group_presets = cfg.get("groups", {}).get(args.group, [])
+            if not group_presets:
+                print(f"Unknown group: {args.group}")
+                return
+            # Resolve preset names to model names
+            presets_cfg = cfg.get("presets", {})
+            group_models = set()
+            for preset_name in group_presets:
+                preset = presets_cfg.get(preset_name, {})
+                if preset.get("model"):
+                    group_models.add(preset["model"])
+            results_list = [
+                r for r in results_list
+                if r.get("model_name", "") in group_models
+            ]
         if args.exclude:
             results_list = [
                 r for r in results_list
@@ -111,7 +143,7 @@ def main():
                 group_name=args.group_name,
             )
         else:
-            report = generate_comparison_report(results_list)
+            report = generate_comparison_report(results_list, title=args.title)
         if args.output:
             Path(args.output).parent.mkdir(parents=True, exist_ok=True)
             Path(args.output).write_text(report)
@@ -143,7 +175,7 @@ def main():
                 group_name=args.group_name,
             )
         else:
-            report = generate_comparison_report(results_list)
+            report = generate_comparison_report(results_list, title=args.title)
         if args.output:
             Path(args.output).parent.mkdir(parents=True, exist_ok=True)
             Path(args.output).write_text(report)

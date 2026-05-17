@@ -1,5 +1,5 @@
 ================================================================================
-theolog-bench Comparison Report
+theolog-bench Leaderboard
 ================================================================================
 
   #  Model                                       BibRef  Catech  Compar  Confes  Doctrn  ErrDet  OVERALL

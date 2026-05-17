@@ -127,6 +127,37 @@ class TestGenerateComparisonReport:
         report = generate_comparison_report([results1, results2])
         assert "OVERALL" in report
 
+    def test_generate_comparison_custom_title(self):
+        """Comparison report uses custom title when provided."""
+        results = [
+            {
+                "model_name": f"model-{i}",
+                "category_weights": {"catechism_recall": 1.0},
+                "questions": [
+                    {"id": "q1", "category": "catechism_recall", "score": 50 + i * 10}
+                ],
+            }
+            for i in range(2)
+        ]
+        report = generate_comparison_report(results, title="theolog-bench Leaderboard")
+        assert "theolog-bench Leaderboard" in report
+        assert "Comparison Report" not in report
+
+    def test_generate_comparison_default_title(self):
+        """Comparison report uses default title when none provided."""
+        results = [
+            {
+                "model_name": f"model-{i}",
+                "category_weights": {"catechism_recall": 1.0},
+                "questions": [
+                    {"id": "q1", "category": "catechism_recall", "score": 50 + i * 10}
+                ],
+            }
+            for i in range(2)
+        ]
+        report = generate_comparison_report(results)
+        assert "theolog-bench Comparison Report" in report
+
 
 # Fixtures for detailed report tests
 

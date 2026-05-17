@@ -76,11 +76,15 @@ def generate_report(results: dict) -> str:
     return "\n".join(lines)
 
 
-def generate_comparison_report(results_list: list[dict]) -> str:
+def generate_comparison_report(results_list: list[dict], title: str = None) -> str:
     """Generate a comparison report between multiple benchmark runs.
 
     Uses a leaderboard layout with models as rows and categories as columns,
     sorted by overall score descending. Works well for 2-20+ models.
+
+    Args:
+        results_list: List of benchmark result dicts.
+        title: Custom report title (default: "theolog-bench Comparison Report").
     """
     if len(results_list) < 2:
         return "Need at least 2 result sets to compare."
@@ -134,9 +138,11 @@ def generate_comparison_report(results_list: list[dict]) -> str:
     max_name = max(len(m["name"]) for m in model_data)
     name_width = max(max_name, 5) + 2  # at least "Model" + padding
 
+    report_title = title or "theolog-bench Comparison Report"
+
     lines = []
     lines.append("=" * 80)
-    lines.append("theolog-bench Comparison Report")
+    lines.append(report_title)
     lines.append("=" * 80)
     lines.append("")
 
