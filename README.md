@@ -2,30 +2,51 @@
 
 Evaluates LLM theological accuracy against Reformed confessional standards — the Westminster Standards, Three Forms of Unity, and the 1689 London Baptist Confession of Faith. Unlike generic "Christian AI" benchmarks, theolog-bench tests against specific historic confessions with transparent methodology and reproducible scoring.
 
+## Leaderboard
+
+| # | Model | Overall |
+|:--:|:--|--:|
+| 1 | openai/gpt-5.5 | **90.6%** |
+| 2 | anthropic/claude-opus-4.7 | **85.1%** |
+| 3 | x-ai/grok-4.3 | **85.0%** |
+| 4 | google/gemini-3.1-pro-preview | **84.2%** |
+| 5 | mistralai/mistral-medium-3-5 | **83.0%** |
+| 6 | z-ai/glm-4.7 | **82.5%** |
+| 7 | qwen/qwen3.5-122b-a10b | **81.9%** |
+| 8 | qwen/qwen3.5-27b | **81.9%** |
+| 9 | qwen/qwen3.6-35b-a3b | **81.4%** |
+| 10 | mistralai/mistral-large-2512 | **81.3%** |
+
+[Full leaderboard (33 models)](results/reports/leaderboard.md) | [Frontier](results/reports/frontier-comparison.md) | [Mid-tier](results/reports/mid-comparison.md) | [Budget](results/reports/budget-comparison.md) | [12GB](results/reports/12gb-comparison.md) | [24GB](results/reports/24gb-comparison.md) | [48GB](results/reports/48gb-comparison.md) | [96GB](results/reports/96gb-comparison.md)
+
 ## Categories
 
-| Category | Questions | Weight | Scoring Method | Description |
+| Category | Questions | Weight | Scoring | Description |
 |---|---|---|---|---|
-| Catechism Recall | ~120 | 25% | Semantic similarity | Direct recall of catechism Q&A (WSC, WLC, Heidelberg, Puritan, Keach's) |
-| Confessional Knowledge | ~40 | 15% | LLM judge | Understanding of confessional teaching (WCF, Belgic, Dort, LBCF) |
-| Doctrinal Position | ~30 | 20% | Position detection | TULIP and Five Solas — affirming Reformed distinctives |
-| Biblical Reference | ~30 | 15% | Reference check | Scripture citation accuracy for theological claims |
-| Error Detection | ~30 | 15% | Position detection | Identifying heterodox statements (Arminian, Roman Catholic, liberal, etc.) |
-| Comparative Theology | ~20 | 10% | LLM judge | Distinguishing Reformed theology from other traditions |
+| Catechism Recall | ~120 | 25% | LLM judge (catechism prompt) | Direct recall of catechism Q&A (WSC, WLC, Heidelberg, Puritan, Keach's) |
+| Confessional Knowledge | ~40 | 15% | LLM judge (generic prompt) | Understanding of confessional teaching (WCF, Belgic, Dort, LBCF) |
+| Doctrinal Position | ~30 | 20% | LLM judge (position prompt) | TULIP and Five Solas — affirming Reformed distinctives |
+| Biblical Reference | ~30 | 15% | Automated reference check | Scripture citation accuracy for theological claims |
+| Error Detection | ~30 | 15% | LLM judge (position prompt) | Identifying heterodox statements (Arminian, Roman Catholic, liberal, etc.) |
+| Comparative Theology | ~20 | 10% | LLM judge (generic prompt) | Distinguishing Reformed theology from other traditions |
 
 ## Scoring Methodology
 
-### Automated Methods
+### LLM-as-Judge (5 of 6 categories)
 
-- **Semantic similarity** (`catechism_recall`) — Splits the expected answer into phrases and concepts, then checks how many appear in the model's response. Uses a 60/40 weighting of phrase presence vs. concept coverage against a configurable similarity threshold (default 0.6).
+The judge (Gemini 2.5 Flash) is authoritative for all categories except Biblical Reference. Each category uses a specialized prompt:
 
-- **Position detection** (`doctrinal_position`, `error_detection`) — Pattern-matching against required affirmations/denials and key doctrinal points. Checks that the model affirms what it should affirm and denies what it should deny, with bonus points for including required theological terms.
+- **Catechism prompt** (`catechism_recall`) — Scores whether the response conveys the same theological content as the reference answer. Paraphrased answers that capture all key doctrinal points score just as high as verbatim quotations.
+
+- **Position prompt** (`doctrinal_position`, `error_detection`) — Scores whether the model clearly takes the correct Reformed position (50 pts), explains why with theological depth (30 pts), and addresses required points (20 pts). Models that present balanced academic analysis but clearly conclude with the correct position score well.
+
+- **Generic prompt** (`confessional_knowledge`, `comparative_theology`) — Scores theological accuracy and alignment with Reformed confessional standards on a 0-100 scale.
+
+### Automated Scoring (fallback + biblical_reference)
 
 - **Reference check** (`biblical_reference`) — Extracts Bible citations from the response and compares them against expected references. Handles book name normalization and verse-level matching.
 
-### LLM-as-Judge
-
-For categories requiring nuanced theological evaluation (`confessional_knowledge`, `comparative_theology`, `error_detection`), an LLM judge scores responses on a 0-100 scale with a written justification. The judge model is configured in `config.yaml`.
+Automated scorers also run on all questions as a baseline (stored in `automated_score`), used when `--no-judge` is specified.
 
 ## Quick Start
 
@@ -58,7 +79,11 @@ python run.py --backend api --model qwen3:1.7b --no-judge
 python report.py --compare results/raw/qwen3_1.7b_*.json results/raw/reformed-qwen3-1.7b_*.json
 ```
 
-Results are saved to `results/raw/{model}_{timestamp}.json`. Narrative comparison reports are saved to `results/reports/`.
+Results are saved to `results/raw/{model}_{timestamp}.json`. Reports are in `results/reports/`.
+
+To regenerate all reports (leaderboard + tier comparisons):
+
+    ./generate_reports.sh
 
 ## Quick Smoke Test
 
@@ -144,18 +169,17 @@ All groups run via OpenRouter by default. Add `--local` to run open-weight model
     python report.py --compare results/raw/*.json
     python report.py --all --detailed --group-name "Frontier" --output results/reports/frontier-comparison.md
 
-### Expected Results by Model Size
+### Observed Results by Tier
 
-| Size Class | Expected Overall | Strengths | Weaknesses |
-|------------|-----------------|-----------|------------|
-| 1.7B base | 20-35 | — | Everything (no theological training) |
-| 1.7B fine-tuned | 65-80 | Catechism recall, doctrinal positions | Comparative theology, long explanations |
-| 2-4B open | 30-50 | Basic knowledge | Lack of Reformed specificity |
-| 8-14B open | 40-60 | Broad knowledge, reasonable positions | May not know confessional content |
-| 24-32B open | 50-70 | Good knowledge, solid positions | May miss confessional nuance |
-| 70B+ open | 55-75 | Strong knowledge, reasoning | May be vague on Reformed distinctives |
-| Mid-tier cloud | 55-75 | Good general theology | May be vague on Reformed distinctives |
-| Frontier cloud | 70-90 | Comparative theology, nuanced analysis | May be diplomatically vague on positions |
+| Tier | Score Range | Top Model | Notes |
+|------|------------|-----------|-------|
+| Frontier cloud | 80-91% | GPT-5.5 (90.6%) | Strong across all categories |
+| 96GB open-weight | 82-83% | Mistral Medium 3-5 (83.0%) | Competitive with frontier |
+| Mid-tier cloud | 75-81% | Mistral Large 2512 (81.3%) | Good value for cost |
+| 24GB open-weight | 66-82% | Qwen3.5 27B (81.9%) | Best bang-for-buck tier |
+| Budget cloud | 68-83% | GLM-4.7 (82.5%) | Wide variance |
+| 48GB open-weight | 68-74% | Llama 3.3 70B (73.5%) | Solid but not standout |
+| 12GB open-weight | 58-76% | Gemma 4 26B MoE (75.8%) | Viable for local use |
 
 ### Cost Summary
 
