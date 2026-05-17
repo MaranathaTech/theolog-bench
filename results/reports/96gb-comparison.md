@@ -1,72 +1,12 @@
-# theolog-bench: 96GB VRAM Tier
+================================================================================
+theolog-bench Comparison Report
+================================================================================
 
-Comparative evaluation of open-weight LLMs that can run locally on a single
-NVIDIA RTX PRO 6000 Blackwell (96GB VRAM) at Q4 quantization.
+  #  Model                           BibRef  Catech  Compar  Confes  Doctrn  ErrDet  OVERALL
+--------------------------------------------------------------------------------------------
+  1  mistralai/mistral-medium-3-5     74.7%   60.5%   96.5%   93.3%   90.1%   99.9%    83.0%
+  2  qwen/qwen3.5-122b-a10b           76.7%   62.0%   97.4%   87.2%   85.4%   99.9%    81.9%
+--------------------------------------------------------------------------------------------
 
-Benchmark: 270 questions across 6 categories of Reformed theological knowledge.
-Scoring: automated pattern matching + LLM-as-judge (Gemini 2.5 Flash) for
-confessional knowledge, error detection, and comparative theology.
-
----
-
-## Overall Rankings
-
-| # | Model | Architecture | Overall |
-|---|---|---|---|
-| 1 | **mistralai/mistral-medium-3-5** | 128B dense | **78.1%** |
-| 2 | qwen/qwen3.5-122b-a10b | 122B MoE, 10B active | 77.3% |
-
----
-
-## Category Breakdown
-
-| Category (weight) | mistralai/mistral-medium-3-5 | qwen/qwen3.5-122b-a10b |
-|---|---|---|
-| Biblical Reference (15%) | 74.7 | **76.7** |
-| Catechism Recall (25%) | 55.2 | **67.2** |
-| Comparative Theology (10%) | 96.7 | **97.5** |
-| Confessional Knowledge (15%) | **93.4** | 86.9 |
-| Doctrinal Position (20%) | **75.1** | 55.9 |
-| Error Detection (15%) | 96.2 | **100.0** |
-
----
-
-## Detailed Analysis
-
-### 1. mistralai/mistral-medium-3-5 (128B dense) — 78.1%
-
-**Top performer overall.** This model demonstrates strong and consistent performance across the board, leading in two high-weight categories: Confessional Knowledge (15% weight) at 93.4% and Doctrinal Position (20% weight) at 75.1%. It exhibits a very low failure rate with only 6 severe failures (<20) out of 270 questions and no zero scores.
-
-- **Strengths**: Confessional Knowledge (93.4%), Doctrinal Position (75.1%), Comparative Theology (96.7%), and Error Detection (96.2%). Its high scores in these categories indicate strong theological reasoning and understanding.
-- **Weaknesses**: Catechism Recall (55.2%) and Biblical Reference (74.7%) are its lowest-scoring categories, though still respectable. Like many general-purpose models, it tends to paraphrase rather than quote verbatim for catechism.
-- **Architecture note**: As a dense 128B model, all parameters are active during inference, which can lead to predictable behavior. It fits within the 96GB VRAM limit, allowing for substantial context windows.
-
-### 2. qwen/qwen3.5-122b-a10b (122B MoE, 10B active) — 77.3%
-
-**Strong contender, excelling in specific areas.** This model closely trails the top performer, leading in four categories, including the critical Catechism Recall (25% weight) at 67.2% and a perfect score in Error Detection (15% weight) at 100.0%. However, it shows a higher number of severe failures (16/270) and 11 zero scores, suggesting less consistency than the Mistral model.
-
-- **Strengths**: Error Detection (100.0%), Comparative Theology (97.5%), Catechism Recall (67.2%), and Biblical Reference (76.7%). Its perfect score in Error Detection is particularly noteworthy.
-- **Weaknesses**: Doctrinal Position (55.9%) is its weakest category, significantly lower than the Mistral model. Its higher number of severe failures and zeros indicates occasional complete misses.
-- **Architecture note**: This is a Mixture-of-Experts (MoE) model where only 10B parameters are active per token, despite the full 122B residing in VRAM. This architecture can offer faster inference speeds compared to dense models of similar quality, but the full model size still requires significant VRAM.
-
----
-
-## Scoring Notes
-
-- **Doctrinal Position and Error Detection (35% combined)**: These categories rely on regex pattern matching that favors direct affirm/deny answers over balanced multi-perspective responses. Models that hedge or present comparative views may score lower than their understanding warrants.
-- **Catechism Recall (25%)**: This category rewards near-verbatim recall of catechism phrasing, giving a natural advantage to models trained on Reformed source texts.
-
----
-
-## Recommendation
-
-For local theological reasoning on a 96GB card, **mistralai/mistral-medium-3-5 is the slightly stronger choice overall**. It demonstrates greater consistency with fewer severe failures and no zero scores, and leads in key reasoning-heavy categories like Confessional Knowledge and Doctrinal Position.
-
-However, **qwen/qwen3.5-122b-a10b is a highly competitive alternative**, especially if Catechism Recall and Error Detection are paramount. Its perfect score in Error Detection and strong performance in Catechism Recall are significant. The trade-off is slightly less consistency and a lower score in Doctrinal Position.
-
----
-
-*Generated by theolog-bench. Scores use weighted category averages.*
-*Scorer: v2 (improved position detection for multi-view responses).*
-*Judge model: Gemini 2.5 Flash via OpenRouter.*
-*Run date: May 16, 2026.*
+Delta (mistralai/mistral-medium-3-5 vs qwen/qwen3.5-122b-a10b): +1.1 points
+================================================================================
