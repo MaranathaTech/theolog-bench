@@ -77,9 +77,9 @@ def generate_report(results: dict) -> str:
 
 
 def generate_comparison_report(results_list: list[dict], title: str = None) -> str:
-    """Generate a comparison report between multiple benchmark runs.
+    """Generate a markdown comparison report between multiple benchmark runs.
 
-    Uses a leaderboard layout with models as rows and categories as columns,
+    Uses a markdown table with models as rows and categories as columns,
     sorted by overall score descending. Works well for 2-20+ models.
 
     Args:
@@ -134,37 +134,32 @@ def generate_comparison_report(results_list: list[dict], title: str = None) -> s
     model_data.sort(key=lambda m: m["overall"], reverse=True)
     cats_ordered = sorted(all_cats)
 
-    # Determine model name column width (fit full names)
-    max_name = max(len(m["name"]) for m in model_data)
-    name_width = max(max_name, 5) + 2  # at least "Model" + padding
-
     report_title = title or "theolog-bench Comparison Report"
 
     lines = []
-    lines.append("=" * 80)
-    lines.append(report_title)
-    lines.append("=" * 80)
+    lines.append(f"# {report_title}")
     lines.append("")
 
-    # Build header: Rank | Model | cat1 | cat2 | ... | OVERALL
-    hdr = f"{'#':>3s}  {'Model':<{name_width}s}"
+    # Build markdown table header
+    hdr_cols = ["#", "Model"]
     for cat in cats_ordered:
-        short = cat_short.get(cat, cat[:6].title())
-        hdr += f"  {short:>6s}"
-    hdr += f"  {'OVERALL':>7s}"
-    lines.append(hdr)
-    lines.append("-" * len(hdr))
+        hdr_cols.append(cat_short.get(cat, cat[:6].title()))
+    hdr_cols.append("OVERALL")
+
+    lines.append("| " + " | ".join(hdr_cols) + " |")
+
+    # Alignment row: right-align numbers, left-align model
+    align = [":--:"] + [":--"] + ["--:"] * (len(cats_ordered) + 1)
+    lines.append("| " + " | ".join(align) + " |")
 
     # Data rows
     for rank, m in enumerate(model_data, 1):
-        row = f"{rank:>3d}  {m['name']:<{name_width}s}"
+        cols = [str(rank), m["name"]]
         for cat in cats_ordered:
             avg = m["cat_avgs"].get(cat, 0.0)
-            row += f"  {avg:>5.1f}%"
-        row += f"  {m['overall']:>6.1f}%"
-        lines.append(row)
-
-    lines.append("-" * len(hdr))
+            cols.append(f"{avg:.1f}%")
+        cols.append(f"**{m['overall']:.1f}%**")
+        lines.append("| " + " | ".join(cols) + " |")
 
     # Delta if exactly 2 models
     if len(results_list) == 2:
@@ -175,7 +170,6 @@ def generate_comparison_report(results_list: list[dict], title: str = None) -> s
             f"+{delta:.1f} points"
         )
 
-    lines.append("=" * 80)
     return "\n".join(lines)
 
 
