@@ -13,7 +13,13 @@ from pathlib import Path
 import yaml
 
 # Categories that benefit from judge scoring
-_JUDGE_CATEGORIES = {"confessional_knowledge", "comparative_theology", "error_detection"}
+_JUDGE_CATEGORIES = {
+    "confessional_knowledge",
+    "comparative_theology",
+    "error_detection",
+    "doctrinal_position",
+    "catechism_recall",
+}
 
 
 class JudgeScorer:
@@ -44,7 +50,14 @@ class JudgeScorer:
         """Score a response using the judge LLM."""
         from lib.scorer import strip_think_blocks
         response = strip_think_blocks(response)
-        prompt = self._build_prompt(question, response)
+
+        method = question.get("scoring", {}).get("method", "")
+        if method == "position_detection":
+            prompt = self._build_position_prompt(question, response)
+        elif method == "semantic_similarity":
+            prompt = self._build_catechism_prompt(question, response)
+        else:
+            prompt = self._build_prompt(question, response)
         try:
             raw_output = self.backend.generate(prompt)
         except Exception as e:
@@ -88,6 +101,61 @@ class JudgeScorer:
             "- Clarity: Is the theological explanation clear and well-organized?\n\n"
             'You MUST respond with ONLY a JSON object, no other text:\n'
             '{"score": <0-100>, "justification": "<brief 1-2 sentence explanation>"}'
+        )
+
+    def _build_position_prompt(self, question: dict, response: str) -> str:
+        """Build a judge prompt for position detection (doctrinal_position / error_detection)."""
+        expected = question.get("scoring", {}).get("expected_position") or question.get("scoring", {}).get("position", "")
+        required_points = question.get("scoring", {}).get("required_points", [])
+        heterodox_flags = question.get("scoring", {}).get("heterodox_flags", [])
+
+        prompt = (
+            "You are a Reformed theology expert evaluating whether an AI model "
+            "correctly identifies and takes a Reformed doctrinal position.\n\n"
+            f"Question: {question['question']}\n"
+            f"Expected position: The model should clearly {expected.upper()} this statement.\n"
+        )
+        if required_points:
+            prompt += f"Key points the model should make: {'; '.join(required_points)}\n"
+        if heterodox_flags:
+            prompt += f"Heterodox elements to reject: {', '.join(heterodox_flags)}\n"
+        prompt += (
+            f"\nModel's response:\n{response}\n\n"
+            "Score 0-100 based on:\n"
+            "- Does the model clearly take the correct position (affirm/deny as expected)? (50 points)\n"
+            "- Does it explain WHY this is the Reformed position with theological depth? (30 points)\n"
+            "- Does it address the required points? (20 points)\n"
+            "A model that presents a balanced academic comparison but clearly concludes "
+            "with the correct Reformed position should score well.\n"
+            "A model that hedges without committing to the correct position should score lower.\n\n"
+            'Respond with ONLY a JSON object:\n'
+            '{"score": <0-100>, "justification": "<brief explanation>"}'
+        )
+        return prompt
+
+    def _build_catechism_prompt(self, question: dict, response: str) -> str:
+        """Build a judge prompt for catechism recall (semantic similarity questions)."""
+        reference = question.get("reference_answer", "")
+        source = question.get("source", "Unknown")
+
+        return (
+            "You are a Reformed theology expert evaluating whether an AI model "
+            "faithfully conveys catechism teaching.\n\n"
+            f"Question: {question['question']}\n"
+            f"Source: {source}\n"
+            f"Reference answer (exact catechism text):\n{reference}\n\n"
+            f"Model's response:\n{response}\n\n"
+            "Score 0-100 based on:\n"
+            "- Does the response convey the SAME theological content as the reference? (60 points)\n"
+            "- Does it cover ALL key doctrinal points from the reference? (30 points)\n"
+            "- Is it theologically accurate with no errors? (10 points)\n\n"
+            "IMPORTANT: A paraphrased answer that captures all key doctrinal points "
+            "should score just as high as a verbatim quotation. Do NOT penalize for "
+            "using different words if the theological substance is equivalent.\n"
+            "DO penalize for missing key points, theological errors, or adding content "
+            "that contradicts the reference.\n\n"
+            'Respond with ONLY a JSON object:\n'
+            '{"score": <0-100>, "justification": "<brief explanation>"}'
         )
 
     def _parse_output(self, raw_output: str) -> dict:

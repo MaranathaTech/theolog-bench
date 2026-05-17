@@ -311,11 +311,13 @@ def run_single_benchmark(args, config, questions, category_weights):
             judge_result = judge.score(rq, rq["response"])
             rq["judge_score"] = judge_result["score"]
             rq["judge_details"] = judge_result["details"]
-            # For llm_judge method questions, use the judge score as the primary score
-            if rq.get("scoring", {}).get("method") == "llm_judge":
-                rq["score"] = judge_result["score"]
-                rq["score_details"] = judge_result["details"]
-                rq["score_method"] = "llm_judge"
+            # Preserve the automated score for reference
+            rq["automated_score"] = rq["score"]
+            rq["automated_score_method"] = rq.get("score_method", "")
+            # Use judge as authoritative score for all judge-scored questions
+            rq["score"] = judge_result["score"]
+            rq["score_details"] = judge_result["details"]
+            rq["score_method"] = "llm_judge"
             if i % 10 == 0:
                 _save_checkpoint(results, output_path)
 

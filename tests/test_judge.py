@@ -83,9 +83,13 @@ class TestShouldUseJudge:
         """should_use_judge returns True for error_detection category."""
         assert should_use_judge(error_detection_question) is True
 
-    def test_should_not_use_judge_for_catechism(self, catechism_question):
-        """should_use_judge returns False for catechism_recall."""
-        assert should_use_judge(catechism_question) is False
+    def test_should_use_judge_for_catechism_recall(self, catechism_question):
+        """should_use_judge returns True for catechism_recall category."""
+        assert should_use_judge(catechism_question) is True
+
+    def test_should_use_judge_for_doctrinal_position(self, position_question_deny):
+        """should_use_judge returns True for doctrinal_position category."""
+        assert should_use_judge(position_question_deny) is True
 
     def test_should_use_judge_for_confessional_knowledge(self):
         """should_use_judge returns True for confessional_knowledge category."""
@@ -106,3 +110,148 @@ class TestShouldUseJudge:
     def test_should_not_use_judge_for_biblical_reference(self, reference_question):
         """should_use_judge returns False for biblical_reference."""
         assert should_use_judge(reference_question) is False
+
+
+class TestPositionPrompt:
+    """Tests for the position detection judge prompt."""
+
+    def test_includes_expected_position(self, position_question_deny):
+        """Position prompt includes the expected position (DENY)."""
+        mock_backend = MagicMock()
+        mock_backend.generate.return_value = '{"score": 80, "justification": "Good."}'
+        judge = JudgeScorer(backend=mock_backend)
+        judge.score(position_question_deny, "No, a believer cannot lose salvation.")
+        prompt = mock_backend.generate.call_args[0][0]
+        assert "DENY" in prompt
+
+    def test_includes_required_points(self, position_question_deny):
+        """Position prompt includes required_points from scoring config."""
+        mock_backend = MagicMock()
+        mock_backend.generate.return_value = '{"score": 80, "justification": "Good."}'
+        judge = JudgeScorer(backend=mock_backend)
+        judge.score(position_question_deny, "No.")
+        prompt = mock_backend.generate.call_args[0][0]
+        assert "God's sovereign keeping" in prompt
+        assert "perseverance" in prompt
+
+    def test_includes_heterodox_flags(self, position_question_deny):
+        """Position prompt includes heterodox flags to watch for."""
+        mock_backend = MagicMock()
+        mock_backend.generate.return_value = '{"score": 80, "justification": "Good."}'
+        judge = JudgeScorer(backend=mock_backend)
+        judge.score(position_question_deny, "No.")
+        prompt = mock_backend.generate.call_args[0][0]
+        assert "can fall away" in prompt
+        assert "conditional security" in prompt
+
+    def test_affirm_position(self, position_question_affirm):
+        """Position prompt uses AFFIRM for affirm-type questions."""
+        mock_backend = MagicMock()
+        mock_backend.generate.return_value = '{"score": 90, "justification": "Solid."}'
+        judge = JudgeScorer(backend=mock_backend)
+        judge.score(position_question_affirm, "Yes, Scripture alone is infallible.")
+        prompt = mock_backend.generate.call_args[0][0]
+        assert "AFFIRM" in prompt
+
+
+class TestCatechismPrompt:
+    """Tests for the catechism recall judge prompt."""
+
+    def test_includes_reference_answer(self, catechism_question):
+        """Catechism prompt includes the reference answer text."""
+        mock_backend = MagicMock()
+        mock_backend.generate.return_value = '{"score": 95, "justification": "Excellent."}'
+        judge = JudgeScorer(backend=mock_backend)
+        judge.score(catechism_question, "To glorify God and enjoy him forever.")
+        prompt = mock_backend.generate.call_args[0][0]
+        assert "glorify God" in prompt
+        assert "enjoy him for ever" in prompt
+
+    def test_includes_source(self, catechism_question):
+        """Catechism prompt includes the source identifier."""
+        mock_backend = MagicMock()
+        mock_backend.generate.return_value = '{"score": 95, "justification": "Excellent."}'
+        judge = JudgeScorer(backend=mock_backend)
+        judge.score(catechism_question, "To glorify God and enjoy him forever.")
+        prompt = mock_backend.generate.call_args[0][0]
+        assert "Westminster Shorter Catechism" in prompt
+
+    def test_includes_paraphrase_instruction(self, catechism_question):
+        """Catechism prompt instructs judge not to penalize paraphrase."""
+        mock_backend = MagicMock()
+        mock_backend.generate.return_value = '{"score": 95, "justification": "Excellent."}'
+        judge = JudgeScorer(backend=mock_backend)
+        judge.score(catechism_question, "To glorify God and enjoy him forever.")
+        prompt = mock_backend.generate.call_args[0][0]
+        assert "paraphrased answer" in prompt.lower() or "Do NOT penalize" in prompt
+
+
+class TestPromptDispatch:
+    """Tests that score() dispatches to the correct prompt builder."""
+
+    def test_dispatches_position_detection(self, position_question_deny):
+        """score() uses position prompt for position_detection method."""
+        mock_backend = MagicMock()
+        mock_backend.generate.return_value = '{"score": 75, "justification": "OK."}'
+        judge = JudgeScorer(backend=mock_backend)
+        judge.score(position_question_deny, "No.")
+        prompt = mock_backend.generate.call_args[0][0]
+        # Position prompt has this unique marker
+        assert "correctly identifies and takes a Reformed doctrinal position" in prompt
+
+    def test_dispatches_semantic_similarity(self, catechism_question):
+        """score() uses catechism prompt for semantic_similarity method."""
+        mock_backend = MagicMock()
+        mock_backend.generate.return_value = '{"score": 90, "justification": "Great."}'
+        judge = JudgeScorer(backend=mock_backend)
+        judge.score(catechism_question, "To glorify God.")
+        prompt = mock_backend.generate.call_args[0][0]
+        # Catechism prompt has this unique marker
+        assert "faithfully conveys catechism teaching" in prompt
+
+    def test_dispatches_llm_judge(self, judge_question):
+        """score() uses generic prompt for llm_judge method."""
+        mock_backend = MagicMock()
+        mock_backend.generate.return_value = '{"score": 80, "justification": "Fine."}'
+        judge = JudgeScorer(backend=mock_backend)
+        judge.score(judge_question, "The WCF teaches...")
+        prompt = mock_backend.generate.call_args[0][0]
+        # Generic prompt has this unique marker
+        assert "theological accuracy" in prompt
+        assert "Scoring rubric" in prompt
+
+
+class TestAutomatedScorePreservation:
+    """Tests that automated_score is preserved when judge overwrites."""
+
+    def test_automated_score_preserved_in_run_logic(self):
+        """Simulates the run.py logic: judge overwrites but automated is kept."""
+        # Simulate a question after automated scoring
+        rq = {
+            "id": "wsc-001",
+            "category": "catechism_recall",
+            "scoring": {"method": "semantic_similarity"},
+            "score": 60,
+            "score_method": "semantic_similarity",
+            "score_details": {"overlap": 0.6},
+            "response": "To glorify God and enjoy him forever.",
+        }
+
+        # Simulate what run.py does when judge returns
+        judge_result = {
+            "score": 92,
+            "method": "llm_judge",
+            "details": {"justification": "Excellent paraphrase."},
+        }
+        rq["judge_score"] = judge_result["score"]
+        rq["judge_details"] = judge_result["details"]
+        rq["automated_score"] = rq["score"]
+        rq["automated_score_method"] = rq.get("score_method", "")
+        rq["score"] = judge_result["score"]
+        rq["score_details"] = judge_result["details"]
+        rq["score_method"] = "llm_judge"
+
+        assert rq["score"] == 92
+        assert rq["automated_score"] == 60
+        assert rq["automated_score_method"] == "semantic_similarity"
+        assert rq["score_method"] == "llm_judge"
