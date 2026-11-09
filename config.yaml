@@ -479,6 +479,50 @@ presets:
       params: "unknown"
       local_capable: false
 
+  gpt-6.1-sol:
+    backend: api
+    api_url: https://openrouter.ai/api/v1
+    model: openai/gpt-6.1-sol
+    description: "GPT-6.1 Sol — OpenAI flagship (Sep 2026), $2/$10 per 1M (OpenRouter)"
+    meta:
+      vendor: "OpenAI"
+      architecture: "proprietary"
+      params: "unknown"
+      local_capable: false
+
+  gpt-6-astra:
+    backend: api
+    api_url: https://openrouter.ai/api/v1
+    model: openai/gpt-6-astra
+    description: "GPT-6 Astra — OpenAI top tier (Sep 2026), $10/$50 per 1M (OpenRouter)"
+    meta:
+      vendor: "OpenAI"
+      architecture: "proprietary"
+      params: "unknown"
+      local_capable: false
+
+  claude-opus-5.5:
+    backend: api
+    api_url: https://openrouter.ai/api/v1
+    model: anthropic/claude-opus-5.5
+    description: "Claude Opus 5.5 (Sep 2026), $4/$20 per 1M (OpenRouter)"
+    meta:
+      vendor: "Anthropic"
+      architecture: "proprietary"
+      params: "unknown"
+      local_capable: false
+
+  grok-4.7:
+    backend: api
+    api_url: https://openrouter.ai/api/v1
+    model: x-ai/grok-4.7
+    description: "Grok 4.7 — reasoning model (Sep 2026), $2/$6 per 1M (OpenRouter)"
+    meta:
+      vendor: "xAI"
+      architecture: "proprietary, reasoning"
+      params: "unknown"
+      local_capable: false
+
   glm-5.1:
     backend: api
     api_url: https://openrouter.ai/api/v1
@@ -572,6 +616,9 @@ groups:
     - claude-sonnet-4.6       # proprietary, ~$2.40/run
     - claude-opus-4.7         # proprietary, ~$4.00/run
     - gpt-5.5                 # proprietary, ~$4.80/run
+    - gpt-6.1-sol             # proprietary (Sep 2026)
+    - claude-opus-5.5         # proprietary (Sep 2026)
+    - grok-4.7                # proprietary, reasoning (Sep 2026)
 
   # All cloud models (no local Ollama presets)
   cloud:

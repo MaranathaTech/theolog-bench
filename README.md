@@ -4,20 +4,22 @@ Evaluates LLM theological accuracy against Reformed confessional standards — t
 
 ## Leaderboard
 
+_Last updated 2026-11-08: added GPT-6.1 Sol, Claude Opus 5.5 and Grok 4.7._
+
 | # | Model | Overall |
 |:--:|:--|--:|
 | 1 | openai/gpt-5.5 | **90.5%** |
-| 2 | anthropic/claude-opus-4.7 | **85.2%** |
-| 3 | x-ai/grok-4.3 | **84.9%** |
-| 4 | google/gemini-3.1-pro-preview | **84.2%** |
-| 5 | mistralai/mistral-medium-3-5 | **82.9%** |
-| 6 | z-ai/glm-4.7 | **82.5%** |
-| 7 | qwen/qwen3.5-122b-a10b | **82.0%** |
-| 8 | qwen/qwen3.5-27b | **82.0%** |
-| 9 | qwen/qwen3.6-35b-a3b | **81.7%** |
-| 10 | mistralai/mistral-large-2512 | **81.4%** |
+| 2 | openai/gpt-6.1-sol | **87.7%** |
+| 3 | anthropic/claude-opus-4.7 | **85.2%** |
+| 4 | x-ai/grok-4.7 | **84.9%** |
+| 5 | x-ai/grok-4.3 | **84.9%** |
+| 6 | google/gemini-3.1-pro-preview | **84.2%** |
+| 7 | anthropic/claude-opus-5.5 | **83.7%** |
+| 8 | mistralai/mistral-medium-3-5 | **82.9%** |
+| 9 | z-ai/glm-4.7 | **82.5%** |
+| 10 | qwen/qwen3.5-122b-a10b | **82.0%** |
 
-[Full leaderboard (37 models)](results/reports/leaderboard.md) | [Frontier](results/reports/frontier-comparison.md) | [Mid-tier](results/reports/mid-comparison.md) | [Budget](results/reports/budget-comparison.md) | [12GB](results/reports/12gb-comparison.md) | [24GB](results/reports/24gb-comparison.md) | [48GB](results/reports/48gb-comparison.md) | [96GB](results/reports/96gb-comparison.md)
+[Full leaderboard (36 models)](results/reports/leaderboard.md) | [Frontier](results/reports/frontier-comparison.md) | [Mid-tier](results/reports/mid-comparison.md) | [Budget](results/reports/budget-comparison.md) | [12GB](results/reports/12gb-comparison.md) | [24GB](results/reports/24gb-comparison.md) | [48GB](results/reports/48gb-comparison.md) | [96GB](results/reports/96gb-comparison.md)
 
 ## Categories
 
